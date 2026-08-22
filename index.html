@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>SIENA MARGEM</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+    --bg:#050806;
+    --card:#0d1510;
+    --card2:#121c15;
+    --green:#58df1e;
+    --green-dark:#299d08;
+    --white:#ffffff;
+    --gray:#929c95;
+    --border:#26342a;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background:#050806;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    min-height:100vh;
+}
+
+.app{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    margin:auto;
+    padding:18px 15px 25px;
+    background:
+        radial-gradient(circle at 50% -10%,#183b24 0%,#0b1710 28%,#050806 70%);
+}
+
+/* TOPO */
+
+.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:22px;
+}
+
+.icon-btn{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:#0c1510;
+    color:white;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.brand{
+    text-align:center;
+    flex:1;
+}
+
+.brand-title{
+    margin:0;
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:1.5px;
+}
+
+.brand-title span{
+    color:var(--green);
+}
+
+.brand-sub{
+    margin-top:3px;
+    color:#89938c;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* CABEÇALHO */
+
+.hero{
+    margin-bottom:17px;
+}
+
+.hero h2{
+    margin:0;
+    font-size:25px;
+    line-height:1.15;
+}
+
+.hero p{
+    margin:6px 0 0;
+    color:var(--gray);
+    font-size:13px;
+}
+
+/* MODOS */
+
+.tabs{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+    margin-bottom:13px;
+}
+
+.tab{
+    height:42px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#0e1711;
+    color:#89948d;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.tab.active{
+    background:var(--green);
+    color:#071007;
+    border-color:var(--green);
+}
+
+/* CARD */
+
+.card{
+    padding:15px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    background:
+        linear-gradient(145deg,#111c14,#09100b);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    margin-bottom:12px;
+}
+
+.field{
+    margin-bottom:14px;
+}
+
+.field:last-child{
+    margin-bottom:0;
+}
+
+.field label{
+    display:block;
+    color:#aab3ad;
+    font-size:10px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    margin-bottom:7px;
+}
+
+.input{
+    display:flex;
+    align-items:center;
+    min-height:52px;
+    background:#060b07;
+    border:1px solid #29372d;
+    border-radius:13px;
+    overflow:hidden;
+}
+
+.input span{
+    color:var(--green);
+    font-weight:bold;
+    padding:0 12px;
+}
+
+.input input{
+    width:100%;
+    height:52px;
+    border:0;
+    outline:0;
+    background:transparent;
+    color:white;
+    font-size:19px;
+    font-weight:bold;
+    padding:0 7px;
+}
+
+/* RESULTADO */
+
+.result{
+    padding:19px 15px;
+    margin-bottom:12px;
+    text-align:center;
+    border-radius:21px;
+    border:1px solid #3a7d28;
+    background:
+        radial-gradient(circle at 90% 0%,rgba(88,223,30,.15),transparent 42%),
+        #09120b;
+}
+
+.result-label{
+    color:#9ca69f;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1.2px;
+}
+
+.result-price{
+    margin:7px 0 14px;
+    color:var(--green);
+    font-size:37px;
+    font-weight:900;
+}
+
+.result-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-top:1px solid #27342b;
+    padding-top:12px;
+}
+
+.result-info small{
+    display:block;
+    color:#7f8982;
+    font-size:9px;
+    margin-bottom:5px;
+}
+
+.result-info strong{
+    font-size:16px;
+}
+
+/* BOTÃO */
+
+.calculate{
+    width:100%;
+    height:56px;
+    border:0;
+    border-radius:15px;
+    background:linear-gradient(135deg,#6aeb29,#35ad0b);
+    color:#061006;
+    font-size:16px;
+    font-weight:900;
+    box-shadow:0 8px 24px rgba(65,190,15,.18);
+}
+
+.calculate:active{
+    transform:scale(.98);
+}
+
+.clear{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#707b73;
+    padding:12px;
+    font-size:11px;
+}
+
+/* TECLADO */
+
+.keypad{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:7px;
+}
+
+.key{
+    height:58px;
+    border:1px solid #29372d;
+    border-radius:15px;
+    background:linear-gradient(145deg,#1a241d,#101711);
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.key:active{
+    transform:scale(.95);
+}
+
+.key.green{
+    color:var(--green);
+}
+
+.key.equal{
+    background:linear-gradient(145deg,#68ea27,#38b50b);
+    color:#061006;
+    font-size:27px;
+}
+
+/* RODAPÉ */
+
+.footer{
+    text-align:center;
+    margin-top:21px;
+    color:#616b64;
+    font-size:10px;
+}
+
+.footer strong{
+    color:#8d9890;
+}
+
+/* MENU */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    display:none;
+    z-index:50;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.menu{
+    position:fixed;
+    top:0;
+    left:-320px;
+    width:290px;
+    height:100vh;
+    padding:22px 18px;
+    background:#09110c;
+    border-right:1px solid var(--border);
+    z-index:60;
+    transition:.25s;
+}
+
+.menu.show{
+    left:0;
+}
+
+.menu-title{
+    font-size:26px;
+    font-weight:900;
+}
+
+.menu-title span{
+    color:var(--green);
+}
+
+.menu-sub{
+    color:#7d8780;
+    font-size:10px;
+    letter-spacing:1px;
+    margin:4px 0 24px;
+}
+
+.menu-item{
+    width:100%;
+    padding:15px;
+    margin-bottom:9px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#101a13;
+    color:white;
+    text-align:left;
+    font-size:14px;
+}
+
+.menu-item b{
+    color:var(--green);
+    margin-right:10px;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(0,0,0,.75);
+    z-index:100;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:430px;
+    max-height:85vh;
+    overflow:auto;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:#0a130d;
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+}
+
+.modal-head h3{
+    margin:0;
+    font-size:20px;
+}
+
+.close{
+    border:0;
+    background:transparent;
+    color:white;
+    font-size:25px;
+}
+
+.info{
+    padding:14px;
+    margin-bottom:9px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#111b14;
+}
+
+.info strong{
+    color:var(--green);
+}
+
+.info p{
+    color:#a2aca5;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.history{
+    padding:13px;
+    margin-bottom:8px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:#111b14;
+}
+
+.history strong{
+    color:var(--green);
+}
+
+.history small{
+    color:#79837c;
+}
+
+/* DESKTOP */
+
+@media(min-width:600px){
+
+    body{
+        padding:30px 0;
+    }
+
+    .app{
+        min-height:auto;
+        border:1px solid #1d2b21;
+        border-radius:28px;
+        box-shadow:0 30px 80px rgba(0,0,0,.5);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="topbar">
+
+        <button class="icon-btn" onclick="abrirMenu()">☰</button>
+
+        <div class="brand">
+            <div class="brand-title">
+                SIENA <span>MARGEM</span>
+            </div>
+
+            <div class="brand-sub">
+                SIMULADOR COMERCIAL
+            </div>
+        </div>
+
+        <button class="icon-btn" onclick="abrirSobre()">ⓘ</button>
+
+    </div>
+
+
+    <div class="hero">
+
+        <h2>Simule seu preço de venda</h2>
+
+        <p>
+            Uma ferramenta rápida para seus cálculos comerciais.
+        </p>
+
+    </div>
+
+
+    <div class="tabs">
+
+        <button class="tab active">
+            MARGEM
+        </button>
+
+        <button class="tab">
+            PREÇO
+        </button>
+
+        <button class="tab">
+            DESCONTO
+        </button>
+
+        <button class="tab">
+            MARKUP
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="field">
+
+            <label>Custo do produto</label>
+
+            <div class="input">
+
+                <span>R$</span>
+
+                <input
+                    id="custo"
+                    type="text"
+                    inputmode="decimal"
+                    value="100"
+                    onclick="campoAtivo=this"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Margem desejada</label>
+
+            <div class="input">
+
+                <input
+                    id="margem"
+                    type="text"
+                    inputmode="decimal"
+                    value="30"
+                    onclick="campoAtivo=this"
+                >
+
+                <span>%</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>Despesas</label>
+
+            <div class="input">
+
+                <input
+                    id="despesas"
+                    type="text"
+                    inputmode="decimal"
+                    value="0"
+                    onclick="campoAtivo=this"
+                >
+
+                <span>%</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="result">
+
+        <div class="result-label">
+            PREÇO DE VENDA
+        </div>
+
+        <div class="result-price" id="resultado">
+            R$ 142,86
+        </div>
+
+        <div class="result-info">
+
+            <div>
+                <small>LUCRO</small>
+                <strong id="lucro">R$ 42,86</strong>
+            </div>
+
+            <div>
+                <small>MARGEM</small>
+                <strong id="margemReal">30,00%</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="calculate" onclick="calcular()">
+        ✓ &nbsp; CALCULAR
+    </button>
+
+
+    <button class="clear" onclick="limpar()">
+        ↻ &nbsp; LIMPAR
+    </button>
+
+
+    <div class="keypad">
+
+        <button class="key" onclick="digitar('7')">7</button>
+        <button class="key" onclick="digitar('8')">8</button>
+        <button class="key" onclick="digitar('9')">9</button>
+        <button class="key green" onclick="apagar()">⌫</button>
+
+        <button class="key" onclick="digitar('4')">4</button>
+        <button class="key" onclick="digitar('5')">5</button>
+        <button class="key" onclick="digitar('6')">6</button>
+        <button class="key green">+</button>
+
+        <button class="key" onclick="digitar('1')">1</button>
+        <button class="key" onclick="digitar('2')">2</button>
+        <button class="key" onclick="digitar('3')">3</button>
+        <button class="key green">−</button>
+
+        <button class="key" onclick="digitar('00')">00</button>
+        <button class="key" onclick="digitar('0')">0</button>
+        <button class="key" onclick="digitar(',')">,</button>
+        <button class="key equal" onclick="calcular()">=</button>
+
+    </div>
+
+
+    <div class="footer">
+        Criado e desenvolvido por <strong>João Siena</strong>
+    </div>
+
+</div>
+
+
+<!-- MENU -->
+
+<div class="overlay" id="overlay" onclick="fecharMenu()"></div>
+
+<div class="menu" id="menu">
+
+    <div class="menu-title">
+        SIENA <span>MARGEM</span>
+    </div>
+
+    <div class="menu-sub">
+        SIMULADOR COMERCIAL
+    </div>
+
+    <button class="menu-item" onclick="abrirHistorico()">
+        <b>◷</b> Histórico
+    </button>
+
+    <button class="menu-item" onclick="abrirFormula()">
+        <b>∑</b> Informações técnicas
+    </button>
+
+    <button class="menu-item" onclick="abrirSobre()">
+        <b>ⓘ</b> Sobre o SIENA
+    </button>
+
+</div>
+
+
+<!-- HISTÓRICO -->
+
+<div class="modal" id="historicoModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>Histórico</h3>
+
+            <button class="close" onclick="fecharModais()">×</button>
+
+        </div>
+
+        <div id="historicoLista"></div>
+
+    </div>
+
+</div>
+
+
+<!-- FÓRMULA -->
+
+<div class="modal" id="formulaModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>Informações técnicas</h3>
+
+            <button class="close" onclick="fecharModais()">×</button>
+
+        </div>
+
+        <div class="info">
+
+            <strong>Como o cálculo funciona</strong>
+
+            <p>
+                A fórmula técnica fica escondida da tela principal
+                para manter o aplicativo simples e rápido.
+            </p>
+
+        </div>
+
+        <div class="info">
+
+            <strong>Margem</strong>
+
+            <p>
+                Preço de venda = Custo ÷ (1 − Margem)
+            </p>
+
+        </div>
+
+        <div class="info">
+
+            <strong>Despesas</strong>
+
+            <p>
+                As despesas são consideradas como percentual do
+                preço de venda.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SOBRE -->
+
+<div class="modal" id="sobreModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>SIENA MARGEM</h3>
+
+            <button class="close" onclick="fecharModais()">×</button>
+
+        </div>
+
+        <div class="info">
+
+            <strong>Simulador Comercial</strong>
+
+            <p>
+                Ferramenta desenvolvida para facilitar cálculos
+                comerciais de margem e formação de preço.
+            </p>
+
+            <p>
+                Criado e desenvolvido por <strong>João Siena</strong>.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let campoAtivo = document.getElementById("custo");
+
+
+/* =========================
+   CONVERTER NÚMERO
+========================= */
+
+function numero(valor){
+
+    valor = String(valor)
+        .replace(/\./g,"")
+        .replace(",", ".");
+
+    return parseFloat(valor) || 0;
+}
+
+
+/* =========================
+   MOEDA
+========================= */
+
+function moeda(valor){
+
+    return valor.toLocaleString("pt-BR",{
+        style:"currency",
+        currency:"BRL"
+    });
+
+}
+
+
+/* =========================
+   CALCULAR
+========================= */
+
+function calcular(){
+
+    const custo =
+        numero(document.getElementById("custo").value);
+
+    const margem =
+        numero(document.getElementById("margem").value);
+
+    const despesas =
+        numero(document.getElementById("despesas").value);
+
+
+    if(custo <= 0){
+
+        alert("Digite o custo do produto.");
+
+        return;
+    }
+
+
+    if(margem < 0 || margem >= 100){
+
+        alert("A margem deve estar entre 0% e 99,99%.");
+
+        return;
+    }
+
+
+    if(despesas < 0 || despesas >= 100){
+
+        alert("Digite uma despesa válida.");
+
+        return;
+    }
+
+
+    const divisor =
+        1 - (margem / 100) - (despesas / 100);
+
+
+    if(divisor <= 0){
+
+        alert("Margem e despesas não podem chegar a 100%.");
+
+        return;
+    }
+
+
+    const preco =
+        custo / divisor;
+
+
+    const valorDespesas =
+        preco * (despesas / 100);
+
+
+    const lucro =
+        preco - custo - valorDespesas;
+
+
+    const margemReal =
+        (lucro / preco) * 100;
+
+
+    document.getElementById("resultado")
+        .innerText = moeda(preco);
+
+
+    document.getElementById("lucro")
+        .innerText = moeda(lucro);
+
+
+    document.getElementById("margemReal")
+        .innerText =
+        margemReal.toFixed(2).replace(".",",") + "%";
+
+
+    salvarHistorico(
+        custo,
+        margem,
+        despesas,
+        preco
+    );
+
+}
+
+
+/* =========================
+   TECLADO
+========================= */
+
+function digitar(valor){
+
+    if(!campoAtivo){
+
+        campoAtivo =
+            document.getElementById("custo");
+
+    }
+
+
+    if(valor === ","){
+
+        if(campoAtivo.value.includes(",")){
+
+            return;
+
+        }
+
+    }
+
+
+    campoAtivo.value += valor;
+
+}
+
+
+function apagar(){
+
+    if(!campoAtivo) return;
+
+    campoAtivo.value =
+        campoAtivo.value.slice(0,-1);
+
+}
+
+
+/* =========================
+   LIMPAR
+========================= */
+
+function limpar(){
+
+    document.getElementById("custo").value = "";
+
+    document.getElementById("margem").value = "";
+
+    document.getElementById("despesas").value = "0";
+
+    document.getElementById("resultado")
+        .innerText = "R$ 0,00";
+
+    document.getElementById("lucro")
+        .innerText = "R$ 0,00";
+
+    document.getElementById("margemReal")
+        .innerText = "0,00%";
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+function abrirMenu(){
+
+    document.getElementById("menu")
+        .classList.add("show");
+
+    document.getElementById("overlay")
+        .classList.add("show");
+
+}
+
+
+function fecharMenu(){
+
+    document.getElementById("menu")
+        .classList.remove("show");
+
+    document.getElementById("overlay")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   MODAIS
+========================= */
+
+function fecharModais(){
+
+    document.querySelectorAll(".modal")
+        .forEach(m => m.classList.remove("show"));
+
+}
+
+
+function abrirHistorico(){
+
+    fecharMenu();
+
+    renderHistorico();
+
+    document.getElementById("historicoModal")
+        .classList.add("show");
+
+}
+
+
+function abrirFormula(){
+
+    fecharMenu();
+
+    document.getElementById("formulaModal")
+        .classList.add("show");
+
+}
+
+
+function abrirSobre(){
+
+    fecharMenu();
+
+    document.getElementById("sobreModal")
+        .classList.add("show");
+
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+function salvarHistorico(
+    custo,
+    margem,
+    despesas,
+    preco
+){
+
+    let dados =
+        JSON.parse(
+            localStorage.getItem("sienaHistorico") || "[]"
+        );
+
+
+    dados.unshift({
+
+        data:
+            new Date().toLocaleString("pt-BR"),
+
+        custo:custo,
+
+        margem:margem,
+
+        despesas:despesas,
+
+        preco:preco
+
+    });
+
+
+    dados =
+        dados.slice(0,30);
+
+
+    localStorage.setItem(
+        "sienaHistorico",
+        JSON.stringify(dados)
+    );
+
+}
+
+
+function renderHistorico(){
+
+    const lista =
+        document.getElementById("historicoLista");
+
+
+    const dados =
+        JSON.parse(
+            localStorage.getItem("sienaHistorico") || "[]"
+        );
+
+
+    if(dados.length === 0){
+
+        lista.innerHTML = `
+            <div class="info">
+                <strong>Nenhum cálculo ainda.</strong>
+                <p>
+                    Seus últimos cálculos aparecerão aqui.
+                </p>
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    lista.innerHTML = "";
+
+
+    dados.forEach(item => {
+
+        const div =
+            document.createElement("div");
+
+
+        div.className = "history";
+
+
+        div.innerHTML = `
+
+            <small>${item.data}</small>
+
+            <br><br>
+
+            Custo:
+            <strong>${moeda(item.custo)}</strong>
+
+            <br>
+
+            Margem:
+            <strong>${item.margem.toFixed(2).replace(".",",")}%</strong>
+
+            <br>
+
+            Preço:
+            <strong>${moeda(item.preco)}</strong>
+
+        `;
+
+
+        lista.appendChild(div);
+
+    });
+
+}
+
+
+/* =========================
+   INICIAR
+========================= */
+
+calcular();
+
+</script>
+
+</body>
+</html>
