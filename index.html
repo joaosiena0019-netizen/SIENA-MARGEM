@@ -40,14 +40,10 @@ height:100dvh;
 }
 
 .app{
-
 width:100%;
 height:100dvh;
-
 max-width:500px;
-
 margin:auto;
-
 padding:
 env(safe-area-inset-top)
 14px
@@ -63,29 +59,21 @@ circle at 50% 0%,
 #08140c 28%,
 #030604 70%
 );
-
 }
 
-/* =========================
-TOPO
-========================= */
+
+/* TOPO */
 
 .top{
-
 height:16%;
-
 min-height:100px;
 
 display:grid;
-
 grid-template-columns:52px 1fr 52px;
-
 align-items:center;
-
 }
 
 .topButton{
-
 width:45px;
 height:45px;
 
@@ -98,83 +86,51 @@ background:#071009;
 color:#fff;
 
 font-size:23px;
-
 }
 
 .brand{
-
 text-align:center;
-
 line-height:.9;
-
 }
 
 .brandSiena{
-
 font-size:clamp(42px,11vw,62px);
-
 font-weight:1000;
-
 letter-spacing:-2px;
-
 color:#fff;
-
-text-shadow:
-0 0 18px rgba(255,255,255,.08);
-
 }
 
 .brandMargem{
-
 font-size:clamp(19px,5vw,27px);
-
 font-weight:900;
-
 letter-spacing:7px;
-
 color:#54e51b;
-
 margin-top:7px;
-
 }
 
 .brandSub{
-
 font-size:9px;
-
 font-weight:bold;
-
 letter-spacing:3px;
-
 color:#8b948d;
-
 margin-top:8px;
-
 }
 
-/* =========================
-ABAS
-========================= */
+
+/* ABAS */
 
 .tabs{
-
 height:8%;
-
 min-height:45px;
 
 display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
+grid-template-columns:repeat(4,1fr);
 gap:6px;
 
 margin-bottom:7px;
-
 }
 
 .tab{
-
 border-radius:12px;
 
 border:1px solid #26372a;
@@ -184,36 +140,26 @@ background:#071009;
 color:#8d968f;
 
 font-size:10px;
-
 font-weight:900;
-
 }
 
 .tab.active{
-
 background:#54e51b;
-
 color:#061006;
-
 border-color:#54e51b;
 
 box-shadow:
 0 0 18px rgba(84,229,27,.2);
-
 }
 
-/* =========================
-ÁREA DE CAMPOS
-========================= */
+
+/* CAMPOS */
 
 .fields{
-
 height:25%;
-
 min-height:155px;
 
 border:1px solid #26372a;
-
 border-radius:18px;
 
 padding:10px;
@@ -226,75 +172,54 @@ rgba(5,11,7,.96)
 );
 
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 gap:8px;
-
 }
 
 .field{
-
 flex:1;
-
 min-height:0;
-
 }
 
 .label{
-
 display:block;
 
 font-size:9px;
-
 font-weight:900;
-
 letter-spacing:.8px;
 
 color:#a5ada7;
 
 margin-bottom:4px;
-
 }
 
 .inputBox{
-
 height:calc(100% - 14px);
-
 min-height:38px;
 
 display:flex;
-
 align-items:center;
 
 border:1px solid #26372a;
-
 border-radius:12px;
 
 background:#020603;
 
 overflow:hidden;
-
 }
 
 .prefix{
-
 padding-left:12px;
-
 padding-right:8px;
 
 color:#54e51b;
 
 font-weight:900;
-
 font-size:17px;
-
 }
 
 .inputBox input{
-
 width:100%;
 height:100%;
 
@@ -306,35 +231,27 @@ background:transparent;
 color:#fff;
 
 font-size:18px;
-
 font-weight:800;
 
 padding:0 8px;
 
 min-width:0;
-
 }
 
 .suffix{
-
 padding:0 12px;
 
 color:#54e51b;
 
 font-size:18px;
-
 font-weight:900;
-
 }
 
-/* =========================
-RESULTADO
-========================= */
+
+/* RESULTADO */
 
 .result{
-
 height:17%;
-
 min-height:105px;
 
 margin-top:7px;
@@ -352,47 +269,31 @@ transparent 45%
 #061008;
 
 display:flex;
-
 flex-direction:column;
-
 align-items:center;
-
 justify-content:center;
-
 }
 
 .resultLabel{
-
 font-size:9px;
-
 font-weight:900;
-
 letter-spacing:1.5px;
-
 color:#9ca59e;
-
 }
 
 .resultValue{
-
 font-size:clamp(32px,9vw,47px);
-
 font-weight:1000;
-
 color:#54e51b;
-
 line-height:1;
 
 margin:5px 0 8px;
-
 }
 
 .resultInfo{
-
 width:85%;
 
 display:grid;
-
 grid-template-columns:1fr 1fr;
 
 border-top:1px solid #253429;
@@ -400,55 +301,39 @@ border-top:1px solid #253429;
 padding-top:7px;
 
 text-align:center;
-
 }
 
 .resultInfo div:first-child{
-
 border-right:1px solid #253429;
-
 }
 
 .resultInfo small{
-
 display:block;
-
 font-size:8px;
-
 color:#7d877f;
-
 margin-bottom:3px;
-
 }
 
 .resultInfo strong{
-
 font-size:13px;
-
 }
 
-/* =========================
-BOTÕES
-========================= */
+
+/* AÇÕES */
 
 .actions{
-
 height:7%;
-
 min-height:40px;
 
 display:grid;
-
 grid-template-columns:1.6fr 1fr;
 
 gap:7px;
 
 margin-top:7px;
-
 }
 
 .action{
-
 border-radius:12px;
 
 border:1px solid #2d432f;
@@ -458,47 +343,34 @@ background:#071009;
 color:#fff;
 
 font-weight:900;
-
 font-size:12px;
-
 }
 
 .action.calculate{
-
 background:#54e51b;
-
 color:#061006;
-
 border-color:#54e51b;
-
 }
 
-/* =========================
-TECLADO
-========================= */
+
+/* TECLADO */
 
 .keypad{
-
 height:26%;
-
 min-height:150px;
 
 display:grid;
 
-grid-template-columns:
-repeat(4,1fr);
+grid-template-columns:repeat(4,1fr);
 
-grid-template-rows:
-repeat(4,1fr);
+grid-template-rows:repeat(4,1fr);
 
 gap:6px;
 
 margin-top:7px;
-
 }
 
 .key{
-
 border-radius:12px;
 
 border:1px solid #26372a;
@@ -513,81 +385,56 @@ linear-gradient(
 color:#fff;
 
 font-size:20px;
-
 font-weight:900;
-
 }
 
 .key:active{
-
 transform:scale(.95);
-
 }
 
 .key.green{
-
 color:#54e51b;
-
 }
 
 .key.equal{
-
 background:#54e51b;
-
 color:#061006;
 
 font-size:28px;
 
 border-color:#54e51b;
-
 }
 
 .key.zero{
-
 grid-column:span 2;
-
 }
 
-/* =========================
-RODAPÉ
-========================= */
+
+/* RODAPÉ */
 
 .footer{
-
 height:3%;
-
 min-height:20px;
 
 display:flex;
-
 align-items:center;
-
 justify-content:center;
 
 font-size:8px;
-
 color:#69736c;
-
 }
 
 .footer span{
-
 color:#54e51b;
-
 font-weight:bold;
-
 margin-left:3px;
-
 }
 
-/* =========================
-MENU
-========================= */
+
+/* MENU */
 
 .overlay{
-
 position:fixed;
-
 inset:0;
 
 background:rgba(0,0,0,.75);
@@ -595,75 +442,55 @@ background:rgba(0,0,0,.75);
 display:none;
 
 z-index:50;
-
 }
 
 .overlay.show{
-
 display:block;
-
 }
 
 .menu{
-
 position:fixed;
 
 z-index:60;
 
 top:0;
-
 left:-310px;
 
 width:290px;
-
 height:100dvh;
 
-padding:
-30px
-18px;
+padding:30px 18px;
 
 background:#071009;
 
 border-right:1px solid #29432d;
 
 transition:.25s;
-
 }
 
 .menu.show{
-
 left:0;
-
 }
 
 .menuLogo{
-
 font-size:27px;
-
 font-weight:1000;
-
 }
 
 .menuLogo span{
-
 color:#54e51b;
-
 }
 
 .menuSub{
-
 font-size:9px;
-
 letter-spacing:2px;
 
 color:#778078;
 
 margin:5px 0 25px;
-
 }
 
 .menuButton{
-
 width:100%;
 
 padding:15px;
@@ -681,15 +508,12 @@ color:#fff;
 text-align:left;
 
 font-weight:bold;
-
 }
 
-/* =========================
-MODAL
-========================= */
+
+/* MODAL */
 
 .modal{
-
 position:fixed;
 
 inset:0;
@@ -699,25 +523,19 @@ z-index:100;
 display:none;
 
 align-items:center;
-
 justify-content:center;
 
 padding:20px;
 
 background:rgba(0,0,0,.8);
-
 }
 
 .modal.show{
-
 display:flex;
-
 }
 
 .modalBox{
-
 width:100%;
-
 max-width:430px;
 
 max-height:80dvh;
@@ -731,43 +549,29 @@ border-radius:18px;
 border:1px solid #29432d;
 
 background:#071009;
-
 }
 
 .modalHead{
-
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
 
 margin-bottom:15px;
-
 }
 
 .modalHead h2{
-
 margin:0;
-
 font-size:19px;
-
 }
 
 .close{
-
 border:0;
-
 background:none;
-
 color:#fff;
-
 font-size:26px;
-
 }
 
 .info{
-
 padding:14px;
 
 margin-bottom:9px;
@@ -777,163 +581,109 @@ border-radius:13px;
 border:1px solid #26372a;
 
 background:#0d1810;
-
 }
 
 .info strong{
-
 color:#54e51b;
-
 }
 
 .info p{
-
 font-size:12px;
 
 line-height:1.5;
 
 color:#a2aaa4;
-
 }
 
-/* =========================
-TELAS PEQUENAS
-========================= */
+
+/* CELULAR */
 
 @media(max-height:700px){
 
 .top{
-
 height:14%;
-
 min-height:85px;
-
 }
 
 .brandSiena{
-
 font-size:42px;
-
 }
 
 .brandMargem{
-
 font-size:18px;
-
 margin-top:4px;
-
 }
 
 .brandSub{
-
 font-size:7px;
-
 margin-top:5px;
-
 }
 
 .tabs{
-
 height:8%;
-
 }
 
 .fields{
-
 height:24%;
-
 padding:8px;
-
 gap:5px;
-
 }
 
 .result{
-
 height:17%;
-
 min-height:90px;
-
 }
 
 .resultValue{
-
 font-size:30px;
-
 }
 
 .actions{
-
 height:7%;
-
 }
 
 .keypad{
-
 height:27%;
-
 min-height:140px;
-
 gap:5px;
-
 }
 
 .key{
-
 font-size:17px;
-
 }
 
 }
 
-/* =========================
-TELAS MUITO PEQUENAS
-========================= */
 
 @media(max-height:620px){
 
 .brandSiena{
-
 font-size:35px;
-
 }
 
 .brandMargem{
-
 font-size:15px;
-
 }
 
 .topButton{
-
 width:38px;
-
 height:38px;
-
 }
 
 .fields{
-
 height:23%;
-
 }
 
 .result{
-
 height:16%;
-
 }
 
 .keypad{
-
 height:29%;
-
 }
 
 .footer{
-
 display:none;
-
 }
 
 }
@@ -1035,7 +785,7 @@ PREÇO DE VENDA
 <div
 class="resultValue"
 id="resultValue">
-R$ 142,86
+R$ 0,00
 </div>
 
 <div class="resultInfo">
@@ -1047,7 +797,7 @@ LUCRO
 </small>
 
 <strong id="info1">
-R$ 42,86
+R$ 0,00
 </strong>
 
 </div>
@@ -1059,7 +809,7 @@ MARGEM
 </small>
 
 <strong id="info2">
-30,00%
+0,00%
 </strong>
 
 </div>
@@ -1096,76 +846,64 @@ onclick="limpar()">
 
 <div class="keypad">
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('7')">
 7
 </button>
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('8')">
 8
 </button>
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('9')">
 9
 </button>
 
-<button
-class="key green"
+<button class="key green"
 onclick="apagar()">
 ⌫
 </button>
 
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('4')">
 4
 </button>
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('5')">
 5
 </button>
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('6')">
 6
 </button>
 
-<button
-class="key green"
+<button class="key green"
 onclick="digitar('00')">
 00
 </button>
 
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('1')">
 1
 </button>
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('2')">
 2
 </button>
 
-<button
-class="key"
+<button class="key"
 onclick="digitar('3')">
 3
 </button>
 
-<button
-class="key green"
+<button class="key green"
 onclick="digitar(',')">
 ,
 </button>
@@ -1206,9 +944,7 @@ João Siena
 </div>
 
 
-<!-- =====================
-MENU
-===================== -->
+<!-- MENU -->
 
 <div
 class="overlay"
@@ -1253,9 +989,7 @@ onclick="abrirSobre()">
 </div>
 
 
-<!-- =====================
-MODAL
-===================== -->
+<!-- MODAL -->
 
 <div
 class="modal"
@@ -1293,19 +1027,15 @@ let modo="margem";
 let campoAtivo=null;
 
 
-/* =========================
-CONFIGURAÇÕES
-========================= */
+/* CONFIGURAÇÕES */
 
 const modos={
 
 margem:{
 
-titulo:"Simule seu preço de venda",
-
 campos:[
-["custo","CUSTO DO PRODUTO","R$","100"],
-["margem","MARGEM DESEJADA","%","30"]
+["custo","CUSTO DO PRODUTO","R$","0"],
+["margem","MARGEM DESEJADA","%","0"]
 ],
 
 resultado:"PREÇO DE VENDA",
@@ -1318,11 +1048,9 @@ info2:"MARGEM"
 
 preco:{
 
-titulo:"Descubra sua margem",
-
 campos:[
-["custo","CUSTO DO PRODUTO","R$","100"],
-["preco","PREÇO DE VENDA","R$","142,86"]
+["custo","CUSTO DO PRODUTO","R$","0"],
+["preco","PREÇO DE VENDA","R$","0"]
 ],
 
 resultado:"MARGEM OBTIDA",
@@ -1335,11 +1063,9 @@ info2:"MARKUP"
 
 desconto:{
 
-titulo:"Calcule seu desconto",
-
 campos:[
-["precoTabela","PREÇO DE TABELA","R$","100"],
-["desconto","DESCONTO","%","10"]
+["precoTabela","PREÇO DE TABELA","R$","0"],
+["desconto","DESCONTO","%","0"]
 ],
 
 resultado:"PREÇO FINAL",
@@ -1352,11 +1078,9 @@ info2:"DESCONTO"
 
 markup:{
 
-titulo:"Calcule seu markup",
-
 campos:[
-["custo","CUSTO DO PRODUTO","R$","100"],
-["markup","MARKUP","x","1,43"]
+["custo","CUSTO DO PRODUTO","R$","0"],
+["markup","MARKUP","x","0"]
 ],
 
 resultado:"PREÇO DE VENDA",
@@ -1370,9 +1094,7 @@ info2:"MARGEM"
 };
 
 
-/* =========================
-MONTA CAMPOS
-========================= */
+/* MONTA CAMPOS */
 
 function montarCampos(){
 
@@ -1398,15 +1120,12 @@ ${c[2]}
 
 <input
 id="${c[0]}"
-value="${c[3]}"
+value="0"
 inputmode="decimal"
 onclick="campoAtivo=this"
+onfocus="campoAtivo=this"
 oninput="calcular()"
 >
-
-${c[2] !== "R$"
-? ""
-: ""}
 
 </div>
 
@@ -1419,7 +1138,7 @@ ${c[2] !== "R$"
 document.getElementById("fields").innerHTML=html;
 
 
-/* coloca sufixo */
+/* SUFIXOS */
 
 config.campos.forEach(c=>{
 
@@ -1435,32 +1154,20 @@ document
 
 }
 
+if(c[2]==="x"){
+
+document
+.getElementById(c[0])
+.parentElement
+.insertAdjacentHTML(
+"beforeend",
+'<span class="suffix">x</span>'
+);
+
+}
+
 });
 
-
-if(config.campos[0][2]==="x"){
-
-document
-.getElementById(config.campos[0][0])
-.parentElement
-.insertAdjacentHTML(
-"beforeend",
-'<span class="suffix">x</span>'
-);
-
-}
-
-if(config.campos[1][2]==="x"){
-
-document
-.getElementById(config.campos[1][0])
-.parentElement
-.insertAdjacentHTML(
-"beforeend",
-'<span class="suffix">x</span>'
-);
-
-}
 
 campoAtivo=
 document.querySelector("#fields input");
@@ -1470,9 +1177,7 @@ calcular();
 }
 
 
-/* =========================
-NÚMERO
-========================= */
+/* NÚMERO */
 
 function numero(v){
 
@@ -1485,9 +1190,7 @@ String(v||"")
 }
 
 
-/* =========================
-MOEDA
-========================= */
+/* MOEDA */
 
 function moeda(v){
 
@@ -1502,9 +1205,7 @@ currency:"BRL"
 }
 
 
-/* =========================
-CALCULAR
-========================= */
+/* CALCULAR */
 
 function calcular(){
 
@@ -1515,18 +1216,34 @@ let info1=0;
 let info2=0;
 
 
+/* MARGEM
+
+Agora a porcentagem é SOMADA
+ao custo.
+
+Exemplo:
+
+100 + 30% = 130
+100 + 150% = 250
+100 + 300% = 400
+
+Sem limite.
+*/
+
 if(modo==="margem"){
 
 let custo=
-numero(document.getElementById("custo").value);
+numero(
+document.getElementById("custo").value
+);
 
 let margem=
-numero(document.getElementById("margem").value);
-
-if(custo>0 && margem<100){
+numero(
+document.getElementById("margem").value
+);
 
 resultado=
-custo/(1-margem/100);
+custo+(custo*margem/100);
 
 info1=
 resultado-custo;
@@ -1536,16 +1253,20 @@ margem;
 
 }
 
-}
 
+/* PREÇO */
 
 if(modo==="preco"){
 
 let custo=
-numero(document.getElementById("custo").value);
+numero(
+document.getElementById("custo").value
+);
 
 let preco=
-numero(document.getElementById("preco").value);
+numero(
+document.getElementById("preco").value
+);
 
 if(custo>0 && preco>0){
 
@@ -1563,6 +1284,8 @@ preco/custo;
 }
 
 
+/* DESCONTO */
+
 if(modo==="desconto"){
 
 let tabela=
@@ -1575,10 +1298,9 @@ numero(
 document.getElementById("desconto").value
 );
 
-if(tabela>0){
-
 resultado=
-tabela*(1-desconto/100);
+tabela-
+(tabela*desconto/100);
 
 info1=
 tabela-resultado;
@@ -1588,24 +1310,28 @@ desconto;
 
 }
 
-}
 
+/* MARKUP */
 
 if(modo==="markup"){
 
 let custo=
-numero(document.getElementById("custo").value);
+numero(
+document.getElementById("custo").value
+);
 
 let markup=
-numero(document.getElementById("markup").value);
-
-if(custo>0 && markup>0){
+numero(
+document.getElementById("markup").value
+);
 
 resultado=
 custo*markup;
 
 info1=
 resultado-custo;
+
+if(resultado>0){
 
 info2=
 ((resultado-custo)/resultado)*100;
@@ -1621,7 +1347,8 @@ if(modo==="preco"){
 
 document.getElementById("resultValue")
 .textContent=
-resultado.toFixed(2)
+resultado
+.toFixed(2)
 .replace(".",",")+"%";
 
 document.getElementById("info1")
@@ -1630,7 +1357,8 @@ moeda(info1);
 
 document.getElementById("info2")
 .textContent=
-info2.toFixed(2)
+info2
+.toFixed(2)
 .replace(".",",")+"x";
 
 }
@@ -1647,7 +1375,8 @@ moeda(info1);
 
 document.getElementById("info2")
 .textContent=
-info2.toFixed(2)
+info2
+.toFixed(2)
 .replace(".",",")+"%";
 
 }
@@ -1670,9 +1399,7 @@ config.info2;
 }
 
 
-/* =========================
-TROCAR MODO
-========================= */
+/* TROCAR ABA */
 
 function trocarModo(novo,botao){
 
@@ -1691,9 +1418,7 @@ montarCampos();
 }
 
 
-/* =========================
-TECLADO
-========================= */
+/* TECLADO */
 
 function digitar(valor){
 
@@ -1704,8 +1429,26 @@ document.querySelector("#fields input");
 
 }
 
-if(valor==="," &&
-campoAtivo.value.includes(",")){
+
+/* Se o campo estiver em ZERO,
+substitui o zero pelo número */
+
+if(
+campoAtivo.value==="0" &&
+valor!==","
+){
+
+campoAtivo.value="";
+
+}
+
+
+/* Não permite duas vírgulas */
+
+if(
+valor==="," &&
+campoAtivo.value.includes(",")
+){
 
 return;
 
@@ -1718,6 +1461,8 @@ calcular();
 }
 
 
+/* APAGAR */
+
 function apagar(){
 
 if(!campoAtivo)return;
@@ -1725,20 +1470,26 @@ if(!campoAtivo)return;
 campoAtivo.value=
 campoAtivo.value.slice(0,-1);
 
+if(campoAtivo.value===""){
+
+campoAtivo.value="0";
+
+}
+
 calcular();
 
 }
 
 
-/* =========================
-LIMPAR
-========================= */
+/* LIMPAR */
 
 function limpar(){
 
 document
 .querySelectorAll("#fields input")
-.forEach(x=>x.value="");
+.forEach(x=>{
+x.value="0";
+});
 
 document.getElementById("resultValue")
 .textContent="R$ 0,00";
@@ -1749,12 +1500,13 @@ document.getElementById("info1")
 document.getElementById("info2")
 .textContent="0,00%";
 
+campoAtivo=
+document.querySelector("#fields input");
+
 }
 
 
-/* =========================
-MENU
-========================= */
+/* MENU */
 
 function abrirMenu(){
 
@@ -1782,9 +1534,7 @@ document
 }
 
 
-/* =========================
-MODAIS
-========================= */
+/* MODAL */
 
 function fecharModal(){
 
@@ -1800,8 +1550,7 @@ function abrirSobre(){
 fecharMenu();
 
 document.getElementById("modalTitle")
-.textContent=
-"SIENA MARGEM";
+.textContent="SIENA MARGEM";
 
 document.getElementById("modalContent")
 .innerHTML=`
@@ -1849,8 +1598,8 @@ document.getElementById("modalContent")
 <strong>MARGEM</strong>
 
 <p>
-Calcula o preço de venda necessário
-para atingir a margem desejada.
+O percentual é aplicado sobre o custo
+e somado ao valor do produto.
 </p>
 
 </div>
@@ -1860,8 +1609,8 @@ para atingir a margem desejada.
 <strong>PREÇO</strong>
 
 <p>
-Calcula a margem obtida a partir
-do custo e do preço de venda.
+Mostra a margem obtida entre o custo
+e o preço de venda.
 </p>
 
 </div>
@@ -1871,8 +1620,8 @@ do custo e do preço de venda.
 <strong>DESCONTO</strong>
 
 <p>
-Calcula o preço final após
-aplicar um desconto.
+Calcula o preço final depois
+do desconto informado.
 </p>
 
 </div>
@@ -1882,8 +1631,8 @@ aplicar um desconto.
 <strong>MARKUP</strong>
 
 <p>
-Calcula o preço de venda
-multiplicando o custo pelo markup.
+Multiplica o custo pelo fator
+de markup informado.
 </p>
 
 </div>
@@ -1901,66 +1650,24 @@ function abrirHistorico(){
 
 fecharMenu();
 
-let dados=
-JSON.parse(
-localStorage.getItem("sienaHistorico")||"[]"
-);
-
 document.getElementById("modalTitle")
-.textContent=
-"Histórico";
-
-if(!dados.length){
+.textContent="Histórico";
 
 document.getElementById("modalContent")
 .innerHTML=`
 
 <div class="info">
 
-<strong>Nenhum cálculo ainda.</strong>
+<strong>Nenhum cálculo salvo.</strong>
 
 <p>
-Seus cálculos aparecerão aqui.
+O histórico poderá ser ativado
+em uma próxima versão.
 </p>
 
 </div>
 
 `;
-
-}else{
-
-let html="";
-
-dados.forEach(x=>{
-
-html+=`
-
-<div class="info">
-
-<small>
-${x.data}
-</small>
-
-<p>
-
-${x.modo}:
-
-<strong>
-${x.resultado}
-</strong>
-
-</p>
-
-</div>
-
-`;
-
-});
-
-document.getElementById("modalContent")
-.innerHTML=html;
-
-}
 
 document
 .getElementById("modal")
@@ -1969,9 +1676,7 @@ document
 }
 
 
-/* =========================
-INICIAR
-========================= */
+/* INICIAR */
 
 montarCampos();
 
