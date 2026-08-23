@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
 content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 
 <meta name="theme-color" content="#020704">
+
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="SIENA PRO">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<link rel="manifest" href="./manifest.json">
+
+<link rel="icon"
+type="image/png"
+sizes="192x192"
+href="./icon-192.png">
+
+<link rel="icon"
+type="image/png"
+sizes="512x512"
+href="./icon-512.png">
+
+<link rel="apple-touch-icon"
+href="./icon-192.png">
 
 <title>SIENA PRO - Calculadora Comercial</title>
 
@@ -33,8 +53,14 @@ touch-action:manipulation;
 body{
 font-family:Arial,Helvetica,sans-serif;
 color:#fff;
+
 background:
-radial-gradient(circle at 50% -10%,#0b4020 0%,#04170b 38%,#020704 78%);
+radial-gradient(
+circle at 50% -10%,
+#0b4020 0%,
+#04170b 38%,
+#020704 78%
+);
 }
 
 button{
@@ -59,8 +85,65 @@ max(4px,env(safe-area-inset-bottom));
 
 display:flex;
 flex-direction:column;
+
 overflow:hidden;
 }
+
+
+/* =================================================
+   SPLASH
+   ================================================= */
+
+.splash{
+position:fixed;
+inset:0;
+
+z-index:5000;
+
+background:#020704;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+transition:
+opacity .45s ease,
+visibility .45s ease;
+}
+
+.splash.hide{
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+
+.splash img{
+width:100%;
+height:100%;
+
+object-fit:cover;
+object-position:center;
+}
+
+.splashClose{
+position:absolute;
+
+right:18px;
+top:18px;
+
+padding:9px 13px;
+
+border:1px solid rgba(255,255,255,.3);
+border-radius:20px;
+
+background:rgba(0,0,0,.5);
+
+color:#fff;
+
+font-size:10px;
+font-weight:bold;
+}
+
 
 /* =================================================
    CABEÇALHO
@@ -68,47 +151,66 @@ overflow:hidden;
 
 .header{
 flex:0 0 91px;
+
 position:relative;
+
 text-align:center;
+
 padding-top:2px;
 }
 
 .logo{
 font-size:48px;
+
 line-height:.88;
+
 font-weight:900;
+
 letter-spacing:-3px;
+
 color:#fff;
 }
 
 .logoSub{
 margin-top:5px;
+
 color:#43ed0a;
+
 font-size:27px;
+
 line-height:1;
+
 font-weight:900;
+
 letter-spacing:6px;
 }
 
 .subtitle{
 margin-top:5px;
+
 color:#929c96;
+
 font-size:8px;
+
 font-weight:bold;
+
 letter-spacing:3px;
 }
 
 .headBtn{
 position:absolute;
+
 top:3px;
 
 width:46px;
 height:46px;
 
 border:2px solid #245b30;
+
 border-radius:15px;
 
 background:#061009;
+
 color:#fff;
 
 display:flex;
@@ -127,10 +229,14 @@ right:0;
 .headBtn svg{
 width:24px;
 height:24px;
+
 fill:none;
+
 stroke:currentColor;
+
 stroke-width:2;
 }
+
 
 /* =================================================
    BANNER
@@ -138,23 +244,32 @@ stroke-width:2;
 
 .adBanner{
 flex:0 0 47px;
+
 height:47px;
 
 margin:3px 0 5px;
 
 border:1px solid #329b28;
+
 border-radius:13px;
 
 background:
-linear-gradient(100deg,#06150a,#0a2812,#06150a);
+linear-gradient(
+100deg,
+#06150a,
+#0a2812,
+#06150a
+);
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
 gap:10px;
 
 overflow:hidden;
+
 position:relative;
 }
 
@@ -168,7 +283,8 @@ height:70px;
 
 border-radius:50%;
 
-background:rgba(67,237,10,.10);
+background:
+rgba(67,237,10,.10);
 
 right:-20px;
 top:-35px;
@@ -181,13 +297,16 @@ height:29px;
 border-radius:9px;
 
 background:#43ed0a;
+
 color:#031006;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
 font-size:15px;
+
 font-weight:900;
 
 z-index:1;
@@ -195,22 +314,28 @@ z-index:1;
 
 .adText{
 text-align:left;
+
 line-height:1.05;
-z-index:1;
 }
 
 .adTitle{
 font-size:11px;
+
 font-weight:900;
+
 color:#fff;
 }
 
 .adSub{
 font-size:7px;
+
 color:#8e9b93;
+
 margin-top:3px;
+
 letter-spacing:.5px;
 }
+
 
 /* =================================================
    ABAS
@@ -220,29 +345,37 @@ letter-spacing:.5px;
 flex:0 0 57px;
 
 display:grid;
-grid-template-columns:repeat(5,1fr);
+
+grid-template-columns:
+repeat(5,1fr);
 
 gap:4px;
 }
 
 .tab{
 height:57px;
+
 min-width:0;
 
 border:2px solid #173c23;
+
 border-radius:14px;
 
 background:#061009;
+
 color:#8b958f;
 
 display:flex;
+
 flex-direction:column;
+
 align-items:center;
 justify-content:center;
 
 gap:2px;
 
 font-size:8px;
+
 font-weight:bold;
 
 white-space:nowrap;
@@ -253,13 +386,17 @@ width:19px;
 height:19px;
 
 fill:none;
+
 stroke:currentColor;
+
 stroke-width:2;
 }
 
 .tab.active{
 background:#43ed0a;
+
 border-color:#43ed0a;
+
 color:#031006;
 }
 
@@ -270,15 +407,18 @@ color:#031006;
 transform:scale(.96);
 }
 
+
 /* =================================================
    TELAS
    ================================================= */
 
 .screen{
 flex:1 1 auto;
+
 min-height:0;
 
 display:none;
+
 flex-direction:column;
 
 overflow:hidden;
@@ -290,6 +430,7 @@ padding-top:5px;
 display:flex;
 }
 
+
 /* =================================================
    PAINEL
    ================================================= */
@@ -298,9 +439,11 @@ display:flex;
 flex:0 0 auto;
 
 border:2px solid #173c23;
+
 border-radius:17px;
 
-background:rgba(3,12,7,.9);
+background:
+rgba(3,12,7,.9);
 
 padding:7px;
 }
@@ -321,6 +464,7 @@ margin:0 0 4px 2px;
 color:#929c96;
 
 font-size:9px;
+
 font-weight:bold;
 
 letter-spacing:1px;
@@ -331,11 +475,13 @@ width:100%;
 height:40px;
 
 border:2px solid #204a2b;
+
 border-radius:13px;
 
 background:#020705;
 
 display:flex;
+
 align-items:center;
 
 padding:0 10px;
@@ -343,7 +489,10 @@ padding:0 10px;
 
 .inputBox.active{
 border-color:#43ed0a;
-box-shadow:0 0 8px rgba(67,237,10,.15);
+
+box-shadow:
+0 0 8px
+rgba(67,237,10,.15);
 }
 
 .prefix,
@@ -351,11 +500,13 @@ box-shadow:0 0 8px rgba(67,237,10,.15);
 color:#43ed0a;
 
 font-size:19px;
+
 font-weight:bold;
 }
 
 .value{
 flex:1;
+
 min-width:0;
 
 padding:0 8px;
@@ -363,11 +514,14 @@ padding:0 8px;
 color:#fff;
 
 font-size:20px;
+
 font-weight:bold;
 
 overflow:hidden;
+
 white-space:nowrap;
 }
+
 
 /* =================================================
    RESULTADO
@@ -379,6 +533,7 @@ flex:0 0 auto;
 margin-top:5px;
 
 border:2px solid #329b28;
+
 border-radius:18px;
 
 padding:6px 9px;
@@ -386,7 +541,11 @@ padding:6px 9px;
 text-align:center;
 
 background:
-radial-gradient(circle at 75% 15%,rgba(47,180,28,.17),transparent 45%),
+radial-gradient(
+circle at 75% 15%,
+rgba(47,180,28,.17),
+transparent 45%
+),
 #031008;
 }
 
@@ -394,6 +553,7 @@ radial-gradient(circle at 75% 15%,rgba(47,180,28,.17),transparent 45%),
 color:#929b96;
 
 font-size:9px;
+
 font-weight:bold;
 
 letter-spacing:1px;
@@ -405,12 +565,15 @@ margin:3px 0 4px;
 color:#43ed0a;
 
 font-size:27px;
+
 font-weight:900;
 
 line-height:1;
 
 white-space:nowrap;
+
 overflow:hidden;
+
 text-overflow:ellipsis;
 }
 
@@ -424,7 +587,9 @@ margin-bottom:4px;
 
 .resultBottom{
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
 }
 
 .resultItem:first-child{
@@ -443,8 +608,10 @@ font-size:7px;
 color:#fff;
 
 font-size:13px;
+
 font-weight:bold;
 }
+
 
 /* =================================================
    TECLADO COMERCIAL
@@ -452,12 +619,16 @@ font-weight:bold;
 
 .commercialKeys{
 flex:1 1 auto;
+
 min-height:0;
 
 display:grid;
 
-grid-template-columns:repeat(4,1fr);
-grid-template-rows:repeat(4,minmax(0,1fr));
+grid-template-columns:
+repeat(4,1fr);
+
+grid-template-rows:
+repeat(4,minmax(0,1fr));
 
 gap:4px;
 
@@ -466,19 +637,24 @@ margin-top:5px;
 
 .key{
 min-width:0;
+
 min-height:0;
 
 border:2px solid #173c23;
+
 border-radius:13px;
 
 background:#07140c;
+
 color:#fff;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
 font-size:20px;
+
 font-weight:bold;
 }
 
@@ -490,34 +666,32 @@ color:#43ed0a;
 grid-column:span 2;
 
 background:#43ed0a;
+
 border-color:#43ed0a;
 
 color:#031006;
 }
 
-/* =================================================
-   CALCULADORA
-   ================================================= */
 
-/*
-   CORREÇÃO PRINCIPAL:
-   O visor agora tem altura limitada.
-   Assim o teclado ocupa o restante da tela.
-*/
+/* =================================================
+   CALCULADORA NORMAL
+   ================================================= */
 
 .calculator{
 padding-top:1px;
 }
 
 .calcDisplay{
-
 flex:0 0 72px;
 
 height:72px;
+
 min-height:72px;
 
 display:flex;
+
 flex-direction:column;
+
 justify-content:flex-end;
 
 text-align:right;
@@ -536,35 +710,41 @@ color:#78827c;
 font-size:12px;
 
 white-space:nowrap;
+
 overflow:hidden;
+
 text-overflow:ellipsis;
 }
 
 .calcNumber{
 color:#fff;
 
-font-size:clamp(40px,10vw,56px);
+font-size:
+clamp(40px,10vw,56px);
 
 line-height:1;
 
 font-weight:300;
 
 white-space:nowrap;
+
 overflow:hidden;
+
 text-overflow:ellipsis;
 }
 
 .calcKeys{
-
 flex:1 1 auto;
 
 min-height:0;
 
 display:grid;
 
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:
+repeat(4,1fr);
 
-grid-template-rows:repeat(5,1fr);
+grid-template-rows:
+repeat(5,1fr);
 
 gap:5px;
 }
@@ -575,6 +755,7 @@ width:min(100%,61px);
 aspect-ratio:1;
 
 justify-self:center;
+
 align-self:center;
 
 border-radius:50%;
@@ -582,13 +763,16 @@ border-radius:50%;
 border:2px solid #24432d;
 
 background:#17251c;
+
 color:#fff;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
-font-size:clamp(21px,6vw,29px);
+font-size:
+clamp(21px,6vw,29px);
 }
 
 .calcKey.function{
@@ -603,6 +787,7 @@ border-color:#43ed0a;
 
 color:#031006;
 }
+
 
 /* =================================================
    RODAPÉ
@@ -624,19 +809,22 @@ padding-top:2px;
 color:#43ed0a;
 }
 
+
 /* =================================================
    MENU
    ================================================= */
 
 .menuOverlay{
 position:fixed;
+
 inset:0;
 
 z-index:900;
 
 display:none;
 
-background:rgba(0,0,0,.6);
+background:
+rgba(0,0,0,.6);
 
 backdrop-filter:blur(4px);
 }
@@ -649,24 +837,31 @@ display:block;
 position:absolute;
 
 left:12px;
-top:max(8px,env(safe-area-inset-top));
 
-width:min(300px,calc(100% - 24px));
+top:
+max(8px,env(safe-area-inset-top));
+
+width:
+min(300px,calc(100% - 24px));
 
 border:2px solid #245b30;
+
 border-radius:21px;
 
 background:#041009;
 
 padding:15px;
 
-box-shadow:0 15px 40px rgba(0,0,0,.5);
+box-shadow:
+0 15px 40px
+rgba(0,0,0,.5);
 }
 
 .menuBrand{
 color:#fff;
 
 font-size:22px;
+
 font-weight:900;
 }
 
@@ -692,9 +887,11 @@ padding:14px;
 margin-top:7px;
 
 border:1px solid #173c23;
+
 border-radius:14px;
 
 background:#07140c;
+
 color:#fff;
 
 text-align:left;
@@ -708,12 +905,14 @@ color:#43ed0a;
 margin-right:8px;
 }
 
+
 /* =================================================
    SOBRE
    ================================================= */
 
 .modal{
 position:fixed;
+
 inset:0;
 
 z-index:1000;
@@ -725,7 +924,8 @@ justify-content:center;
 
 padding:15px;
 
-background:rgba(0,0,0,.82);
+background:
+rgba(0,0,0,.82);
 
 backdrop-filter:blur(8px);
 }
@@ -742,17 +942,25 @@ max-height:94dvh;
 overflow:auto;
 
 border:2px solid #245b30;
+
 border-radius:23px;
 
 background:
-radial-gradient(circle at 50% 0%,#0b4020,#031008 55%,#020704);
+radial-gradient(
+circle at 50% 0%,
+#0b4020,
+#031008 55%,
+#020704
+);
 
 padding:20px 17px;
 }
 
 .modalHeader{
 display:flex;
+
 align-items:center;
+
 justify-content:space-between;
 
 margin-bottom:14px;
@@ -764,16 +972,19 @@ margin:0;
 color:#43ed0a;
 
 font-size:23px;
+
 font-weight:900;
 }
 
 .closeBtn{
 width:37px;
+
 height:37px;
 
 border-radius:50%;
 
 background:#13251a;
+
 color:#fff;
 
 font-size:20px;
@@ -808,7 +1019,8 @@ color:#43ed0a;
 .highlightGrid{
 display:grid;
 
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:
+repeat(2,1fr);
 
 gap:7px;
 
@@ -817,19 +1029,24 @@ margin-bottom:18px;
 
 .highlightCard{
 border:1px solid #245b30;
+
 border-radius:15px;
 
 background:
-linear-gradient(145deg,
+linear-gradient(
+145deg,
 rgba(67,237,10,.11),
-rgba(3,12,7,.8));
+rgba(3,12,7,.8)
+);
 
 padding:12px;
 
 min-height:76px;
 
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
 }
 
@@ -870,7 +1087,8 @@ font-weight:900;
 .featureWords{
 display:grid;
 
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:
+repeat(2,1fr);
 
 gap:6px;
 
@@ -881,6 +1099,7 @@ margin:10px 0 14px;
 padding:9px;
 
 border:1px solid #245b30;
+
 border-radius:11px;
 
 background:#06120a;
@@ -890,6 +1109,7 @@ color:#fff;
 text-align:center;
 
 font-size:10px;
+
 font-weight:bold;
 }
 
@@ -899,6 +1119,7 @@ font-weight:bold;
 .benefitCard,
 .storyFinal{
 border:1px solid #245b30;
+
 border-radius:16px;
 
 background:#06120a;
@@ -943,9 +1164,11 @@ padding:14px;
 
 border-left:3px solid #43ed0a;
 
-background:rgba(67,237,10,.06);
+background:
+rgba(67,237,10,.06);
 
-border-radius:0 12px 12px 0;
+border-radius:
+0 12px 12px 0;
 
 color:#fff;
 
@@ -994,6 +1217,7 @@ border-color:#329b28;
 
 .platformIcon{
 width:46px;
+
 height:46px;
 
 flex:0 0 46px;
@@ -1003,7 +1227,9 @@ border-radius:13px;
 background:#43ed0a;
 
 display:flex;
+
 align-items:center;
+
 justify-content:center;
 
 font-size:24px;
@@ -1030,7 +1256,8 @@ line-height:1.4;
 .benefitsGrid{
 display:grid;
 
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:
+repeat(2,1fr);
 
 gap:7px;
 }
@@ -1041,7 +1268,9 @@ min-height:70px;
 padding:11px;
 
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
 }
 
@@ -1117,6 +1346,7 @@ font-size:9px;
 margin-top:5px;
 }
 
+
 /* =================================================
    TELAS PEQUENAS
    ================================================= */
@@ -1137,16 +1367,19 @@ font-size:23px;
 
 .subtitle{
 font-size:7px;
+
 margin-top:3px;
 }
 
 .headBtn{
 width:42px;
+
 height:42px;
 }
 
 .adBanner{
 flex-basis:42px;
+
 height:42px;
 
 margin:2px 0 4px;
@@ -1154,6 +1387,7 @@ margin:2px 0 4px;
 
 .adIcon{
 width:26px;
+
 height:26px;
 }
 
@@ -1175,6 +1409,7 @@ height:53px;
 
 .tab svg{
 width:18px;
+
 height:18px;
 }
 
@@ -1188,11 +1423,13 @@ height:37px;
 
 .commercialKeys{
 gap:3px;
+
 margin-top:4px;
 }
 
 .key{
 font-size:18px;
+
 border-radius:11px;
 }
 
@@ -1204,15 +1441,15 @@ font-size:25px;
 display:none;
 }
 
-/* =================================================
-   CORREÇÃO PARA SAMSUNG / TELAS PEQUENAS
-   ================================================= */
+
+/* CORREÇÃO SAMSUNG */
 
 .calculator .calcDisplay{
 
 flex:0 0 55px;
 
 height:55px;
+
 min-height:55px;
 
 padding:
@@ -1223,6 +1460,7 @@ padding:
 
 .calculator .calcExpression{
 font-size:10px;
+
 min-height:13px;
 }
 
@@ -1231,7 +1469,6 @@ font-size:40px;
 }
 
 .calculator .calcKeys{
-
 flex:1 1 auto;
 
 gap:4px;
@@ -1240,14 +1477,12 @@ gap:4px;
 .calculator .calcKey{
 width:min(100%,53px);
 
-font-size:clamp(19px,5.5vw,26px);
+font-size:
+clamp(19px,5.5vw,26px);
 }
 
 }
 
-/* =================================================
-   TELAS MUITO PEQUENAS
-   ================================================= */
 
 @media(max-height:620px){
 
@@ -1269,11 +1504,13 @@ display:none;
 
 .headBtn{
 width:39px;
+
 height:39px;
 }
 
 .adBanner{
 flex-basis:38px;
+
 height:38px;
 }
 
@@ -1283,15 +1520,14 @@ flex-basis:48px;
 
 .tab{
 height:48px;
+
+font-size:7px;
 }
 
 .tab svg{
 width:16px;
-height:16px;
-}
 
-.tab{
-font-size:7px;
+height:16px;
 }
 
 .screen{
@@ -1304,6 +1540,7 @@ padding:5px;
 
 .label{
 font-size:8px;
+
 margin-bottom:3px;
 }
 
@@ -1313,6 +1550,7 @@ height:34px;
 
 .result{
 margin-top:3px;
+
 padding:5px 7px;
 }
 
@@ -1322,6 +1560,7 @@ font-size:23px;
 
 .commercialKeys{
 margin-top:3px;
+
 gap:3px;
 }
 
@@ -1331,7 +1570,9 @@ font-size:17px;
 
 .calculator .calcDisplay{
 flex-basis:45px;
+
 height:45px;
+
 min-height:45px;
 }
 
@@ -1345,6 +1586,7 @@ gap:3px;
 
 .calculator .calcKey{
 width:min(100%,48px);
+
 font-size:20px;
 }
 
@@ -1355,11 +1597,37 @@ font-size:20px;
 
 <body>
 
-<div class="app">
 
 <!-- =================================================
-     CABEÇALHO
+     CAPA DO APLICATIVO
      ================================================= -->
+
+<div
+id="splash"
+class="splash">
+
+<img
+src="./splash.png"
+alt="SIENA PRO">
+
+<button
+class="splashClose"
+type="button"
+onclick="hideSplash()">
+
+ENTRAR
+
+</button>
+
+</div>
+
+
+<!-- =================================================
+     APLICATIVO
+     ================================================= -->
+
+<div class="app">
+
 
 <header class="header">
 
@@ -1374,6 +1642,7 @@ onclick="openMenu()">
 
 </button>
 
+
 <button
 class="headBtn right"
 type="button"
@@ -1385,6 +1654,7 @@ onclick="openAbout()">
 </svg>
 
 </button>
+
 
 <div class="logo">
 SIENA
@@ -1399,6 +1669,7 @@ CALCULADORA COMERCIAL
 </div>
 
 </header>
+
 
 <!-- =================================================
      BANNER
@@ -1424,11 +1695,13 @@ Espaço para parceiros e promoções
 
 </div>
 
+
 <!-- =================================================
      ABAS
      ================================================= -->
 
 <div class="tabs">
+
 
 <button
 class="tab active"
@@ -1449,6 +1722,7 @@ MARGEM
 
 </button>
 
+
 <button
 class="tab"
 data-tab="preco"
@@ -1465,6 +1739,7 @@ PREÇO
 </span>
 
 </button>
+
 
 <button
 class="tab"
@@ -1483,6 +1758,7 @@ DESCONTO
 
 </button>
 
+
 <button
 class="tab"
 data-tab="markup"
@@ -1499,6 +1775,7 @@ MARKUP
 </span>
 
 </button>
+
 
 <button
 class="tab"
@@ -1519,6 +1796,7 @@ CALCULADORA
 </button>
 
 </div>
+
 
 <!-- =================================================
      MARGEM
@@ -1555,6 +1833,7 @@ class="value">
 
 </div>
 
+
 <div class="field">
 
 <label class="label">
@@ -1581,6 +1860,7 @@ class="value">
 </div>
 
 </div>
+
 
 <div class="result">
 
@@ -1612,6 +1892,7 @@ R$ 0,00
 
 </div>
 
+
 <div class="resultItem">
 
 <div class="small">
@@ -1630,12 +1911,14 @@ class="resultValue">
 
 </div>
 
+
 <div
 id="keysMargem"
 class="commercialKeys">
 </div>
 
 </section>
+
 
 <!-- =================================================
      PREÇO
@@ -1672,6 +1955,7 @@ class="value">
 
 </div>
 
+
 <div class="field">
 
 <label class="label">
@@ -1698,6 +1982,7 @@ class="value">
 </div>
 
 </div>
+
 
 <div class="result">
 
@@ -1729,6 +2014,7 @@ R$ 0,00
 
 </div>
 
+
 <div class="resultItem">
 
 <div class="small">
@@ -1747,12 +2033,14 @@ R$ 0,00
 
 </div>
 
+
 <div
 id="keysPreco"
 class="commercialKeys">
 </div>
 
 </section>
+
 
 <!-- =================================================
      DESCONTO
@@ -1789,6 +2077,7 @@ class="value">
 
 </div>
 
+
 <div class="field">
 
 <label class="label">
@@ -1815,6 +2104,7 @@ class="value">
 </div>
 
 </div>
+
 
 <div class="result">
 
@@ -1846,6 +2136,7 @@ R$ 0,00
 
 </div>
 
+
 <div class="resultItem">
 
 <div class="small">
@@ -1864,12 +2155,14 @@ class="resultValue">
 
 </div>
 
+
 <div
 id="keysDesconto"
 class="commercialKeys">
 </div>
 
 </section>
+
 
 <!-- =================================================
      MARKUP
@@ -1906,6 +2199,7 @@ class="value">
 
 </div>
 
+
 <div class="field">
 
 <label class="label">
@@ -1932,6 +2226,7 @@ class="value">
 </div>
 
 </div>
+
 
 <div class="result">
 
@@ -1963,6 +2258,7 @@ R$ 0,00
 
 </div>
 
+
 <div class="resultItem">
 
 <div class="small">
@@ -1981,6 +2277,7 @@ class="resultValue">
 
 </div>
 
+
 <div
 id="keysMarkup"
 class="commercialKeys">
@@ -1988,13 +2285,15 @@ class="commercialKeys">
 
 </section>
 
+
 <!-- =================================================
-     CALCULADORA NORMAL
+     CALCULADORA
      ================================================= -->
 
 <section
 id="screen-calculadora"
 class="screen calculator">
+
 
 <div class="calcDisplay">
 
@@ -2011,7 +2310,9 @@ class="calcNumber">
 
 </div>
 
+
 <div class="calcKeys">
+
 
 <button
 class="calcKey function"
@@ -2020,6 +2321,7 @@ onclick="calcBack()">
 ⌫
 </button>
 
+
 <button
 class="calcKey function"
 type="button"
@@ -2027,12 +2329,14 @@ onclick="calcClear()">
 AC
 </button>
 
+
 <button
 class="calcKey function"
 type="button"
 onclick="calcPercent()">
 %
 </button>
+
 
 <button
 class="calcKey operator"
@@ -2049,6 +2353,7 @@ onclick="calcDigit('7')">
 7
 </button>
 
+
 <button
 class="calcKey"
 type="button"
@@ -2056,12 +2361,14 @@ onclick="calcDigit('8')">
 8
 </button>
 
+
 <button
 class="calcKey"
 type="button"
 onclick="calcDigit('9')">
 9
 </button>
+
 
 <button
 class="calcKey operator"
@@ -2078,6 +2385,7 @@ onclick="calcDigit('4')">
 4
 </button>
 
+
 <button
 class="calcKey"
 type="button"
@@ -2085,12 +2393,14 @@ onclick="calcDigit('5')">
 5
 </button>
 
+
 <button
 class="calcKey"
 type="button"
 onclick="calcDigit('6')">
 6
 </button>
+
 
 <button
 class="calcKey operator"
@@ -2107,6 +2417,7 @@ onclick="calcDigit('1')">
 1
 </button>
 
+
 <button
 class="calcKey"
 type="button"
@@ -2114,12 +2425,14 @@ onclick="calcDigit('2')">
 2
 </button>
 
+
 <button
 class="calcKey"
 type="button"
 onclick="calcDigit('3')">
 3
 </button>
+
 
 <button
 class="calcKey operator"
@@ -2136,6 +2449,7 @@ onclick="calcSign()">
 +/−
 </button>
 
+
 <button
 class="calcKey"
 type="button"
@@ -2143,12 +2457,14 @@ onclick="calcDigit('0')">
 0
 </button>
 
+
 <button
 class="calcKey"
 type="button"
 onclick="calcDecimal()">
 ,
 </button>
+
 
 <button
 class="calcKey equal"
@@ -2161,12 +2477,19 @@ onclick="calcEqual()">
 
 </section>
 
+
 <div class="footer">
+
 Criado e desenvolvido por
-<strong>João Siena</strong>
+
+<strong>
+João Siena
+</strong>
+
 </div>
 
 </div>
+
 
 <!-- =================================================
      MENU
@@ -2189,20 +2512,24 @@ SIENA <span>PRO</span>
 CALCULADORA COMERCIAL
 </div>
 
+
 <button
 class="menuItem"
 onclick="openAbout();closeMenu()">
 
 <span>ⓘ</span>
+
 Sobre o SIENA PRO
 
 </button>
+
 
 <button
 class="menuItem"
 onclick="closeMenu()">
 
 <span>✓</span>
+
 Calculadora Comercial
 
 </button>
@@ -2210,6 +2537,7 @@ Calculadora Comercial
 </div>
 
 </div>
+
 
 <!-- =================================================
      SOBRE
@@ -2223,6 +2551,7 @@ onclick="closeAbout(event)">
 <div
 class="modalBox"
 onclick="event.stopPropagation()">
+
 
 <div class="modalHeader">
 
@@ -2238,17 +2567,25 @@ onclick="closeAbout()">
 
 </div>
 
+
 <div class="story">
+
 
 <div class="storyIntro">
 
-<strong>Mais do que uma calculadora.</strong><br>
+<strong>
+Mais do que uma calculadora.
+</strong>
+
+<br>
 
 Uma ferramenta criada a partir da rotina real de vendas.
 
 </div>
 
+
 <div class="highlightGrid">
+
 
 <div class="highlightCard">
 
@@ -2262,6 +2599,7 @@ Idealizador
 
 </div>
 
+
 <div class="highlightCard">
 
 <div class="highlightNumber">
@@ -2274,6 +2612,7 @@ Experiência comercial
 
 </div>
 
+
 <div class="highlightCard">
 
 <div class="highlightNumber">
@@ -2285,6 +2624,7 @@ Alta performance
 </div>
 
 </div>
+
 
 <div class="highlightCard">
 
@@ -2300,20 +2640,26 @@ Feito para celular
 
 </div>
 
+
 <div class="storySectionTitle">
 🚀 COMO TUDO COMEÇOU
 </div>
 
+
 <p>
 Tudo começou com uma necessidade simples:
-<strong>calcular mais rápido, decidir mais rápido e
-perder menos tempo durante a rotina comercial.</strong>
+<strong>
+calcular mais rápido, decidir mais rápido e
+perder menos tempo durante a rotina comercial.
+</strong>
 </p>
+
 
 <p>
 Na rotina de vendas, muitas decisões precisam ser
 tomadas em poucos segundos.
 </p>
+
 
 <div class="featureWords">
 
@@ -2335,14 +2681,17 @@ Markup
 
 </div>
 
+
 <p>
 Foi dessa realidade que nasceu o
 <strong>SIENA PRO.</strong>
 </p>
 
+
 <div class="storySectionTitle">
 👤 QUEM ESTÁ POR TRÁS
 </div>
+
 
 <div class="creatorCard">
 
@@ -2362,15 +2711,21 @@ diariamente os desafios da rotina comercial.
 
 </div>
 
+
 <div class="storySectionTitle">
 💡 DE UMA NECESSIDADE PARA UMA FERRAMENTA
 </div>
 
+
 <div class="storyQuote">
 
-Uma necessidade virou uma ideia.<br>
+Uma necessidade virou uma ideia.
 
-Uma ideia virou um projeto.<br>
+<br>
+
+Uma ideia virou um projeto.
+
+<br>
 
 <strong>
 Um projeto virou uma ferramenta.
@@ -2378,17 +2733,21 @@ Um projeto virou uma ferramenta.
 
 </div>
 
+
 <p>
 O SIENA PRO foi idealizado e desenvolvido por
 <strong>João Siena</strong>, unindo experiência
 comercial, criatividade e vontade de criar algo útil.
 </p>
 
+
 <div class="storySectionTitle">
 📊 FEITO PARA QUEM VIVE O COMERCIAL
 </div>
 
+
 <div class="useBox">
+
 
 <div class="useItem">
 
@@ -2409,6 +2768,7 @@ Para agilizar cálculos durante visitas e negociações.
 </div>
 
 </div>
+
 
 <div class="useItem">
 
@@ -2431,6 +2791,7 @@ margens e descontos.
 
 </div>
 
+
 <div class="useItem">
 
 <div class="useIcon">
@@ -2450,6 +2811,7 @@ Para realizar cálculos rapidamente.
 </div>
 
 </div>
+
 
 <div class="useItem">
 
@@ -2473,9 +2835,11 @@ Que procure uma calculadora comercial prática.
 
 </div>
 
+
 <div class="storySectionTitle">
 📱 ANDROID + iOS
 </div>
+
 
 <div class="platformCard">
 
@@ -2499,11 +2863,14 @@ para a rotina comercial.
 
 </div>
 
+
 <div class="storySectionTitle">
 ⚡ POR QUE SIENA PRO?
 </div>
 
+
 <div class="benefitsGrid">
+
 
 <div class="benefitCard">
 
@@ -2517,6 +2884,7 @@ Cálculos sem complicação.
 
 </div>
 
+
 <div class="benefitCard">
 
 <strong>
@@ -2529,6 +2897,7 @@ Fácil de entender e usar.
 
 </div>
 
+
 <div class="benefitCard">
 
 <strong>
@@ -2540,6 +2909,7 @@ Pensado para situações reais.
 </span>
 
 </div>
+
 
 <div class="benefitCard">
 
@@ -2555,23 +2925,31 @@ Feito para quem trabalha com vendas.
 
 </div>
 
+
 <div class="storySectionTitle">
 🎯 O PROPÓSITO
 </div>
+
 
 <p>
 O objetivo nunca foi criar apenas mais uma calculadora.
 </p>
 
+
 <p>
 Foi criar algo que pudesse
-<strong>economizar tempo na rotina e ajudar
-na tomada de decisões.</strong>
+<strong>
+economizar tempo na rotina e ajudar
+na tomada de decisões.
+</strong>
 </p>
+
 
 <div class="storyQuote">
 
-Porque, no comercial:<br>
+Porque, no comercial:
+
+<br>
 
 <strong>
 tempo também é resultado.
@@ -2579,13 +2957,17 @@ tempo também é resultado.
 
 </div>
 
+
 <div class="storyFinal">
 
-Uma ideia criada para facilitar.<br>
+Uma ideia criada para facilitar.
+
+<br>
 
 Uma ferramenta feita para evoluir.
 
 </div>
+
 
 <div class="aboutSignature">
 
@@ -2612,13 +2994,45 @@ para quem vive vendas.
 
 </div>
 
-</div>
 
 </div>
 
 </div>
+
+</div>
+
 
 <script>
+
+/* =================================================
+   SPLASH
+   ================================================= */
+
+function hideSplash(){
+
+const splash=
+document.getElementById("splash");
+
+if(splash){
+
+splash.classList.add("hide");
+
+}
+
+}
+
+window.addEventListener(
+"load",
+function(){
+
+setTimeout(
+hideSplash,
+2500
+);
+
+}
+);
+
 
 /* =================================================
    PROTEÇÃO
@@ -2627,31 +3041,42 @@ para quem vive vendas.
 document.addEventListener(
 "dblclick",
 function(e){
+
 e.preventDefault();
+
 },
 {passive:false}
 );
+
 
 document.addEventListener(
 "gesturestart",
 function(e){
+
 e.preventDefault();
+
 },
 {passive:false}
 );
+
 
 document.addEventListener(
 "gesturechange",
 function(e){
+
 e.preventDefault();
+
 },
 {passive:false}
 );
 
+
 document.addEventListener(
 "gestureend",
 function(e){
+
 e.preventDefault();
+
 },
 {passive:false}
 );
@@ -2678,20 +3103,25 @@ if(
 value===null||
 value===undefined
 ){
+
 return 0;
+
 }
 
-let text=String(value).trim();
+let text=
+String(value).trim();
 
 if(text===""){
 return 0;
 }
 
-text=text
+text=
+text
 .replace(/\./g,"")
 .replace(",", ".");
 
-const number=Number(text);
+const number=
+Number(text);
 
 return Number.isFinite(number)
 ?number
@@ -2703,7 +3133,9 @@ return Number.isFinite(number)
 function money(number){
 
 if(!Number.isFinite(number)){
+
 number=0;
+
 }
 
 return number.toLocaleString(
@@ -2722,7 +3154,9 @@ maximumFractionDigits:2
 function percent(number){
 
 if(!Number.isFinite(number)){
+
 number=0;
+
 }
 
 return number.toLocaleString(
@@ -2746,6 +3180,7 @@ activeField=id;
 
 freshCommercial=true;
 
+
 document
 .querySelectorAll(".inputBox")
 .forEach(function(box){
@@ -2753,6 +3188,7 @@ document
 box.classList.remove("active");
 
 });
+
 
 const map={
 
@@ -2774,6 +3210,7 @@ markupPercentValor:"box-markupPercent"
 
 };
 
+
 if(map[id]){
 
 document
@@ -2794,10 +3231,6 @@ function createCommercialKeyboard(containerId){
 const container=
 document.getElementById(containerId);
 
-/*
-   APENAS UM 00
-   O BOTÃO = OCUPA DUAS COLUNAS
-*/
 
 const keys=[
 
@@ -2810,6 +3243,7 @@ const keys=[
 "0","AC","="
 
 ];
+
 
 keys.forEach(function(key){
 
@@ -2846,7 +3280,9 @@ button.textContent="⌫";
 
 button.onclick=
 function(){
+
 commercialBack();
+
 };
 
 }
@@ -2857,7 +3293,9 @@ button.textContent="AC";
 
 button.onclick=
 function(){
+
 commercialClear();
+
 };
 
 }
@@ -2868,7 +3306,9 @@ button.textContent="=";
 
 button.onclick=
 function(){
+
 calculateCommercial();
+
 };
 
 }
@@ -2900,6 +3340,7 @@ commercialDigit(key);
 };
 
 }
+
 
 container.appendChild(button);
 
@@ -2937,9 +3378,14 @@ element.textContent.trim();
 if(freshCommercial){
 
 if(digit===","){
+
 value="0,";
-}else{
+
+}
+else{
+
 value=digit;
+
 }
 
 freshCommercial=false;
@@ -2951,7 +3397,9 @@ else{
 if(digit===","){
 
 if(value.includes(",")){
+
 return;
+
 }
 
 value+=",";
@@ -2964,7 +3412,9 @@ if(value==="0"){
 
 value=digit;
 
-}else{
+}
+
+else{
 
 value+=digit;
 
@@ -2978,9 +3428,13 @@ value+=digit;
 const numericDigits=
 value.replace(/[^\d]/g,"");
 
+
 if(numericDigits.length>14){
+
 return;
+
 }
+
 
 element.textContent=value;
 
@@ -2990,7 +3444,7 @@ calculateCommercial();
 
 
 /* =================================================
-   BACKSPACE COMERCIAL
+   BACKSPACE
    ================================================= */
 
 function commercialBack(){
@@ -3016,13 +3470,16 @@ freshCommercial=true;
 
 else{
 
-value=value.slice(0,-1);
+value=
+value.slice(0,-1);
 
-element.textContent=value||"0";
+element.textContent=
+value||"0";
 
 freshCommercial=false;
 
 }
+
 
 calculateCommercial();
 
@@ -3030,7 +3487,7 @@ calculateCommercial();
 
 
 /* =================================================
-   AC COMERCIAL
+   AC
    ================================================= */
 
 function commercialClear(){
@@ -3057,6 +3514,7 @@ calculateCommercial();
 
 function calculateCommercial(){
 
+
 /* MARGEM */
 
 if(currentTab==="margem"){
@@ -3068,6 +3526,7 @@ document
 .textContent
 );
 
+
 const margem=
 parseBR(
 document
@@ -3075,7 +3534,9 @@ document
 .textContent
 );
 
+
 let venda=0;
+
 
 if(
 custo>0&&
@@ -3084,19 +3545,23 @@ margem<100
 ){
 
 venda=
-custo/(1-margem/100);
+custo/
+(1-margem/100);
 
 }
+
 
 document
 .getElementById("resultadoMargem")
 .textContent=
 money(venda);
 
+
 document
 .getElementById("lucroMargem")
 .textContent=
 money(venda-custo);
+
 
 document
 .getElementById("percentMargem")
@@ -3117,6 +3582,7 @@ document
 .textContent
 );
 
+
 const venda=
 parseBR(
 document
@@ -3124,23 +3590,28 @@ document
 .textContent
 );
 
+
 const lucro=
 venda-custo;
+
 
 const margem=
 venda!==0
 ?(lucro/venda)*100
 :0;
 
+
 document
 .getElementById("resultadoPreco")
 .textContent=
 percent(margem);
 
+
 document
 .getElementById("lucroPreco")
 .textContent=
 money(lucro);
+
 
 document
 .getElementById("valorPreco")
@@ -3161,6 +3632,7 @@ document
 .textContent
 );
 
+
 const desconto=
 parseBR(
 document
@@ -3168,21 +3640,26 @@ document
 .textContent
 );
 
+
 const valorDesconto=
 preco*desconto/100;
 
+
 const final=
 preco-valorDesconto;
+
 
 document
 .getElementById("resultadoDesconto")
 .textContent=
 money(final);
 
+
 document
 .getElementById("valorDesconto")
 .textContent=
 money(valorDesconto);
+
 
 document
 .getElementById("percentDesconto")
@@ -3203,6 +3680,7 @@ document
 .textContent
 );
 
+
 const markup=
 parseBR(
 document
@@ -3210,18 +3688,23 @@ document
 .textContent
 );
 
+
 const venda=
-custo*(1+markup/100);
+custo*
+(1+markup/100);
+
 
 document
 .getElementById("resultadoMarkup")
 .textContent=
 money(venda);
 
+
 document
 .getElementById("lucroMarkup")
 .textContent=
 money(venda-custo);
+
 
 document
 .getElementById("percentMarkup")
@@ -3241,6 +3724,7 @@ function openTab(tab){
 
 currentTab=tab;
 
+
 document
 .querySelectorAll(".screen")
 .forEach(function(screen){
@@ -3248,6 +3732,7 @@ document
 screen.classList.remove("active");
 
 });
+
 
 document
 .getElementById("screen-"+tab)
@@ -3277,6 +3762,7 @@ desconto:"descPrecoValor",
 markup:"markupCustoValor"
 
 };
+
 
 if(fields[tab]){
 
@@ -3316,6 +3802,7 @@ markupPercentValor:"box-markupPercent"
 
 };
 
+
 if(map[activeField]){
 
 document
@@ -3350,14 +3837,22 @@ let calcLastValue=null;
 function formatCalc(value){
 
 if(value==="Erro"){
+
 return "Erro";
+
 }
 
-const number=Number(value);
+
+const number=
+Number(value);
+
 
 if(!Number.isFinite(number)){
+
 return "Erro";
+
 }
+
 
 return number.toLocaleString(
 "pt-BR",
@@ -3377,6 +3872,7 @@ document
 .textContent=
 formatCalc(calcValue);
 
+
 document
 .getElementById("calcExpression")
 .textContent=
@@ -3385,13 +3881,16 @@ calcExpression;
 }
 
 
-/* NÚMEROS */
+/* DIGITO */
 
 function calcDigit(digit){
 
 if(calcValue==="Erro"){
+
 calcClear();
+
 }
+
 
 if(calcWaiting){
 
@@ -3414,9 +3913,13 @@ else{
 const digits=
 calcValue.replace(/[^\d]/g,"");
 
+
 if(digits.length>=15){
+
 return;
+
 }
+
 
 calcValue+=digit;
 
@@ -3424,18 +3927,22 @@ calcValue+=digit;
 
 }
 
+
 updateCalc();
 
 }
 
 
-/* VÍRGULA */
+/* DECIMAL */
 
 function calcDecimal(){
 
 if(calcValue==="Erro"){
+
 calcClear();
+
 }
+
 
 if(calcWaiting){
 
@@ -3451,22 +3958,31 @@ calcValue+=".";
 
 }
 
+
 updateCalc();
 
 }
 
 
-/* OPERADORES */
+/* OPERADOR */
 
 function operatorSymbol(op){
 
-if(op==="+")return "+";
+if(op==="+"){
+return "+";
+}
 
-if(op==="-")return "−";
+if(op==="-"){
+return "−";
+}
 
-if(op==="*")return "×";
+if(op==="*"){
+return "×";
+}
 
-if(op==="/")return "÷";
+if(op==="/"){
+return "÷";
+}
 
 return "";
 
@@ -3490,7 +4006,9 @@ return a*b;
 if(op==="/"){
 
 if(b===0){
+
 return NaN;
+
 }
 
 return a/b;
@@ -3505,14 +4023,20 @@ return b;
 function calcOperator(op){
 
 if(calcValue==="Erro"){
+
 return;
+
 }
+
 
 const current=
 Number(calcValue);
 
+
 if(!Number.isFinite(current)){
+
 return;
+
 }
 
 
@@ -3523,7 +4047,7 @@ calcStored=current;
 }
 
 else if(
-calcOp!==null &&
+calcOp!==null&&
 !calcWaiting
 ){
 
@@ -3533,6 +4057,7 @@ calcStored,
 current,
 calcOp
 );
+
 
 if(!Number.isFinite(result)){
 
@@ -3552,9 +4077,11 @@ return;
 
 }
 
+
 calcStored=result;
 
-calcValue=String(result);
+calcValue=
+String(result);
 
 }
 
@@ -3565,10 +4092,12 @@ calcWaiting=true;
 
 calcLastValue=null;
 
+
 calcExpression=
 formatCalc(calcStored)
 +" "
 +operatorSymbol(op);
+
 
 updateCalc();
 
@@ -3583,15 +4112,22 @@ if(
 calcStored===null||
 calcOp===null
 ){
+
 return;
+
 }
+
 
 let current=
 Number(calcValue);
 
+
 if(calcLastValue!==null){
+
 current=calcLastValue;
+
 }
+
 
 const result=
 doOperation(
@@ -3599,6 +4135,7 @@ calcStored,
 current,
 calcOp
 );
+
 
 if(!Number.isFinite(result)){
 
@@ -3639,6 +4176,7 @@ calcWaiting=true;
 
 calcLastValue=null;
 
+
 updateCalc();
 
 }
@@ -3651,8 +4189,11 @@ function calcPercent(){
 let value=
 Number(calcValue);
 
+
 if(!Number.isFinite(value)){
+
 return;
+
 }
 
 
@@ -3667,7 +4208,8 @@ calcOp==="-"
 ){
 
 value=
-calcStored*value/100;
+calcStored*
+value/100;
 
 }
 
@@ -3696,12 +4238,13 @@ value;
 
 calcWaiting=false;
 
+
 updateCalc();
 
 }
 
 
-/* BACKSPACE */
+/* BACK */
 
 function calcBack(){
 
@@ -3732,6 +4275,7 @@ calcValue=
 calcValue.slice(0,-1);
 
 }
+
 
 updateCalc();
 
@@ -3764,8 +4308,11 @@ updateCalc();
 function calcSign(){
 
 if(calcValue==="0"){
+
 return;
+
 }
+
 
 if(calcValue.startsWith("-")){
 
@@ -3780,6 +4327,7 @@ calcValue=
 "-"+calcValue;
 
 }
+
 
 updateCalc();
 
@@ -3802,12 +4350,15 @@ document
 function closeMenu(event){
 
 if(
-event &&
+event&&
 event.target!==
 document.getElementById("menuOverlay")
 ){
+
 return;
+
 }
+
 
 document
 .getElementById("menuOverlay")
@@ -3832,12 +4383,15 @@ document
 function closeAbout(event){
 
 if(
-event &&
+event&&
 event.target!==
 document.getElementById("aboutModal")
 ){
+
 return;
+
 }
+
 
 document
 .getElementById("aboutModal")
@@ -3855,8 +4409,11 @@ document.addEventListener(
 function(event){
 
 if(currentTab!=="calculadora"){
+
 return;
+
 }
+
 
 if(/^\d$/.test(event.key)){
 
@@ -3865,6 +4422,7 @@ calcDigit(event.key);
 return;
 
 }
+
 
 if(
 event.key===","||
@@ -3877,6 +4435,7 @@ return;
 
 }
 
+
 if(
 ["+","-","*","/"]
 .includes(event.key)
@@ -3887,6 +4446,7 @@ calcOperator(event.key);
 return;
 
 }
+
 
 if(
 event.key==="Enter"||
@@ -3899,6 +4459,7 @@ return;
 
 }
 
+
 if(event.key==="Backspace"){
 
 calcBack();
@@ -3906,6 +4467,7 @@ calcBack();
 return;
 
 }
+
 
 if(event.key==="Escape"){
 
@@ -3950,6 +4512,7 @@ ids.forEach(function(id){
 
 const element=
 document.getElementById(id);
+
 
 if(element){
 
