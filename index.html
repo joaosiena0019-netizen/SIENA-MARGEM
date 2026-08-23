@@ -2,9 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 
 <meta name="theme-color" content="#020704">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -161,7 +159,7 @@ color:#031006;
 transform:scale(.96);
 }
 
-/* SCREENS */
+/* TELAS */
 
 .screen{
 flex:1 1 auto;
@@ -176,7 +174,7 @@ padding-top:7px;
 display:flex;
 }
 
-/* PANEL */
+/* PAINEL */
 
 .panel{
 flex:0 0 auto;
@@ -238,7 +236,7 @@ white-space:nowrap;
 text-align:left;
 }
 
-/* RESULT */
+/* RESULTADO */
 
 .result{
 flex:0 0 auto;
@@ -297,7 +295,7 @@ font-size:14px;
 font-weight:bold;
 }
 
-/* COMMERCIAL KEYS */
+/* TECLADO COMERCIAL */
 
 .commercialKeys{
 flex:1 1 auto;
@@ -333,7 +331,7 @@ border-color:#43ed0a;
 color:#031006;
 }
 
-/* CALCULATOR */
+/* CALCULADORA */
 
 .calculator{
 padding-top:2px;
@@ -478,7 +476,7 @@ color:#43ed0a;
 margin-right:8px;
 }
 
-/* SOBRE */
+/* MODAL */
 
 .modal{
 position:fixed;
@@ -1146,7 +1144,7 @@ SIENA PRO — Calculadora Comercial
 
 <script>
 
-/* PROTEÇÃO CONTRA ZOOM */
+/* IMPEDIR ZOOM */
 
 document.addEventListener("dblclick",function(e){
 e.preventDefault();
@@ -1330,7 +1328,7 @@ createCommercialKeyboard("keysDesconto");
 createCommercialKeyboard("keysMarkup");
 
 
-/* DIGITAÇÃO */
+/* DIGITAÇÃO COMERCIAL */
 
 function commercialDigit(digit){
 
@@ -1842,54 +1840,42 @@ updateCalc();
 /* MENU */
 
 function openMenu(){
-
-document
-.getElementById("menuOverlay")
-.classList.add("show");
+document.getElementById("menuOverlay").classList.add("show");
 }
-
 
 function closeMenu(event){
 
 if(
-event&&
+event &&
 event.target!==document.getElementById("menuOverlay")
 ){
 return;
 }
 
-document
-.getElementById("menuOverlay")
-.classList.remove("show");
+document.getElementById("menuOverlay").classList.remove("show");
 }
 
 
 /* SOBRE */
 
 function openAbout(){
-
-document
-.getElementById("aboutModal")
-.classList.add("show");
+document.getElementById("aboutModal").classList.add("show");
 }
-
 
 function closeAbout(event){
 
 if(
-event&&
+event &&
 event.target!==document.getElementById("aboutModal")
 ){
 return;
 }
 
-document
-.getElementById("aboutModal")
-.classList.remove("show");
+document.getElementById("aboutModal").classList.remove("show");
 }
 
 
-/* TECLADO */
+/* TECLADO FÍSICO */
 
 document.addEventListener("keydown",function(event){
 
