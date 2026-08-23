@@ -4,769 +4,706 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+content="width=device-width,
+initial-scale=1,
+maximum-scale=1,
+user-scalable=no,
+viewport-fit=cover">
 
 <meta name="theme-color" content="#020704">
 
 <title>SIENA MARGEM</title>
 
 <style>
-
 *{
-box-sizing:border-box;
--webkit-tap-highlight-color:transparent;
-user-select:none;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
 }
 
 html,body{
-margin:0;
-padding:0;
-width:100%;
-height:100%;
-overflow:hidden;
-background:#020704;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
-touch-action:manipulation;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:#020704;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  touch-action:manipulation;
 }
 
 body{
-background:
-radial-gradient(circle at 50% -10%,#0b3b1d 0,#04170b 38%,#020704 75%);
+  background:
+  radial-gradient(
+    circle at 50% -10%,
+    #0b3b1d 0%,
+    #04170b 38%,
+    #020704 78%
+  );
 }
 
 button{
-font-family:Arial,Helvetica,sans-serif;
-border:0;
-outline:0;
+  font-family:Arial,Helvetica,sans-serif;
+  border:0;
+  outline:0;
+  cursor:pointer;
 }
 
-/* ================= APP ================= */
-
 .app{
-width:100%;
-height:100svh;
-max-width:700px;
-margin:auto;
+  width:100%;
+  height:100svh;
+  max-width:700px;
+  margin:auto;
 
-padding:
-max(6px,env(safe-area-inset-top))
-12px
-max(4px,env(safe-area-inset-bottom));
+  padding:
+  max(6px,env(safe-area-inset-top))
+  12px
+  max(4px,env(safe-area-inset-bottom));
 
-display:flex;
-flex-direction:column;
+  display:flex;
+  flex-direction:column;
 
-overflow:hidden;
+  overflow:hidden;
 }
 
 /* ================= HEADER ================= */
 
 .header{
-position:relative;
-flex:0 0 auto;
-
-text-align:center;
-
-padding:0 58px 4px;
+  position:relative;
+  flex:0 0 auto;
+  text-align:center;
+  padding:0 55px 4px;
 }
 
 .logo{
-font-size:clamp(45px,13vw,66px);
-line-height:.84;
-
-font-weight:900;
-letter-spacing:-3px;
+  font-size:clamp(44px,13vw,66px);
+  line-height:.84;
+  font-weight:900;
+  letter-spacing:-3px;
 }
 
 .logo-sub{
-color:#42ed0a;
-
-font-size:clamp(22px,6.3vw,33px);
-line-height:1;
-
-font-weight:800;
-letter-spacing:8px;
-
-margin-top:5px;
+  color:#43ed0a;
+  font-size:clamp(21px,6vw,33px);
+  line-height:1;
+  font-weight:800;
+  letter-spacing:8px;
+  margin-top:5px;
 }
 
 .subtitle{
-color:#818b85;
-
-font-size:9px;
-font-weight:bold;
-
-letter-spacing:4px;
-
-margin-top:5px;
+  color:#818b85;
+  font-size:9px;
+  font-weight:bold;
+  letter-spacing:4px;
+  margin-top:5px;
 }
 
 .header-btn{
-position:absolute;
+  position:absolute;
+  top:0;
 
-top:0;
+  width:53px;
+  height:53px;
 
-width:53px;
-height:53px;
+  border-radius:18px;
+  border:2px solid #245b30;
 
-border-radius:18px;
+  background:#061009;
+  color:#fff;
 
-border:2px solid #245b30;
-
-background:#061009;
-
-color:#fff;
-
-display:flex;
-align-items:center;
-justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .header-left{
-left:0;
+  left:0;
 }
 
 .header-right{
-right:0;
+  right:0;
 }
 
 .header-btn svg{
-width:26px;
-height:26px;
-
-stroke:#fff;
-fill:none;
-stroke-width:2;
+  width:26px;
+  height:26px;
+  stroke:#fff;
+  fill:none;
+  stroke-width:2;
 }
 
 /* ================= ABAS ================= */
 
 .tabs{
-flex:0 0 auto;
+  flex:0 0 auto;
 
-display:grid;
-grid-template-columns:repeat(5,1fr);
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
 
-gap:6px;
+  gap:6px;
 
-margin:7px 0 7px;
+  margin:7px 0 7px;
 }
 
 .tab{
-height:68px;
+  height:68px;
+  min-width:0;
 
-min-width:0;
+  border:2px solid #173c23;
+  border-radius:17px;
 
-border:2px solid #173c23;
+  background:#061009;
+  color:#8b948e;
 
-border-radius:17px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 
-background:#061009;
+  gap:4px;
 
-color:#8b948e;
+  padding:3px 1px;
 
-display:flex;
-flex-direction:column;
+  font-size:9px;
+  font-weight:bold;
 
-align-items:center;
-justify-content:center;
-
-gap:4px;
-
-padding:3px 1px;
-
-font-size:9px;
-font-weight:bold;
-
-white-space:nowrap;
+  white-space:nowrap;
 }
 
 .tab svg{
-width:23px;
-height:23px;
+  width:23px;
+  height:23px;
 
-stroke:currentColor;
-fill:none;
-stroke-width:2;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2;
 }
 
 .tab.active{
-background:#43ed0a;
-border-color:#43ed0a;
-color:#031006;
+  background:#43ed0a;
+  border-color:#43ed0a;
+  color:#031006;
 }
 
 .tab:active{
-transform:scale(.96);
+  transform:scale(.96);
 }
 
 /* ================= TELAS ================= */
 
 .screen{
-flex:1 1 auto;
-
-min-height:0;
-
-overflow:hidden;
+  flex:1 1 auto;
+  min-height:0;
+  overflow:hidden;
 }
 
 /* ================= PAINEL ================= */
 
 .panel{
-border:2px solid #173c23;
+  border:2px solid #173c23;
+  border-radius:23px;
 
-border-radius:23px;
+  background:rgba(3,12,7,.86);
 
-background:rgba(3,12,7,.86);
-
-padding:10px 12px 8px;
+  padding:10px 12px 8px;
 }
 
 .field{
-margin-bottom:11px;
+  margin-bottom:12px;
 }
 
 .field:last-child{
-margin-bottom:0;
+  margin-bottom:0;
 }
 
 .label{
-display:block;
+  display:block;
 
-color:#929c96;
+  color:#929c96;
 
-font-size:11px;
+  font-size:11px;
+  font-weight:bold;
 
-font-weight:bold;
+  letter-spacing:1.4px;
 
-letter-spacing:1.4px;
-
-margin:0 0 6px 2px;
+  margin:0 0 6px 2px;
 }
 
+/*
+  IMPORTANTE:
+  Não usamos input HTML.
+  Assim o teclado do celular NÃO abre.
+*/
+
 .inputbox{
-height:52px;
+  height:52px;
+  width:100%;
 
-width:100%;
+  border:2px solid #204a2b;
+  border-radius:17px;
 
-border:2px solid #204a2b;
+  background:#020705;
 
-border-radius:17px;
+  display:flex;
+  align-items:center;
 
-background:#020705;
+  padding:0 14px;
 
-display:flex;
-align-items:center;
-
-padding:0 14px;
+  cursor:pointer;
 }
 
 .inputbox.active{
-border-color:#43ed0a;
+  border-color:#43ed0a;
 
-box-shadow:
-0 0 8px rgba(67,237,10,.14);
+  box-shadow:
+  0 0 8px rgba(67,237,10,.15);
 }
 
 .prefix{
-color:#43ed0a;
-
-font-size:23px;
-
-font-weight:bold;
+  color:#43ed0a;
+  font-size:23px;
+  font-weight:bold;
 }
 
 .suffix{
-color:#43ed0a;
-
-font-size:24px;
-
-font-weight:bold;
+  color:#43ed0a;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .display{
-flex:1;
+  flex:1;
+  min-width:0;
 
-min-width:0;
+  padding:0 10px;
 
-padding:0 10px;
+  color:#fff;
 
-color:#fff;
+  font-size:24px;
+  font-weight:bold;
 
-font-size:24px;
-
-font-weight:bold;
-
-overflow:hidden;
-
-white-space:nowrap;
+  overflow:hidden;
+  white-space:nowrap;
 }
 
 /* ================= RESULTADO ================= */
 
 .result{
-margin-top:7px;
+  margin-top:7px;
 
-border:2px solid #329b28;
+  border:2px solid #329b28;
+  border-radius:23px;
 
-border-radius:23px;
+  padding:8px 14px 9px;
 
-padding:8px 14px 9px;
+  text-align:center;
 
-text-align:center;
-
-background:
-radial-gradient(
-circle at 75% 15%,
-rgba(47,180,28,.18),
-transparent 48%
-),
-#031008;
+  background:
+  radial-gradient(
+    circle at 75% 15%,
+    rgba(47,180,28,.18),
+    transparent 48%
+  ),
+  #031008;
 }
 
 .result-title{
-color:#929b96;
+  color:#929b96;
 
-font-size:11px;
+  font-size:11px;
+  font-weight:bold;
 
-font-weight:bold;
-
-letter-spacing:1.4px;
+  letter-spacing:1.4px;
 }
 
 .result-main{
-color:#43ed0a;
+  color:#43ed0a;
 
-font-size:clamp(36px,10vw,52px);
+  font-size:clamp(36px,10vw,52px);
 
-font-weight:900;
+  font-weight:900;
 
-line-height:1;
+  line-height:1;
 
-margin:4px 0 7px;
+  margin:4px 0 7px;
 }
 
 .result-line{
-height:1px;
-
-background:#24442b;
-
-margin-bottom:7px;
+  height:1px;
+  background:#24442b;
+  margin-bottom:7px;
 }
 
 .result-bottom{
-display:grid;
-
-grid-template-columns:1fr 1fr;
+  display:grid;
+  grid-template-columns:1fr 1fr;
 }
 
 .result-item:first-child{
-border-right:1px solid #345039;
+  border-right:1px solid #345039;
 }
 
 .result-small{
-color:#737d77;
-
-font-size:9px;
-
-margin-bottom:3px;
+  color:#737d77;
+  font-size:9px;
+  margin-bottom:3px;
 }
 
 .result-value{
-color:#fff;
-
-font-size:17px;
-
-font-weight:bold;
+  color:#fff;
+  font-size:17px;
+  font-weight:bold;
 }
 
 /* ================= TECLADO COMERCIAL ================= */
 
 .keypad{
-display:grid;
+  display:grid;
 
-grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
 
-gap:5px;
+  gap:5px;
 
-margin-top:7px;
+  margin-top:7px;
 }
 
 .key{
-height:49px;
+  height:49px;
 
-border:2px solid #173c23;
+  border:2px solid #173c23;
+  border-radius:15px;
 
-border-radius:15px;
+  background:#07140c;
+  color:#fff;
 
-background:#07140c;
+  font-size:22px;
+  font-weight:bold;
 
-color:#fff;
-
-font-size:22px;
-
-font-weight:bold;
-
-display:flex;
-align-items:center;
-justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .key.green{
-color:#43ed0a;
+  color:#43ed0a;
 }
 
 .key.equal{
-background:#43ed0a;
-
-border-color:#43ed0a;
-
-color:#031006;
+  background:#43ed0a;
+  border-color:#43ed0a;
+  color:#031006;
 }
 
 .key.zero{
-grid-column:span 2;
+  grid-column:span 2;
 }
 
 .key svg{
-width:21px;
-height:21px;
+  width:21px;
+  height:21px;
 
-stroke:currentColor;
-fill:none;
-
-stroke-width:2.5;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2.5;
 }
 
 .key:active{
-transform:scale(.95);
+  transform:scale(.95);
 }
 
 /* ================= CALCULADORA ================= */
 
 .calculator{
-height:100%;
+  height:100%;
 
-display:flex;
-flex-direction:column;
+  display:flex;
+  flex-direction:column;
 
-overflow:hidden;
+  overflow:hidden;
 }
 
-/*
-   O visor foi reduzido.
-   Isso libera espaço para as 5 linhas do teclado.
-*/
-
 .calc-display{
-flex:0 0 78px;
+  flex:0 0 78px;
 
-display:flex;
+  display:flex;
+  flex-direction:column;
 
-flex-direction:column;
+  justify-content:flex-end;
 
-justify-content:flex-end;
+  text-align:right;
 
-text-align:right;
-
-padding:
-3px 7px 5px;
+  padding:3px 7px 5px;
 }
 
 .calc-expression{
-height:20px;
+  height:20px;
 
-color:#727c76;
+  color:#727c76;
 
-font-size:14px;
+  font-size:14px;
 
-overflow:hidden;
-
-white-space:nowrap;
-
-text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 
 .calc-number{
-color:#fff;
+  color:#fff;
 
-font-size:clamp(42px,11vw,62px);
+  font-size:clamp(42px,11vw,62px);
 
-font-weight:300;
+  font-weight:300;
 
-line-height:1;
+  line-height:1;
 
-word-break:break-all;
+  word-break:break-all;
 }
 
-/*
-   AQUI ESTÁ A PRINCIPAL CORREÇÃO:
-   os botões não ocupam mais toda a largura.
-   Agora ficam menores e circulares.
-*/
-
 .calc-keypad{
-flex:0 0 auto;
+  flex:0 0 auto;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
-repeat(4,minmax(0,1fr));
+  grid-template-columns:
+  repeat(4,minmax(0,1fr));
 
-gap:6px;
+  gap:6px;
 
-padding:
-0 2px
-2px;
+  padding:0 2px 2px;
 }
 
 .calc-key{
-width:60px;
-height:60px;
+  width:60px;
+  height:60px;
 
-max-width:100%;
+  max-width:100%;
 
-justify-self:center;
+  justify-self:center;
 
-border-radius:50%;
+  border-radius:50%;
 
-border:2px solid #24432d;
+  border:2px solid #24432d;
 
-background:#17251c;
+  background:#17251c;
 
-color:#fff;
+  color:#fff;
 
-font-size:28px;
+  font-size:28px;
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .calc-key.function{
-background:#284331;
+  background:#284331;
 }
 
 .calc-key.operator{
-background:#43ed0a;
-
-border-color:#43ed0a;
-
-color:#031006;
+  background:#43ed0a;
+  border-color:#43ed0a;
+  color:#031006;
 }
 
 .calc-key.equal{
-background:#43ed0a;
-
-color:#031006;
+  background:#43ed0a;
+  color:#031006;
 }
 
 .calc-key:active{
-transform:scale(.92);
+  transform:scale(.92);
 }
 
 /* ================= RODAPÉ ================= */
 
 .footer{
-flex:0 0 20px;
+  flex:0 0 20px;
 
-text-align:center;
+  text-align:center;
 
-color:#707b74;
+  color:#707b74;
 
-font-size:9px;
+  font-size:9px;
 
-padding-top:3px;
+  padding-top:3px;
 
-white-space:nowrap;
+  white-space:nowrap;
 }
 
 .footer strong{
-color:#43ed0a;
+  color:#43ed0a;
 }
 
 /* ================= TELAS MENORES ================= */
 
 @media(max-height:760px){
 
-.logo{
-font-size:44px;
-}
+  .logo{
+    font-size:44px;
+  }
 
-.logo-sub{
-font-size:21px;
-margin-top:4px;
-}
+  .logo-sub{
+    font-size:21px;
+    margin-top:4px;
+  }
 
-.subtitle{
-font-size:8px;
-margin-top:4px;
-}
+  .subtitle{
+    font-size:8px;
+    margin-top:4px;
+  }
 
-.header-btn{
-width:48px;
-height:48px;
-}
+  .header-btn{
+    width:48px;
+    height:48px;
+  }
 
-.tabs{
-margin-top:5px;
-margin-bottom:5px;
-}
+  .tabs{
+    margin-top:5px;
+    margin-bottom:5px;
+  }
 
-.tab{
-height:61px;
-}
+  .tab{
+    height:61px;
+  }
 
-.tab svg{
-width:21px;
-height:21px;
-}
+  .tab svg{
+    width:21px;
+    height:21px;
+  }
 
-.panel{
-padding:8px 10px;
-}
+  .panel{
+    padding:8px 10px;
+  }
 
-.field{
-margin-bottom:7px;
-}
+  .field{
+    margin-bottom:9px;
+  }
 
-.inputbox{
-height:46px;
-}
+  .inputbox{
+    height:46px;
+  }
 
-.result{
-padding:6px 12px 7px;
-}
+  .result{
+    padding:6px 12px 7px;
+  }
 
-.result-main{
-font-size:35px;
-margin:3px 0 5px;
-}
+  .result-main{
+    font-size:35px;
+    margin:3px 0 5px;
+  }
 
-.key{
-height:43px;
-}
+  .key{
+    height:43px;
+  }
 
-.calc-display{
-flex-basis:66px;
-}
+  .calc-display{
+    flex-basis:66px;
+  }
 
-.calc-number{
-font-size:48px;
-}
+  .calc-number{
+    font-size:48px;
+  }
 
-.calc-keypad{
-gap:5px;
-}
+  .calc-keypad{
+    gap:5px;
+  }
 
-.calc-key{
-width:55px;
-height:55px;
-font-size:25px;
-}
+  .calc-key{
+    width:55px;
+    height:55px;
+    font-size:25px;
+  }
 
-.footer{
-font-size:8px;
+  .footer{
+    font-size:8px;
+  }
 }
-}
-
-/* ================= IPHONES MENORES ================= */
 
 @media(max-width:390px){
 
-.app{
-padding-left:10px;
-padding-right:10px;
+  .app{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .calc-key{
+    width:54px;
+    height:54px;
+  }
+
+  .calc-display{
+    flex-basis:62px;
+  }
 }
-
-.calc-key{
-width:54px;
-height:54px;
-
-font-size:24px;
-}
-
-.calc-display{
-flex-basis:62px;
-}
-
-}
-
-/* ================= TELAS MUITO BAIXAS ================= */
 
 @media(max-height:680px){
 
-.header{
-padding-bottom:2px;
-}
+  .logo{
+    font-size:40px;
+  }
 
-.logo{
-font-size:40px;
-}
+  .logo-sub{
+    font-size:19px;
+  }
 
-.logo-sub{
-font-size:19px;
-}
+  .subtitle{
+    display:none;
+  }
 
-.subtitle{
-display:none;
-}
+  .header-btn{
+    width:45px;
+    height:45px;
+  }
 
-.header-btn{
-width:45px;
-height:45px;
-}
+  .tabs{
+    margin-top:3px;
+    margin-bottom:4px;
+  }
 
-.tabs{
-margin-top:3px;
-margin-bottom:4px;
-}
+  .tab{
+    height:55px;
+  }
 
-.tab{
-height:55px;
-}
+  .tab svg{
+    width:19px;
+    height:19px;
+  }
 
-.tab svg{
-width:19px;
-height:19px;
-}
+  .panel{
+    padding:6px 9px;
+  }
 
-.panel{
-padding:6px 9px;
-}
+  .inputbox{
+    height:42px;
+  }
 
-.inputbox{
-height:42px;
-}
+  .result{
+    margin-top:5px;
+  }
 
-.result{
-margin-top:5px;
-}
+  .result-main{
+    font-size:32px;
+  }
 
-.result-main{
-font-size:32px;
-}
+  .key{
+    height:39px;
+  }
 
-.key{
-height:39px;
-}
+  .calc-display{
+    flex-basis:55px;
+  }
 
-.calc-display{
-flex-basis:55px;
-}
+  .calc-key{
+    width:50px;
+    height:50px;
+    font-size:22px;
+  }
 
-.calc-key{
-width:50px;
-height:50px;
-font-size:22px;
-}
-
-.footer{
-height:17px;
-}
+  .footer{
+    height:17px;
+  }
 }
 
 </style>
@@ -775,8 +712,6 @@ height:17px;
 <body>
 
 <div class="app">
-
-<!-- ================= CABEÇALHO ================= -->
 
 <header class="header">
 
@@ -820,6 +755,7 @@ SIMULADOR COMERCIAL
 
 </header>
 
+
 <!-- ================= ABAS ================= -->
 
 <div class="tabs">
@@ -830,12 +766,10 @@ data-tab="margem"
 onclick="changeTab('margem')">
 
 <svg viewBox="0 0 24 24">
-
 <path d="M4 19V9"/>
 <path d="M10 19V4"/>
 <path d="M16 19v-7"/>
 <path d="M22 19V7"/>
-
 </svg>
 
 <span>MARGEM</span>
@@ -956,7 +890,8 @@ CUSTO DO PRODUTO
 
 <div
 class="inputbox active"
-id="box-custo">
+id="box-custo"
+onclick="selectField('custo')">
 
 <span class="prefix">
 R$
@@ -981,7 +916,8 @@ MARGEM DESEJADA (%)
 
 <div
 class="inputbox"
-id="box-margem">
+id="box-margem"
+onclick="selectField('margem')">
 
 <div
 class="display"
@@ -1075,7 +1011,8 @@ CUSTO DO PRODUTO
 
 <div
 class="inputbox"
-id="box-precoCusto">
+id="box-precoCusto"
+onclick="selectField('precoCusto')">
 
 <span class="prefix">
 R$
@@ -1100,7 +1037,8 @@ PREÇO DE VENDA
 
 <div
 class="inputbox"
-id="box-precoVenda">
+id="box-precoVenda"
+onclick="selectField('precoVenda')">
 
 <span class="prefix">
 R$
@@ -1194,7 +1132,8 @@ PREÇO ORIGINAL
 
 <div
 class="inputbox"
-id="box-descPreco">
+id="box-descPreco"
+onclick="selectField('descPreco')">
 
 <span class="prefix">
 R$
@@ -1219,7 +1158,8 @@ DESCONTO (%)
 
 <div
 class="inputbox"
-id="box-descPercent">
+id="box-descPercent"
+onclick="selectField('descPercent')">
 
 <div
 class="display"
@@ -1313,7 +1253,8 @@ CUSTO DO PRODUTO
 
 <div
 class="inputbox"
-id="box-markupCusto">
+id="box-markupCusto"
+onclick="selectField('markupCusto')">
 
 <span class="prefix">
 R$
@@ -1338,7 +1279,8 @@ MARKUP (%)
 
 <div
 class="inputbox"
-id="box-markupPercent">
+id="box-markupPercent"
+onclick="selectField('markupPercent')">
 
 <div
 class="display"
@@ -1569,8 +1511,6 @@ onclick="calcEqual()">
 </section>
 
 
-<!-- ================= RODAPÉ ================= -->
-
 <div class="footer">
 
 Criado e desenvolvido por
@@ -1593,44 +1533,67 @@ let activeField="custo";
 
 
 /* ==================================================
-   NÚMEROS
+   SELECIONAR CAMPO
+================================================== */
+
+function selectField(id){
+
+  activeField=id;
+
+  document.querySelectorAll(".inputbox")
+  .forEach(function(box){
+    box.classList.remove("active");
+  });
+
+  const box=document.getElementById("box-"+id);
+
+  if(box){
+    box.classList.add("active");
+  }
+
+}
+
+
+/* ==================================================
+   VALORES
 ================================================== */
 
 function numberValue(id){
 
-const el=document.getElementById(id);
+  const el=document.getElementById(id);
 
-if(!el)return 0;
+  if(!el)return 0;
 
-let value=el.textContent
-.replace(/\./g,"")
-.replace(",",".")
-.trim();
+  let value=el.textContent
+  .trim()
+  .replace(/\./g,"")
+  .replace(",",".")
+  .replace(/[^\d.-]/g,"");
 
-return parseFloat(value)||0;
+  return parseFloat(value)||0;
 
 }
 
 
 function money(value){
 
-return Number(value||0)
-.toLocaleString(
-"pt-BR",
-{
-style:"currency",
-currency:"BRL"
-}
-);
+  return Number(value||0)
+  .toLocaleString(
+    "pt-BR",
+    {
+      style:"currency",
+      currency:"BRL"
+    }
+  );
 
 }
 
 
 function pct(value){
 
-return Number(value||0)
-.toFixed(2)
-.replace(".",",")+"%";
+  return Number(value||0)
+  .toFixed(2)
+  .replace(".",",")+"%";
 
 }
 
@@ -1641,278 +1604,285 @@ return Number(value||0)
 
 function changeTab(tab){
 
-currentTab=tab;
+  currentTab=tab;
 
-document.querySelectorAll(".screen")
-.forEach(function(screen){
+  document.querySelectorAll(".screen")
+  .forEach(function(screen){
 
-screen.style.display=
-screen.id===tab
-?"block"
-:"none";
+    screen.style.display=
+    screen.id===tab
+    ?"block"
+    :"none";
 
-});
-
-
-document.querySelectorAll(".tab")
-.forEach(function(btn){
-
-btn.classList.toggle(
-"active",
-btn.dataset.tab===tab
-);
-
-});
+  });
 
 
-if(tab==="margem"){
+  document.querySelectorAll(".tab")
+  .forEach(function(btn){
 
-activeField="custo";
+    btn.classList.toggle(
+      "active",
+      btn.dataset.tab===tab
+    );
 
-setActive("custo");
+  });
 
-calculateMargem();
 
-}
+  if(tab==="margem"){
 
-if(tab==="preco"){
+    selectField("custo");
 
-activeField="precoCusto";
+    calculateMargem();
 
-setActive("precoCusto");
+  }
 
-calculatePreco();
 
-}
+  if(tab==="preco"){
 
-if(tab==="desconto"){
+    selectField("precoCusto");
 
-activeField="descPreco";
+    calculatePreco();
 
-setActive("descPreco");
+  }
 
-calculateDesconto();
 
-}
+  if(tab==="desconto"){
 
-if(tab==="markup"){
+    selectField("descPreco");
 
-activeField="markupCusto";
+    calculateDesconto();
 
-setActive("markupCusto");
+  }
 
-calculateMarkup();
 
-}
+  if(tab==="markup"){
+
+    selectField("markupCusto");
+
+    calculateMarkup();
+
+  }
 
 }
 
 
 /* ==================================================
-   CAMPO ATIVO
-================================================== */
-
-function setActive(id){
-
-document.querySelectorAll(".inputbox")
-.forEach(function(box){
-
-box.classList.remove("active");
-
-});
-
-
-const box=document.getElementById("box-"+id);
-
-if(box){
-
-box.classList.add("active");
-
-}
-
-}
-
-
-/* ==================================================
-   TECLADO DAS FERRAMENTAS
+   TECLADO COMERCIAL
 ================================================== */
 
 function createKeypad(id){
 
-const area=document.getElementById(id);
+  const area=document.getElementById(id);
 
-const keys=[
+  const keys=[
 
-["7",""],
-["8",""],
-["9",""],
-["back","green"],
+    ["7",""],
+    ["8",""],
+    ["9",""],
+    ["back","green"],
 
-["4",""],
-["5",""],
-["6",""],
-["00","green"],
+    ["4",""],
+    ["5",""],
+    ["6",""],
+    ["00","green"],
 
-["1",""],
-["2",""],
-["3",""],
-[",","green"],
+    ["1",""],
+    ["2",""],
+    ["3",""],
+    [",","green"],
 
-["0","zero"],
-["AC","green"],
-["=","equal"]
+    ["0","zero"],
+    ["AC","green"],
+    ["=","equal"]
 
-];
-
-
-keys.forEach(function(item){
-
-const b=document.createElement("button");
-
-b.className="key "+item[1];
+  ];
 
 
-if(item[0]==="back"){
+  keys.forEach(function(item){
 
-b.innerHTML=
-'<svg viewBox="0 0 24 24">'+
-'<path d="M3 12l4-6h14v12H7z"/>'+
-'<path d="M10 9l6 6M16 9l-6 6"/>'+
-'</svg>';
+    const b=document.createElement("button");
 
-b.onclick=backspace;
-
-}else{
-
-b.textContent=item[0];
+    b.className="key "+item[1];
 
 
-if(item[0]==="AC"){
+    if(item[0]==="back"){
 
-b.onclick=clearField;
+      b.innerHTML=
+      '<svg viewBox="0 0 24 24">'+
+      '<path d="M3 12l4-6h14v12H7z"/>'+
+      '<path d="M10 9l6 6M16 9l-6 6"/>'+
+      '</svg>';
 
-}else if(item[0]==="="){
+      b.onclick=backspace;
 
-b.onclick=calculateCurrent;
+    }else{
 
-}else{
-
-b.onclick=function(){
-
-addDigit(item[0]);
-
-};
-
-}
-
-}
+      b.textContent=item[0];
 
 
-area.appendChild(b);
+      if(item[0]==="AC"){
 
-});
+        b.onclick=clearField;
+
+      }else if(item[0]==="="){
+
+        b.onclick=calculateCurrent;
+
+      }else{
+
+        b.onclick=function(){
+
+          addDigit(item[0]);
+
+        };
+
+      }
+
+    }
+
+
+    area.appendChild(b);
+
+  });
 
 }
 
 
 /* ==================================================
-   DIGITAÇÃO
+   DIGITAÇÃO DOS CAMPOS
 ================================================== */
 
 function addDigit(value){
 
-const el=document.getElementById(activeField);
+  const el=document.getElementById(activeField);
 
-if(!el)return;
-
-let current=el.textContent.trim();
+  if(!el)return;
 
 
-if(value===","){
+  let current=el.textContent.trim();
 
-if(current.includes(","))return;
 
-if(current==="0"){
+  /*
+    Se estiver em zero e apertar um número,
+    substitui o zero.
+  */
 
-current="0,";
+  if(value==="00"){
 
-}else{
+    if(current==="0"){
+      return;
+    }
 
-current+=",";
+    current+="00";
+
+  }
+
+  else if(value===","){
+
+    if(current.includes(",")){
+      return;
+    }
+
+    if(current==="0"){
+
+      current="0,";
+
+    }else{
+
+      current+=",";
+
+    }
+
+  }
+
+  else{
+
+    if(current==="0"){
+
+      current="";
+
+    }
+
+    current+=value;
+
+  }
+
+
+  el.textContent=current;
+
+  calculateCurrent();
 
 }
 
-}else{
 
-if(current==="0"){
-
-current="";
-
-}
-
-current+=value;
-
-}
-
-
-el.textContent=current;
-
-calculateCurrent();
-
-}
-
+/* ==================================================
+   APAGAR
+================================================== */
 
 function backspace(){
 
-const el=document.getElementById(activeField);
+  const el=document.getElementById(activeField);
 
-if(!el)return;
+  if(!el)return;
 
-let value=el.textContent;
 
-value=value.slice(0,-1);
+  let value=el.textContent;
 
-if(value===""){
 
-value="0";
+  if(value.length<=1){
+
+    value="0";
+
+  }else{
+
+    value=value.slice(0,-1);
+
+  }
+
+
+  el.textContent=value;
+
+  calculateCurrent();
 
 }
 
-el.textContent=value;
 
-calculateCurrent();
-
-}
-
+/* ==================================================
+   AC
+================================================== */
 
 function clearField(){
 
-const el=document.getElementById(activeField);
+  const el=document.getElementById(activeField);
 
-if(el){
+  if(el){
 
-el.textContent="0";
+    el.textContent="0";
+
+  }
+
+  calculateCurrent();
 
 }
 
-calculateCurrent();
 
-}
-
+/* ==================================================
+   CALCULAR ATUAL
+================================================== */
 
 function calculateCurrent(){
 
-if(currentTab==="margem")
-calculateMargem();
+  if(currentTab==="margem")
+  calculateMargem();
 
-if(currentTab==="preco")
-calculatePreco();
+  if(currentTab==="preco")
+  calculatePreco();
 
-if(currentTab==="desconto")
-calculateDesconto();
+  if(currentTab==="desconto")
+  calculateDesconto();
 
-if(currentTab==="markup")
-calculateMarkup();
+  if(currentTab==="markup")
+  calculateMarkup();
 
 }
 
@@ -1923,38 +1893,47 @@ calculateMarkup();
 
 function calculateMargem(){
 
-const custo=numberValue("custo");
+  const custo=numberValue("custo");
 
-const margem=numberValue("margem");
+  const margem=numberValue("margem");
 
-let venda=0;
-
-
-if(custo>0 && margem<100){
-
-venda=
-custo/
-(1-margem/100);
-
-}
+  let venda=0;
 
 
-const lucro=venda-custo;
+  /*
+    Margem comercial:
+    preço = custo / (1 - margem/100)
+
+    Não bloqueamos o campo em 100%.
+    Se chegar em 100% ou mais,
+    evitamos resultado infinito.
+  */
+
+  if(custo>0 && margem<100){
+
+    venda=
+    custo/
+    (1-margem/100);
+
+  }
 
 
-document.getElementById(
-"resultadoMargem"
-).textContent=money(venda);
+  const lucro=venda-custo;
 
 
-document.getElementById(
-"lucroMargem"
-).textContent=money(lucro);
+  document.getElementById(
+    "resultadoMargem"
+  ).textContent=money(venda);
 
 
-document.getElementById(
-"percentMargem"
-).textContent=pct(margem);
+  document.getElementById(
+    "lucroMargem"
+  ).textContent=money(lucro);
+
+
+  document.getElementById(
+    "percentMargem"
+  ).textContent=pct(margem);
 
 }
 
@@ -1965,36 +1944,36 @@ document.getElementById(
 
 function calculatePreco(){
 
-const custo=
-numberValue("precoCusto");
+  const custo=
+  numberValue("precoCusto");
 
-const venda=
-numberValue("precoVenda");
+  const venda=
+  numberValue("precoVenda");
 
-let margem=0;
-
-
-if(venda>0){
-
-margem=
-((venda-custo)/venda)*100;
-
-}
+  let margem=0;
 
 
-document.getElementById(
-"resultadoPreco"
-).textContent=pct(margem);
+  if(venda>0){
+
+    margem=
+    ((venda-custo)/venda)*100;
+
+  }
 
 
-document.getElementById(
-"lucroPreco"
-).textContent=money(venda-custo);
+  document.getElementById(
+    "resultadoPreco"
+  ).textContent=pct(margem);
 
 
-document.getElementById(
-"valorPreco"
-).textContent=money(venda);
+  document.getElementById(
+    "lucroPreco"
+  ).textContent=money(venda-custo);
+
+
+  document.getElementById(
+    "valorPreco"
+  ).textContent=money(venda);
 
 }
 
@@ -2005,32 +1984,32 @@ document.getElementById(
 
 function calculateDesconto(){
 
-const preco=
-numberValue("descPreco");
+  const preco=
+  numberValue("descPreco");
 
-const desconto=
-numberValue("descPercent");
+  const desconto=
+  numberValue("descPercent");
 
-const valor=
-preco*desconto/100;
+  const valor=
+  preco*desconto/100;
 
-const final=
-preco-valor;
-
-
-document.getElementById(
-"resultadoDesconto"
-).textContent=money(final);
+  const final=
+  preco-valor;
 
 
-document.getElementById(
-"valorDesconto"
-).textContent=money(valor);
+  document.getElementById(
+    "resultadoDesconto"
+  ).textContent=money(final);
 
 
-document.getElementById(
-"percentDesconto"
-).textContent=pct(desconto);
+  document.getElementById(
+    "valorDesconto"
+  ).textContent=money(valor);
+
+
+  document.getElementById(
+    "percentDesconto"
+  ).textContent=pct(desconto);
 
 }
 
@@ -2041,57 +2020,31 @@ document.getElementById(
 
 function calculateMarkup(){
 
-const custo=
-numberValue("markupCusto");
+  const custo=
+  numberValue("markupCusto");
 
-const markup=
-numberValue("markupPercent");
+  const markup=
+  numberValue("markupPercent");
 
-const venda=
-custo*(1+markup/100);
-
-
-document.getElementById(
-"resultadoMarkup"
-).textContent=money(venda);
+  const venda=
+  custo*(1+markup/100);
 
 
-document.getElementById(
-"lucroMarkup"
-).textContent=money(venda-custo);
+  document.getElementById(
+    "resultadoMarkup"
+  ).textContent=money(venda);
 
 
-document.getElementById(
-"percentMarkup"
-).textContent=pct(markup);
-
-}
+  document.getElementById(
+    "lucroMarkup"
+  ).textContent=money(venda-custo);
 
 
-/* ==================================================
-   SELEÇÃO DOS CAMPOS
-================================================== */
-
-document.addEventListener(
-"click",
-function(e){
-
-const box=
-e.target.closest(".inputbox");
-
-if(!box)return;
-
-const display=
-box.querySelector(".display");
-
-if(!display)return;
-
-activeField=display.id;
-
-setActive(activeField);
+  document.getElementById(
+    "percentMarkup"
+  ).textContent=pct(markup);
 
 }
-);
 
 
 /* ==================================================
@@ -2111,266 +2064,267 @@ let calcExpr="";
 
 function updateCalc(){
 
-document.getElementById(
-"calcNumber"
-).textContent=
-calcValue.replace(".",",");
+  document.getElementById(
+    "calcNumber"
+  ).textContent=
+  calcValue.replace(".",",");
 
 
-document.getElementById(
-"calcExpression"
-).textContent=
-calcExpr;
+  document.getElementById(
+    "calcExpression"
+  ).textContent=
+  calcExpr;
 
 }
 
 
 function calcNumber(n){
 
-if(calcWaiting){
+  if(calcWaiting){
 
-calcValue=n;
+    calcValue=n;
 
-calcWaiting=false;
+    calcWaiting=false;
 
-}else{
+  }else{
 
-if(calcValue==="0"){
+    if(calcValue==="0"){
 
-calcValue=n;
+      calcValue=n;
 
-}else{
+    }else{
 
-calcValue+=n;
+      calcValue+=n;
 
-}
+    }
 
-}
+  }
 
-updateCalc();
+  updateCalc();
 
 }
 
 
 function calcDecimal(){
 
-if(calcWaiting){
+  if(calcWaiting){
 
-calcValue="0.";
+    calcValue="0.";
 
-calcWaiting=false;
+    calcWaiting=false;
 
-}else if(!calcValue.includes(".")){
+  }else if(!calcValue.includes(".")){
 
-calcValue+=".";
+    calcValue+=".";
 
-}
+  }
 
-updateCalc();
+  updateCalc();
 
 }
 
 
 function calcOperator(op){
 
-const value=
-parseFloat(calcValue);
+  const value=
+  parseFloat(calcValue);
 
 
-if(calcStored===null){
+  if(calcStored===null){
 
-calcStored=value;
+    calcStored=value;
 
-}else if(calcOp){
+  }else if(calcOp){
 
-calcStored=
-operate(
-calcStored,
-value,
-calcOp
-);
+    calcStored=
+    operate(
+      calcStored,
+      value,
+      calcOp
+    );
 
-calcValue=
-String(calcStored);
+    calcValue=
+    String(calcStored);
 
-}
-
-
-calcOp=op;
-
-calcWaiting=true;
+  }
 
 
-calcExpr=
-formatCalc(calcStored)
-+" "
-+operatorSymbol(op);
+  calcOp=op;
+
+  calcWaiting=true;
 
 
-updateCalc();
+  calcExpr=
+  formatCalc(calcStored)
+  +" "
+  +operatorSymbol(op);
+
+
+  updateCalc();
 
 }
 
 
 function operate(a,b,op){
 
-if(op==="+")
-return a+b;
+  if(op==="+")
+  return a+b;
 
-if(op==="-")
-return a-b;
+  if(op==="-")
+  return a-b;
 
-if(op==="*")
-return a*b;
+  if(op==="*")
+  return a*b;
 
-if(op==="/")
-return b===0?0:a/b;
+  if(op==="/")
+  return b===0?0:a/b;
 
-return b;
+  return b;
 
 }
 
 
 function operatorSymbol(op){
 
-if(op==="+")return "+";
+  if(op==="+")return "+";
 
-if(op==="-")return "−";
+  if(op==="-")return "−";
 
-if(op==="*")return "×";
+  if(op==="*")return "×";
 
-if(op==="/")return "÷";
+  if(op==="/")return "÷";
 
-return "";
+  return "";
 
 }
 
 
 function calcEqual(){
 
-if(calcOp===null)
-return;
+  if(calcOp===null)
+  return;
 
 
-const value=
-parseFloat(calcValue);
+  const value=
+  parseFloat(calcValue);
 
 
-const result=
-operate(
-calcStored,
-value,
-calcOp
-);
+  const result=
+  operate(
+    calcStored,
+    value,
+    calcOp
+  );
 
 
-calcExpr=
-formatCalc(calcStored)
-+" "
-+operatorSymbol(calcOp)
-+" "
-+formatCalc(value)
-+" =";
+  calcExpr=
+  formatCalc(calcStored)
+  +" "
+  +operatorSymbol(calcOp)
+  +" "
+  +formatCalc(value)
+  +" =";
 
 
-calcValue=
-String(
-Number(
-result.toFixed(10)
-)
-);
+  calcValue=
+  String(
+    Number(
+      result.toFixed(10)
+    )
+  );
 
 
-calcStored=null;
+  calcStored=null;
 
-calcOp=null;
+  calcOp=null;
 
-calcWaiting=true;
+  calcWaiting=true;
 
-updateCalc();
+  updateCalc();
 
 }
 
 
 function calcClear(){
 
-calcValue="0";
+  calcValue="0";
 
-calcStored=null;
+  calcStored=null;
 
-calcOp=null;
+  calcOp=null;
 
-calcWaiting=false;
+  calcWaiting=false;
 
-calcExpr="";
+  calcExpr="";
 
-updateCalc();
+  updateCalc();
 
 }
 
 
 function calcBack(){
 
-if(calcValue.length<=1){
+  if(calcValue.length<=1){
 
-calcValue="0";
+    calcValue="0";
 
-}else{
+  }else{
 
-calcValue=
-calcValue.slice(0,-1);
+    calcValue=
+    calcValue.slice(0,-1);
 
-}
+  }
 
-updateCalc();
+  updateCalc();
 
 }
 
 
 function calcSign(){
 
-if(calcValue==="0")
-return;
+  if(calcValue==="0")
+  return;
 
-if(calcValue.startsWith("-")){
 
-calcValue=
-calcValue.substring(1);
+  if(calcValue.startsWith("-")){
 
-}else{
+    calcValue=
+    calcValue.substring(1);
 
-calcValue=
-"-"+calcValue;
+  }else{
 
-}
+    calcValue=
+    "-"+calcValue;
 
-updateCalc();
+  }
+
+  updateCalc();
 
 }
 
 
 function calcPercent(){
 
-const value=
-parseFloat(calcValue);
+  const value=
+  parseFloat(calcValue);
 
-calcValue=
-String(value/100);
+  calcValue=
+  String(value/100);
 
-updateCalc();
+  updateCalc();
 
 }
 
 
 function formatCalc(value){
 
-return Number(value)
-.toLocaleString(
-"pt-BR",
-{
-maximumFractionDigits:10
-}
-);
+  return Number(value)
+  .toLocaleString(
+    "pt-BR",
+    {
+      maximumFractionDigits:10
+    }
+  );
 
 }
 
@@ -2381,21 +2335,22 @@ maximumFractionDigits:10
 
 function showInfo(){
 
-alert(
-"SIENA MARGEM\n\n"+
-"Escolha uma ferramenta acima para realizar seus cálculos comerciais."
-);
+  alert(
+    "SIENA MARGEM\n\n"+
+    "Selecione uma ferramenta acima "+
+    "para realizar seus cálculos comerciais."
+  );
 
 }
 
 
 function showAbout(){
 
-alert(
-"SIENA MARGEM\n\n"+
-"Simulador comercial\n\n"+
-"Criado e desenvolvido por João Siena."
-);
+  alert(
+    "SIENA MARGEM\n\n"+
+    "Simulador Comercial\n\n"+
+    "Criado e desenvolvido por João Siena."
+  );
 
 }
 
@@ -2412,6 +2367,7 @@ createKeypad("keypadDesconto");
 
 createKeypad("keypadMarkup");
 
+
 calculateMargem();
 
 calculatePreco();
@@ -2421,6 +2377,14 @@ calculateDesconto();
 calculateMarkup();
 
 updateCalc();
+
+
+/*
+  Garante que a tela comece
+  sempre no campo CUSTO.
+*/
+
+selectField("custo");
 
 </script>
 
