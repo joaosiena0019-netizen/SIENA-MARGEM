@@ -2,459 +2,540 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+
 <meta name="theme-color" content="#020704">
+
 <title>SIENA MARGEM</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;
+ box-sizing:border-box;
+ -webkit-tap-highlight-color:transparent;
+ user-select:none;
 }
 
 html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  min-height:100%;
-  background:#020704;
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-  overflow-x:hidden;
-  touch-action:manipulation;
+ margin:0;
+ padding:0;
+ width:100%;
+ height:100%;
+ overflow:hidden;
+ background:#020704;
+ color:white;
+ font-family:Arial,Helvetica,sans-serif;
+ touch-action:manipulation;
 }
 
 body{
-  background:
-    radial-gradient(circle at 50% 0%,#0b351b 0,#04180b 30%,#020704 68%);
+ background:
+ radial-gradient(circle at 50% -10%,#0b3b1d 0,#04170b 38%,#020704 75%);
 }
 
 button{
-  font-family:inherit;
-  border:0;
-  outline:0;
+ font-family:Arial,Helvetica,sans-serif;
+ border:0;
+ outline:0;
 }
 
 .app{
-  width:100%;
-  max-width:700px;
-  margin:auto;
-  padding:
-    max(12px,env(safe-area-inset-top))
-    14px
-    max(18px,env(safe-area-inset-bottom));
+ width:100%;
+ height:100svh;
+ max-width:700px;
+ margin:auto;
+ padding:
+ max(7px,env(safe-area-inset-top))
+ 12px
+ max(5px,env(safe-area-inset-bottom));
+
+ display:flex;
+ flex-direction:column;
+ overflow:hidden;
 }
 
-/* ================= CABEÇALHO ================= */
+/* ================= HEADER ================= */
 
 .header{
-  position:relative;
-  text-align:center;
-  padding:2px 60px 8px;
+ position:relative;
+ flex:0 0 auto;
+ text-align:center;
+ padding:0 58px 5px;
 }
 
 .logo{
-  font-size:clamp(48px,15vw,78px);
-  line-height:.88;
-  font-weight:900;
-  letter-spacing:-3px;
+ font-size:clamp(47px,13vw,68px);
+ line-height:.85;
+ font-weight:900;
+ letter-spacing:-3px;
 }
 
 .logo-sub{
-  color:#42ed0a;
-  font-size:clamp(25px,7vw,40px);
-  line-height:1;
-  font-weight:800;
-  letter-spacing:9px;
-  margin-top:8px;
+ color:#42ed0a;
+ font-size:clamp(23px,6.5vw,34px);
+ line-height:1;
+ font-weight:800;
+ letter-spacing:8px;
+ margin-top:6px;
 }
 
 .subtitle{
-  color:#858f89;
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:5px;
-  margin-top:9px;
+ color:#818b85;
+ font-size:9px;
+ font-weight:bold;
+ letter-spacing:4px;
+ margin-top:6px;
 }
 
 .header-btn{
-  position:absolute;
-  top:5px;
-  width:58px;
-  height:58px;
-  border:2px solid #23552e;
-  border-radius:19px;
-  background:#06100a;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+ position:absolute;
+ top:1px;
+ width:55px;
+ height:55px;
+ border-radius:18px;
+ border:2px solid #245b30;
+ background:#061009;
+ color:white;
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
 }
 
-.header-left{left:0}
-.header-right{right:0}
+.header-left{
+ left:0;
+}
+
+.header-right{
+ right:0;
+}
 
 .header-btn svg{
-  width:27px;
-  height:27px;
-  stroke:#fff;
-  fill:none;
-  stroke-width:2;
-}
-
-.header-btn:active{
-  transform:scale(.94);
+ width:27px;
+ height:27px;
+ stroke:white;
+ fill:none;
+ stroke-width:2;
 }
 
 /* ================= ABAS ================= */
 
 .tabs{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:7px;
-  margin:16px 0 13px;
+ flex:0 0 auto;
+ display:grid;
+ grid-template-columns:repeat(5,1fr);
+ gap:6px;
+ margin:8px 0 8px;
 }
 
 .tab{
-  min-width:0;
-  height:88px;
-  border:2px solid #173c23;
-  border-radius:20px;
-  background:#061009;
-  color:#89928c;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:5px 2px;
-  font-size:11px;
-  font-weight:bold;
+ height:69px;
+ min-width:0;
+
+ border:2px solid #173c23;
+ border-radius:17px;
+
+ background:#061009;
+ color:#8b948e;
+
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+
+ gap:4px;
+ padding:3px 1px;
+
+ font-size:9px;
+ font-weight:bold;
 }
 
 .tab svg{
-  width:27px;
-  height:27px;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:2;
+ width:24px;
+ height:24px;
+ stroke:currentColor;
+ fill:none;
+ stroke-width:2;
 }
 
 .tab.active{
-  background:#43ed0a;
-  border-color:#43ed0a;
-  color:#031006;
-  box-shadow:0 0 22px rgba(67,237,10,.16);
+ background:#43ed0a;
+ border-color:#43ed0a;
+ color:#031006;
 }
 
 .tab:active{
-  transform:scale(.97);
+ transform:scale(.96);
+}
+
+/* ================= TELAS ================= */
+
+.screen{
+ flex:1 1 auto;
+ min-height:0;
+ overflow:hidden;
 }
 
 /* ================= PAINEL ================= */
 
 .panel{
-  border:2px solid #173c23;
-  border-radius:27px;
-  background:rgba(3,12,7,.82);
-  padding:17px 16px 15px;
+ border:2px solid #173c23;
+ border-radius:23px;
+ background:rgba(3,12,7,.86);
+ padding:11px 12px 8px;
 }
 
 .field{
-  margin-bottom:27px;
+ margin-bottom:12px;
 }
 
 .field:last-child{
-  margin-bottom:1px;
+ margin-bottom:0;
 }
 
 .label{
-  display:block;
-  color:#929c96;
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:1.7px;
-  margin:0 0 10px 2px;
+ display:block;
+ color:#929c96;
+ font-size:11px;
+ font-weight:bold;
+ letter-spacing:1.4px;
+ margin:0 0 6px 2px;
 }
 
 .inputbox{
-  width:100%;
-  height:68px;
-  border:2px solid #204a2b;
-  border-radius:19px;
-  background:#020705;
-  display:flex;
-  align-items:center;
-  padding:0 17px;
+ height:54px;
+ width:100%;
+
+ border:2px solid #204a2b;
+ border-radius:17px;
+
+ background:#020705;
+
+ display:flex;
+ align-items:center;
+
+ padding:0 14px;
 }
 
 .inputbox.active{
-  border-color:#43ed0a;
-  box-shadow:0 0 0 2px rgba(67,237,10,.07);
+ border-color:#43ed0a;
+ box-shadow:0 0 8px rgba(67,237,10,.14);
 }
 
-.prefix,
+.prefix{
+ color:#43ed0a;
+ font-size:24px;
+ font-weight:bold;
+}
+
 .suffix{
-  color:#43ed0a;
-  font-size:26px;
-  font-weight:bold;
+ color:#43ed0a;
+ font-size:25px;
+ font-weight:bold;
 }
 
 .display{
-  flex:1;
-  min-width:0;
-  padding:0 12px;
-  color:#fff;
-  font-size:29px;
-  font-weight:bold;
-  overflow:hidden;
-  white-space:nowrap;
-}
+ flex:1;
+ min-width:0;
 
-.suffix{
-  padding-left:5px;
+ padding:0 10px;
+
+ color:white;
+
+ font-size:25px;
+ font-weight:bold;
+
+ overflow:hidden;
+ white-space:nowrap;
 }
 
 /* ================= RESULTADO ================= */
 
 .result{
-  margin-top:13px;
-  border:2px solid #329b28;
-  border-radius:27px;
-  padding:15px 18px 16px;
-  text-align:center;
-  background:
-    radial-gradient(circle at 75% 15%,rgba(47,180,28,.20),transparent 45%),
-    #031008;
+ margin-top:7px;
+
+ border:2px solid #329b28;
+ border-radius:23px;
+
+ padding:9px 14px 10px;
+
+ text-align:center;
+
+ background:
+ radial-gradient(
+  circle at 75% 15%,
+  rgba(47,180,28,.18),
+  transparent 48%
+ ),
+ #031008;
 }
 
 .result-title{
-  color:#929b96;
-  font-size:14px;
-  font-weight:bold;
-  letter-spacing:1.7px;
+ color:#929b96;
+ font-size:11px;
+ font-weight:bold;
+ letter-spacing:1.4px;
 }
 
 .result-main{
-  color:#43ed0a;
-  font-size:clamp(42px,12vw,64px);
-  font-weight:900;
-  margin:6px 0 11px;
+ color:#43ed0a;
+ font-size:clamp(37px,10vw,53px);
+ font-weight:900;
+ line-height:1;
+ margin:4px 0 7px;
 }
 
 .result-line{
-  height:1px;
-  background:#24442b;
-  margin-bottom:12px;
+ height:1px;
+ background:#24442b;
+ margin-bottom:7px;
 }
 
 .result-bottom{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+ display:grid;
+ grid-template-columns:1fr 1fr;
 }
 
 .result-item:first-child{
-  border-right:1px solid #345039;
+ border-right:1px solid #345039;
 }
 
 .result-small{
-  color:#737d77;
-  font-size:11px;
-  margin-bottom:5px;
+ color:#737d77;
+ font-size:9px;
+ margin-bottom:3px;
 }
 
 .result-value{
-  color:#fff;
-  font-size:20px;
-  font-weight:bold;
+ color:white;
+ font-size:17px;
+ font-weight:bold;
 }
 
 /* ================= TECLADO ================= */
 
 .keypad{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-  margin-top:12px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:5px;
+
+ margin-top:7px;
 }
 
 .key{
-  min-width:0;
-  height:64px;
-  border:2px solid #173c23;
-  border-radius:18px;
-  background:#07140c;
-  color:#fff;
-  font-size:26px;
-  font-weight:bold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+ height:51px;
+
+ border:2px solid #173c23;
+ border-radius:15px;
+
+ background:#07140c;
+ color:white;
+
+ font-size:22px;
+ font-weight:bold;
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
 }
 
 .key.green{
-  color:#43ed0a;
+ color:#43ed0a;
 }
 
 .key.equal{
-  background:#43ed0a;
-  color:#031006;
-  border-color:#43ed0a;
+ background:#43ed0a;
+ border-color:#43ed0a;
+ color:#031006;
 }
 
 .key.zero{
-  grid-column:span 2;
+ grid-column:span 2;
 }
 
 .key svg{
-  width:25px;
-  height:25px;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:2.5;
+ width:22px;
+ height:22px;
+ stroke:currentColor;
+ fill:none;
+ stroke-width:2.5;
 }
 
 .key:active{
-  transform:scale(.95);
-  background:#102319;
+ transform:scale(.95);
 }
 
-.key.equal:active{
-  background:#32c909;
+/* ================= FOOTER ================= */
+
+.footer{
+ flex:0 0 auto;
+
+ text-align:center;
+
+ color:#707b74;
+
+ font-size:9px;
+
+ padding-top:5px;
+}
+
+.footer strong{
+ color:#43ed0a;
 }
 
 /* ================= CALCULADORA ================= */
 
 .calculator{
-  padding-top:2px;
+ height:100%;
+ display:flex;
+ flex-direction:column;
 }
 
 .calc-display{
-  min-height:130px;
-  padding:10px 7px 16px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  text-align:right;
+ flex:1 1 auto;
+ min-height:0;
+
+ display:flex;
+ flex-direction:column;
+ justify-content:flex-end;
+
+ text-align:right;
+
+ padding:5px 7px 8px;
 }
 
 .calc-expression{
-  min-height:25px;
-  color:#6f7a73;
-  font-size:18px;
-  word-break:break-all;
+ min-height:22px;
+ color:#727c76;
+ font-size:15px;
+ word-break:break-all;
 }
 
 .calc-number{
-  color:#fff;
-  font-size:clamp(48px,14vw,76px);
-  font-weight:300;
-  line-height:1;
-  word-break:break-all;
+ color:white;
+ font-size:clamp(45px,13vw,70px);
+ font-weight:300;
+ line-height:1;
+ word-break:break-all;
 }
 
 .calc-keypad{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
+ flex:0 0 auto;
+
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+
+ gap:7px;
+
+ padding-bottom:2px;
 }
 
 .calc-key{
-  aspect-ratio:1;
-  border-radius:50%;
-  border:2px solid #24432d;
-  background:#17221b;
-  color:#fff;
-  font-size:clamp(25px,7vw,40px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+ width:100%;
+ aspect-ratio:1;
+
+ border-radius:50%;
+
+ border:2px solid #24432d;
+
+ background:#17251c;
+
+ color:white;
+
+ font-size:clamp(23px,6.5vw,37px);
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
 }
 
 .calc-key.function{
-  background:#28402f;
+ background:#284331;
 }
 
 .calc-key.operator{
-  background:#43ed0a;
-  border-color:#43ed0a;
-  color:#031006;
-}
-
-.calc-key:active{
-  transform:scale(.93);
+ background:#43ed0a;
+ border-color:#43ed0a;
+ color:#031006;
 }
 
 .calc-key.equal{
-  background:#43ed0a;
-  color:#031006;
+ background:#43ed0a;
+ color:#031006;
 }
 
-/* ================= RODAPÉ ================= */
-
-.footer{
-  text-align:center;
-  color:#707b74;
-  font-size:11px;
-  margin-top:17px;
-  padding-bottom:5px;
-}
-
-.footer strong{
-  color:#43ed0a;
+.calc-key:active{
+ transform:scale(.93);
 }
 
 /* ================= CELULARES PEQUENOS ================= */
 
-@media(max-width:390px){
+@media(max-height:700px){
 
-  .app{
-    padding-left:10px;
-    padding-right:10px;
-  }
+ .logo{
+  font-size:47px;
+ }
 
-  .tabs{
-    gap:5px;
-  }
+ .logo-sub{
+  font-size:23px;
+  margin-top:4px;
+ }
 
-  .tab{
-    height:79px;
-    border-radius:17px;
-    font-size:9px;
-  }
+ .subtitle{
+  margin-top:4px;
+ }
 
-  .tab svg{
-    width:24px;
-    height:24px;
-  }
+ .header-btn{
+  width:49px;
+  height:49px;
+ }
 
-  .panel{
-    padding:14px 13px;
-  }
+ .tabs{
+  margin-top:5px;
+  margin-bottom:5px;
+ }
 
-  .field{
-    margin-bottom:24px;
-  }
+ .tab{
+  height:62px;
+ }
 
-  .inputbox{
-    height:63px;
-  }
+ .tab svg{
+  width:21px;
+  height:21px;
+ }
 
-  .key{
-    height:58px;
-    border-radius:16px;
-    font-size:23px;
-  }
+ .panel{
+  padding:8px 10px;
+ }
 
-  .result{
-    padding:13px 14px;
-  }
+ .field{
+  margin-bottom:8px;
+ }
 
-  .result-main{
-    font-size:40px;
-  }
+ .inputbox{
+  height:48px;
+ }
+
+ .result{
+  padding:7px 12px;
+ }
+
+ .result-main{
+  font-size:37px;
+  margin:3px 0 5px;
+ }
+
+ .key{
+  height:45px;
+ }
+
+ .footer{
+  padding-top:3px;
+ }
 }
+
 </style>
 </head>
 
@@ -466,23 +547,31 @@ button{
 
 <header class="header">
 
-<button class="header-btn header-left" onclick="showInfo('menu')" aria-label="Menu">
+<button class="header-btn header-left" onclick="showInfo()">
+
 <svg viewBox="0 0 24 24">
 <path d="M4 6h16M4 12h16M4 18h16"/>
 </svg>
+
 </button>
 
-<button class="header-btn header-right" onclick="showInfo('info')" aria-label="Informações">
+<button class="header-btn header-right" onclick="showAbout()">
+
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="9"/>
 <path d="M12 10v6"/>
 <path d="M12 7h.01"/>
 </svg>
+
 </button>
 
 <div class="logo">SIENA</div>
+
 <div class="logo-sub">MARGEM</div>
-<div class="subtitle">SIMULADOR COMERCIAL</div>
+
+<div class="subtitle">
+SIMULADOR COMERCIAL
+</div>
 
 </header>
 
@@ -490,310 +579,557 @@ button{
 
 <div class="tabs">
 
-<button class="tab active" data-tab="margem" onclick="changeTab('margem')">
+<button class="tab active"
+data-tab="margem"
+onclick="changeTab('margem')">
+
 <svg viewBox="0 0 24 24">
 <path d="M4 19V9M10 19V4M16 19v-7M22 19V7"/>
 </svg>
+
 <span>MARGEM</span>
+
 </button>
 
-<button class="tab" data-tab="preco" onclick="changeTab('preco')">
+<button class="tab"
+data-tab="preco"
+onclick="changeTab('preco')">
+
 <svg viewBox="0 0 24 24">
 <path d="M3 12l9-9h7l2 2v7l-9 9-9-9z"/>
 <circle cx="16" cy="7" r="1.3"/>
 </svg>
+
 <span>PREÇO</span>
+
 </button>
 
-<button class="tab" data-tab="desconto" onclick="changeTab('desconto')">
+<button class="tab"
+data-tab="desconto"
+onclick="changeTab('desconto')">
+
 <svg viewBox="0 0 24 24">
 <path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"/>
 <path d="M9 9l6 6M15 9l-6 6"/>
 <circle cx="9" cy="9" r="1"/>
 <circle cx="15" cy="15" r="1"/>
 </svg>
+
 <span>DESCONTO</span>
+
 </button>
 
-<button class="tab" data-tab="markup" onclick="changeTab('markup')">
+<button class="tab"
+data-tab="markup"
+onclick="changeTab('markup')">
+
 <svg viewBox="0 0 24 24">
 <path d="M5 19L19 5"/>
 <path d="M10 5h9v9"/>
 </svg>
+
 <span>MARKUP</span>
+
 </button>
 
-<button class="tab" data-tab="calculadora" onclick="changeTab('calculadora')">
+<button class="tab"
+data-tab="calculadora"
+onclick="changeTab('calculadora')">
+
 <svg viewBox="0 0 24 24">
 <rect x="5" y="2.5" width="14" height="19" rx="2"/>
 <rect x="8" y="5" width="8" height="3"/>
 <path d="M8 11h2M14 11h2M8 15h2M14 15h2M8 19h2M14 19h2"/>
 </svg>
+
 <span>CALCULADORA</span>
+
 </button>
 
 </div>
 
-<!-- =====================================================
-     MARGEM
-===================================================== -->
+<!-- ================= MARGEM ================= -->
 
 <section id="margem" class="screen">
 
 <div class="panel">
 
 <div class="field">
-<label class="label">CUSTO DO PRODUTO</label>
 
-<div class="inputbox active" id="box-custo">
+<label class="label">
+CUSTO DO PRODUTO
+</label>
+
+<div class="inputbox active"
+id="box-custo">
+
 <span class="prefix">R$</span>
-<div class="display" id="custo">0</div>
+
+<div class="display"
+id="custo">
+0
 </div>
+
+</div>
+
 </div>
 
 <div class="field">
-<label class="label">MARGEM DESEJADA (%)</label>
 
-<div class="inputbox" id="box-margem">
-<div class="display" id="margem">0</div>
-<span class="suffix">%</span>
+<label class="label">
+MARGEM DESEJADA (%)
+</label>
+
+<div class="inputbox"
+id="box-margem">
+
+<div class="display"
+id="margem">
+0
 </div>
+
+<span class="suffix">%</span>
+
+</div>
+
 </div>
 
 </div>
 
 <div class="result">
 
-<div class="result-title">PREÇO DE VENDA</div>
+<div class="result-title">
+PREÇO DE VENDA
+</div>
 
-<div class="result-main" id="resultadoMargem">R$ 0,00</div>
+<div class="result-main"
+id="resultadoMargem">
+R$ 0,00
+</div>
 
 <div class="result-line"></div>
 
 <div class="result-bottom">
 
 <div class="result-item">
-<div class="result-small">LUCRO</div>
-<div class="result-value" id="lucroMargem">R$ 0,00</div>
+
+<div class="result-small">
+LUCRO
+</div>
+
+<div class="result-value"
+id="lucroMargem">
+R$ 0,00
+</div>
+
 </div>
 
 <div class="result-item">
-<div class="result-small">MARGEM</div>
-<div class="result-value" id="percentMargem">0,00%</div>
+
+<div class="result-small">
+MARGEM
+</div>
+
+<div class="result-value"
+id="percentMargem">
+0,00%
 </div>
 
 </div>
+
 </div>
 
-<div class="keypad" id="keypadMargem"></div>
+</div>
+
+<div class="keypad"
+id="keypadMargem">
+</div>
 
 </section>
 
-<!-- =====================================================
-     PREÇO
-===================================================== -->
+<!-- ================= PREÇO ================= -->
 
-<section id="preco" class="screen" style="display:none">
+<section id="preco"
+class="screen"
+style="display:none">
 
 <div class="panel">
 
 <div class="field">
-<label class="label">CUSTO DO PRODUTO</label>
 
-<div class="inputbox" id="box-precoCusto">
+<label class="label">
+CUSTO DO PRODUTO
+</label>
+
+<div class="inputbox"
+id="box-precoCusto">
+
 <span class="prefix">R$</span>
-<div class="display" id="precoCusto">0</div>
+
+<div class="display"
+id="precoCusto">
+0
 </div>
+
+</div>
+
 </div>
 
 <div class="field">
-<label class="label">PREÇO DE VENDA</label>
 
-<div class="inputbox" id="box-precoVenda">
+<label class="label">
+PREÇO DE VENDA
+</label>
+
+<div class="inputbox"
+id="box-precoVenda">
+
 <span class="prefix">R$</span>
-<div class="display" id="precoVenda">0</div>
+
+<div class="display"
+id="precoVenda">
+0
 </div>
+
+</div>
+
 </div>
 
 </div>
 
 <div class="result">
 
-<div class="result-title">MARGEM OBTIDA</div>
+<div class="result-title">
+MARGEM OBTIDA
+</div>
 
-<div class="result-main" id="resultadoPreco">0,00%</div>
+<div class="result-main"
+id="resultadoPreco">
+0,00%
+</div>
 
 <div class="result-line"></div>
 
 <div class="result-bottom">
 
 <div class="result-item">
-<div class="result-small">LUCRO</div>
-<div class="result-value" id="lucroPreco">R$ 0,00</div>
+
+<div class="result-small">
+LUCRO
+</div>
+
+<div class="result-value"
+id="lucroPreco">
+R$ 0,00
+</div>
+
 </div>
 
 <div class="result-item">
-<div class="result-small">PREÇO</div>
-<div class="result-value" id="valorPreco">R$ 0,00</div>
+
+<div class="result-small">
+PREÇO
+</div>
+
+<div class="result-value"
+id="valorPreco">
+R$ 0,00
 </div>
 
 </div>
+
 </div>
 
-<div class="keypad" id="keypadPreco"></div>
+</div>
+
+<div class="keypad"
+id="keypadPreco">
+</div>
 
 </section>
 
-<!-- =====================================================
-     DESCONTO
-===================================================== -->
+<!-- ================= DESCONTO ================= -->
 
-<section id="desconto" class="screen" style="display:none">
+<section id="desconto"
+class="screen"
+style="display:none">
 
 <div class="panel">
 
 <div class="field">
-<label class="label">PREÇO ORIGINAL</label>
 
-<div class="inputbox" id="box-descPreco">
+<label class="label">
+PREÇO ORIGINAL
+</label>
+
+<div class="inputbox"
+id="box-descPreco">
+
 <span class="prefix">R$</span>
-<div class="display" id="descPreco">0</div>
+
+<div class="display"
+id="descPreco">
+0
 </div>
+
+</div>
+
 </div>
 
 <div class="field">
-<label class="label">DESCONTO (%)</label>
 
-<div class="inputbox" id="box-descPercent">
-<div class="display" id="descPercent">0</div>
-<span class="suffix">%</span>
+<label class="label">
+DESCONTO (%)
+</label>
+
+<div class="inputbox"
+id="box-descPercent">
+
+<div class="display"
+id="descPercent">
+0
 </div>
+
+<span class="suffix">%</span>
+
+</div>
+
 </div>
 
 </div>
 
 <div class="result">
 
-<div class="result-title">PREÇO COM DESCONTO</div>
+<div class="result-title">
+PREÇO COM DESCONTO
+</div>
 
-<div class="result-main" id="resultadoDesconto">R$ 0,00</div>
+<div class="result-main"
+id="resultadoDesconto">
+R$ 0,00
+</div>
 
 <div class="result-line"></div>
 
 <div class="result-bottom">
 
 <div class="result-item">
-<div class="result-small">DESCONTO</div>
-<div class="result-value" id="valorDesconto">R$ 0,00</div>
+
+<div class="result-small">
+DESCONTO
+</div>
+
+<div class="result-value"
+id="valorDesconto">
+R$ 0,00
+</div>
+
 </div>
 
 <div class="result-item">
-<div class="result-small">PERCENTUAL</div>
-<div class="result-value" id="percentDesconto">0,00%</div>
+
+<div class="result-small">
+PERCENTUAL
+</div>
+
+<div class="result-value"
+id="percentDesconto">
+0,00%
 </div>
 
 </div>
+
 </div>
 
-<div class="keypad" id="keypadDesconto"></div>
+</div>
+
+<div class="keypad"
+id="keypadDesconto">
+</div>
 
 </section>
 
-<!-- =====================================================
-     MARKUP
-===================================================== -->
+<!-- ================= MARKUP ================= -->
 
-<section id="markup" class="screen" style="display:none">
+<section id="markup"
+class="screen"
+style="display:none">
 
 <div class="panel">
 
 <div class="field">
-<label class="label">CUSTO DO PRODUTO</label>
 
-<div class="inputbox" id="box-markupCusto">
+<label class="label">
+CUSTO DO PRODUTO
+</label>
+
+<div class="inputbox"
+id="box-markupCusto">
+
 <span class="prefix">R$</span>
-<div class="display" id="markupCusto">0</div>
+
+<div class="display"
+id="markupCusto">
+0
 </div>
+
+</div>
+
 </div>
 
 <div class="field">
-<label class="label">MARKUP (%)</label>
 
-<div class="inputbox" id="box-markupPercent">
-<div class="display" id="markupPercent">0</div>
-<span class="suffix">%</span>
+<label class="label">
+MARKUP (%)
+</label>
+
+<div class="inputbox"
+id="box-markupPercent">
+
+<div class="display"
+id="markupPercent">
+0
 </div>
+
+<span class="suffix">%</span>
+
+</div>
+
 </div>
 
 </div>
 
 <div class="result">
 
-<div class="result-title">PREÇO DE VENDA</div>
+<div class="result-title">
+PREÇO DE VENDA
+</div>
 
-<div class="result-main" id="resultadoMarkup">R$ 0,00</div>
+<div class="result-main"
+id="resultadoMarkup">
+R$ 0,00
+</div>
 
 <div class="result-line"></div>
 
 <div class="result-bottom">
 
 <div class="result-item">
-<div class="result-small">LUCRO</div>
-<div class="result-value" id="lucroMarkup">R$ 0,00</div>
+
+<div class="result-small">
+LUCRO
+</div>
+
+<div class="result-value"
+id="lucroMarkup">
+R$ 0,00
+</div>
+
 </div>
 
 <div class="result-item">
-<div class="result-small">MARKUP</div>
-<div class="result-value" id="percentMarkup">0,00%</div>
+
+<div class="result-small">
+MARKUP
+</div>
+
+<div class="result-value"
+id="percentMarkup">
+0,00%
 </div>
 
 </div>
+
 </div>
 
-<div class="keypad" id="keypadMarkup"></div>
+</div>
+
+<div class="keypad"
+id="keypadMarkup">
+</div>
 
 </section>
 
-<!-- =====================================================
-     CALCULADORA
-===================================================== -->
+<!-- ================= CALCULADORA ================= -->
 
-<section id="calculadora" class="screen calculator" style="display:none">
+<section id="calculadora"
+class="screen calculator"
+style="display:none">
 
 <div class="calc-display">
 
-<div class="calc-expression" id="calcExpression"></div>
+<div class="calc-expression"
+id="calcExpression">
+</div>
 
-<div class="calc-number" id="calcNumber">0</div>
+<div class="calc-number"
+id="calcNumber">
+0
+</div>
 
 </div>
 
 <div class="calc-keypad">
 
-<button class="calc-key function" onclick="calcBack()">⌫</button>
-<button class="calc-key function" onclick="calcClear()">AC</button>
-<button class="calc-key function" onclick="calcPercent()">%</button>
-<button class="calc-key operator" onclick="calcOperator('/')">÷</button>
+<button class="calc-key function"
+onclick="calcBack()">⌫</button>
 
-<button class="calc-key" onclick="calcNumber('7')">7</button>
-<button class="calc-key" onclick="calcNumber('8')">8</button>
-<button class="calc-key" onclick="calcNumber('9')">9</button>
-<button class="calc-key operator" onclick="calcOperator('*')">×</button>
+<button class="calc-key function"
+onclick="calcClear()">AC</button>
 
-<button class="calc-key" onclick="calcNumber('4')">4</button>
-<button class="calc-key" onclick="calcNumber('5')">5</button>
-<button class="calc-key" onclick="calcNumber('6')">6</button>
-<button class="calc-key operator" onclick="calcOperator('-')">−</button>
+<button class="calc-key function"
+onclick="calcPercent()">%</button>
 
-<button class="calc-key" onclick="calcNumber('1')">1</button>
-<button class="calc-key" onclick="calcNumber('2')">2</button>
-<button class="calc-key" onclick="calcNumber('3')">3</button>
-<button class="calc-key operator" onclick="calcOperator('+')">+</button>
+<button class="calc-key operator"
+onclick="calcOperator('/')">÷</button>
 
-<button class="calc-key" onclick="calcSign()">+/−</button>
-<button class="calc-key" onclick="calcNumber('0')">0</button>
-<button class="calc-key" onclick="calcDecimal()">,</button>
-<button class="calc-key equal" onclick="calcEqual()">=</button>
+<button class="calc-key"
+onclick="calcNumber('7')">7</button>
+
+<button class="calc-key"
+onclick="calcNumber('8')">8</button>
+
+<button class="calc-key"
+onclick="calcNumber('9')">9</button>
+
+<button class="calc-key operator"
+onclick="calcOperator('*')">×</button>
+
+<button class="calc-key"
+onclick="calcNumber('4')">4</button>
+
+<button class="calc-key"
+onclick="calcNumber('5')">5</button>
+
+<button class="calc-key"
+onclick="calcNumber('6')">6</button>
+
+<button class="calc-key operator"
+onclick="calcOperator('-')">−</button>
+
+<button class="calc-key"
+onclick="calcNumber('1')">1</button>
+
+<button class="calc-key"
+onclick="calcNumber('2')">2</button>
+
+<button class="calc-key"
+onclick="calcNumber('3')">3</button>
+
+<button class="calc-key operator"
+onclick="calcOperator('+')">+</button>
+
+<button class="calc-key"
+onclick="calcSign()">+/−</button>
+
+<button class="calc-key"
+onclick="calcNumber('0')">0</button>
+
+<button class="calc-key"
+onclick="calcDecimal()">,</button>
+
+<button class="calc-key equal"
+onclick="calcEqual()">=</button>
 
 </div>
 
@@ -807,377 +1143,375 @@ Criado e desenvolvido por <strong>João Siena</strong>
 
 <script>
 
-/* =====================================================
-   ESTADO
-===================================================== */
+/* ================= ESTADO ================= */
 
 let currentTab="margem";
 let activeField="custo";
 
-/* =====================================================
-   UTILITÁRIOS
-===================================================== */
+/* ================= FORMATAÇÃO ================= */
 
-function num(id){
+function numberValue(id){
 
-  const el=document.getElementById(id);
+ const el=document.getElementById(id);
 
-  if(!el)return 0;
+ if(!el)return 0;
 
-  return parseFloat(
-    el.textContent
-      .replace(/\./g,"")
-      .replace(",",".")
-  ) || 0;
+ let value=el.textContent
+ .replace(/\./g,"")
+ .replace(",",".")
+ .trim();
+
+ return parseFloat(value)||0;
 }
 
 function money(value){
 
-  return Number(value || 0).toLocaleString("pt-BR",{
-    style:"currency",
-    currency:"BRL"
-  });
+ return Number(value||0).toLocaleString(
+ "pt-BR",
+ {
+  style:"currency",
+  currency:"BRL"
+ }
+ );
 
 }
 
-function percent(value){
+function pct(value){
 
-  return Number(value || 0)
-    .toFixed(2)
-    .replace(".",",")+"%";
+ return Number(value||0)
+ .toFixed(2)
+ .replace(".",",")+"%";
 
 }
 
-/* =====================================================
-   TROCA DE ABA
-===================================================== */
+/* ================= ABAS ================= */
 
 function changeTab(tab){
 
-  currentTab=tab;
+ currentTab=tab;
 
-  document.querySelectorAll(".screen").forEach(function(screen){
+ document.querySelectorAll(".screen")
+ .forEach(function(screen){
 
-    screen.style.display=
-      screen.id===tab ? "block" : "none";
+  screen.style.display=
+   screen.id===tab ? "block" : "none";
 
-  });
+ });
 
-  document.querySelectorAll(".tab").forEach(function(button){
+ document.querySelectorAll(".tab")
+ .forEach(function(btn){
 
-    button.classList.toggle(
-      "active",
-      button.dataset.tab===tab
-    );
+  btn.classList.toggle(
+   "active",
+   btn.dataset.tab===tab
+  );
 
-  });
+ });
 
-  if(tab==="margem"){
-    activeField="custo";
-    setActive("custo");
-    calculateMargem();
-  }
+ if(tab==="margem"){
+  activeField="custo";
+  setActive("custo");
+  calculateMargem();
+ }
 
-  if(tab==="preco"){
-    activeField="precoCusto";
-    setActive("precoCusto");
-    calculatePreco();
-  }
+ if(tab==="preco"){
+  activeField="precoCusto";
+  setActive("precoCusto");
+  calculatePreco();
+ }
 
-  if(tab==="desconto"){
-    activeField="descPreco";
-    setActive("descPreco");
-    calculateDesconto();
-  }
+ if(tab==="desconto"){
+  activeField="descPreco";
+  setActive("descPreco");
+  calculateDesconto();
+ }
 
-  if(tab==="markup"){
-    activeField="markupCusto";
-    setActive("markupCusto");
-    calculateMarkup();
-  }
+ if(tab==="markup"){
+  activeField="markupCusto";
+  setActive("markupCusto");
+ }
 
 }
 
-/* =====================================================
-   CAMPOS
-===================================================== */
+/* ================= CAMPO ATIVO ================= */
 
 function setActive(id){
 
-  document.querySelectorAll(".inputbox")
-    .forEach(function(box){
-      box.classList.remove("active");
-    });
+ document.querySelectorAll(".inputbox")
+ .forEach(function(box){
+  box.classList.remove("active");
+ });
 
-  const box=document.getElementById("box-"+id);
+ const box=document.getElementById("box-"+id);
 
-  if(box){
-    box.classList.add("active");
-  }
-
-}
-
-/* =====================================================
-   TECLADO COMERCIAL
-===================================================== */
-
-function createKeypad(containerId){
-
-  const container=document.getElementById(containerId);
-
-  const keys=[
-    ["7",""],
-    ["8",""],
-    ["9",""],
-    ["back","green"],
-
-    ["4",""],
-    ["5",""],
-    ["6",""],
-    ["00","green"],
-
-    ["1",""],
-    ["2",""],
-    ["3",""],
-    [",","green"],
-
-    ["0","zero"],
-    ["AC","green"],
-    ["=","equal"]
-  ];
-
-  keys.forEach(function(item){
-
-    const button=document.createElement("button");
-
-    button.className="key "+item[1];
-
-    if(item[0]==="back"){
-
-      button.innerHTML=
-      '<svg viewBox="0 0 24 24">'+
-      '<path d="M3 12l4-6h14v12H7z"/>'+
-      '<path d="M10 9l6 6M16 9l-6 6"/>'+
-      '</svg>';
-
-      button.onclick=backspace;
-
-    }else{
-
-      button.textContent=item[0];
-
-      if(item[0]==="AC"){
-        button.onclick=clearActive;
-      }else if(item[0]==="="){
-        button.onclick=calculateCurrent;
-      }else{
-        button.onclick=function(){
-          addDigit(item[0]);
-        };
-      }
-
-    }
-
-    container.appendChild(button);
-
-  });
+ if(box){
+  box.classList.add("active");
+ }
 
 }
 
-/* =====================================================
-   DIGITAÇÃO
-===================================================== */
+/* ================= TECLADOS ================= */
 
-function addDigit(value){
+function createKeypad(id){
 
-  const el=document.getElementById(activeField);
+ const area=document.getElementById(id);
 
-  if(!el)return;
+ const keys=[
+  ["7",""],
+  ["8",""],
+  ["9",""],
+  ["back","green"],
 
-  let current=el.textContent.trim();
+  ["4",""],
+  ["5",""],
+  ["6",""],
+  ["00","green"],
 
-  if(value==="," || value==="."){
+  ["1",""],
+  ["2",""],
+  ["3",""],
+  [",","green"],
 
-    if(current.includes(",") || current.includes(".")){
-      return;
-    }
+  ["0","zero"],
+  ["AC","green"],
+  ["=","equal"]
+ ];
 
-    if(current==="0"){
-      current="0,";
-    }else{
-      current+=",";
-    }
+ keys.forEach(function(item){
+
+  const b=document.createElement("button");
+
+  b.className="key "+item[1];
+
+  if(item[0]==="back"){
+
+   b.innerHTML=
+   '<svg viewBox="0 0 24 24">'+
+   '<path d="M3 12l4-6h14v12H7z"/>'+
+   '<path d="M10 9l6 6M16 9l-6 6"/>'+
+   '</svg>';
+
+   b.onclick=backspace;
 
   }else{
 
-    if(current==="0"){
-      current="";
-    }
+   b.textContent=item[0];
 
-    current+=value;
+   if(item[0]==="AC"){
+    b.onclick=clearField;
+   }else if(item[0]==="="){
+    b.onclick=calculateCurrent;
+   }else{
+    b.onclick=function(){
+     addDigit(item[0]);
+    };
+   }
 
   }
 
-  el.textContent=current;
+  area.appendChild(b);
 
-  calculateCurrent();
+ });
+
+}
+
+/* ================= ENTRADA ================= */
+
+function addDigit(value){
+
+ const el=document.getElementById(activeField);
+
+ if(!el)return;
+
+ let current=el.textContent.trim();
+
+ if(value===","){
+
+  if(current.includes(","))return;
+
+  if(current==="0"){
+   current="0,";
+  }else{
+   current+=",";
+  }
+
+ }else{
+
+  if(current==="0"){
+   current="";
+  }
+
+  current+=value;
+
+ }
+
+ el.textContent=current;
+
+ calculateCurrent();
 
 }
 
 function backspace(){
 
-  const el=document.getElementById(activeField);
+ const el=document.getElementById(activeField);
 
-  if(!el)return;
+ if(!el)return;
 
-  let value=el.textContent;
+ let value=el.textContent;
 
-  value=value.slice(0,-1);
+ value=value.slice(0,-1);
 
-  if(value==="" || value==="-"){
-    value="0";
-  }
+ if(value===""){
+  value="0";
+ }
 
-  el.textContent=value;
+ el.textContent=value;
 
-  calculateCurrent();
+ calculateCurrent();
 
 }
 
-function clearActive(){
+function clearField(){
 
-  const el=document.getElementById(activeField);
+ const el=document.getElementById(activeField);
 
-  if(el){
-    el.textContent="0";
-  }
+ if(el){
+  el.textContent="0";
+ }
 
-  calculateCurrent();
+ calculateCurrent();
 
 }
 
 function calculateCurrent(){
 
-  if(currentTab==="margem")calculateMargem();
-  if(currentTab==="preco")calculatePreco();
-  if(currentTab==="desconto")calculateDesconto();
-  if(currentTab==="markup")calculateMarkup();
+ if(currentTab==="margem")calculateMargem();
+
+ if(currentTab==="preco")calculatePreco();
+
+ if(currentTab==="desconto")calculateDesconto();
+
+ if(currentTab==="markup")calculateMarkup();
 
 }
 
-/* =====================================================
-   MARGEM
-===================================================== */
+/* ================= MARGEM ================= */
 
 function calculateMargem(){
 
-  const custo=num("custo");
-  const margem=num("margem");
+ const custo=numberValue("custo");
+ const margem=numberValue("margem");
 
-  let venda=0;
+ let venda=0;
 
-  if(custo>0){
+ if(custo>0){
 
-    if(margem<100){
+  if(margem<100){
 
-      venda=custo/(1-(margem/100));
-
-    }else{
-
-      venda=0;
-
-    }
+   venda=custo/(1-margem/100);
 
   }
 
-  const lucro=venda-custo;
+ }
 
-  document.getElementById("resultadoMargem")
-    .textContent=money(venda);
+ const lucro=venda-custo;
 
-  document.getElementById("lucroMargem")
-    .textContent=money(lucro);
+ document.getElementById("resultadoMargem")
+ .textContent=money(venda);
 
-  document.getElementById("percentMargem")
-    .textContent=percent(margem);
+ document.getElementById("lucroMargem")
+ .textContent=money(lucro);
+
+ document.getElementById("percentMargem")
+ .textContent=pct(margem);
 
 }
 
-/* =====================================================
-   PREÇO
-===================================================== */
+/* ================= PREÇO ================= */
 
 function calculatePreco(){
 
-  const custo=num("precoCusto");
-  const venda=num("precoVenda");
+ const custo=numberValue("precoCusto");
+ const venda=numberValue("precoVenda");
 
-  let margem=0;
+ let margem=0;
 
-  if(venda>0){
-    margem=((venda-custo)/venda)*100;
-  }
+ if(venda>0){
+  margem=((venda-custo)/venda)*100;
+ }
 
-  document.getElementById("resultadoPreco")
-    .textContent=percent(margem);
+ document.getElementById("resultadoPreco")
+ .textContent=pct(margem);
 
-  document.getElementById("lucroPreco")
-    .textContent=money(venda-custo);
+ document.getElementById("lucroPreco")
+ .textContent=money(venda-custo);
 
-  document.getElementById("valorPreco")
-    .textContent=money(venda);
+ document.getElementById("valorPreco")
+ .textContent=money(venda);
 
 }
 
-/* =====================================================
-   DESCONTO
-===================================================== */
+/* ================= DESCONTO ================= */
 
 function calculateDesconto(){
 
-  const preco=num("descPreco");
-  const desconto=num("descPercent");
+ const preco=numberValue("descPreco");
+ const desconto=numberValue("descPercent");
 
-  const valorDesconto=preco*(desconto/100);
-  const final=preco-valorDesconto;
+ const valor=preco*desconto/100;
 
-  document.getElementById("resultadoDesconto")
-    .textContent=money(final);
+ const final=preco-valor;
 
-  document.getElementById("valorDesconto")
-    .textContent=money(valorDesconto);
+ document.getElementById("resultadoDesconto")
+ .textContent=money(final);
 
-  document.getElementById("percentDesconto")
-    .textContent=percent(desconto);
+ document.getElementById("valorDesconto")
+ .textContent=money(valor);
+
+ document.getElementById("percentDesconto")
+ .textContent=pct(desconto);
 
 }
 
-/* =====================================================
-   MARKUP
-===================================================== */
+/* ================= MARKUP ================= */
 
 function calculateMarkup(){
 
-  const custo=num("markupCusto");
-  const markup=num("markupPercent");
+ const custo=numberValue("markupCusto");
+ const markup=numberValue("markupPercent");
 
-  const venda=custo*(1+(markup/100));
-  const lucro=venda-custo;
+ const venda=custo*(1+markup/100);
 
-  document.getElementById("resultadoMarkup")
-    .textContent=money(venda);
+ document.getElementById("resultadoMarkup")
+ .textContent=money(venda);
 
-  document.getElementById("lucroMarkup")
-    .textContent=money(lucro);
+ document.getElementById("lucroMarkup")
+ .textContent=money(venda-custo);
 
-  document.getElementById("percentMarkup")
-    .textContent=percent(markup);
+ document.getElementById("percentMarkup")
+ .textContent=pct(markup);
 
 }
 
-/* =====================================================
-   CALCULADORA COMPLETA
-===================================================== */
+/* ================= SELEÇÃO DOS CAMPOS ================= */
+
+document.addEventListener("click",function(e){
+
+ const box=e.target.closest(".inputbox");
+
+ if(!box)return;
+
+ const display=box.querySelector(".display");
+
+ if(!display)return;
+
+ activeField=display.id;
+
+ setActive(activeField);
+
+});
+
+/* ================= CALCULADORA ================= */
 
 let calcValue="0";
 let calcStored=null;
@@ -1187,253 +1521,233 @@ let calcExpr="";
 
 function updateCalc(){
 
-  document.getElementById("calcNumber")
-    .textContent=calcValue.replace(".",",");
+ document.getElementById("calcNumber")
+ .textContent=calcValue.replace(".",",");
 
-  document.getElementById("calcExpression")
-    .textContent=calcExpr;
+ document.getElementById("calcExpression")
+ .textContent=calcExpr;
 
 }
 
 function calcNumber(n){
 
-  if(calcWaiting){
+ if(calcWaiting){
 
-    calcValue=n;
-    calcWaiting=false;
+  calcValue=n;
+  calcWaiting=false;
 
+ }else{
+
+  if(calcValue==="0"){
+   calcValue=n;
   }else{
-
-    if(calcValue==="0"){
-      calcValue=n;
-    }else{
-      calcValue+=n;
-    }
-
+   calcValue+=n;
   }
 
-  updateCalc();
+ }
+
+ updateCalc();
 
 }
 
 function calcDecimal(){
 
-  if(calcWaiting){
+ if(calcWaiting){
 
-    calcValue="0.";
-    calcWaiting=false;
+  calcValue="0.";
+  calcWaiting=false;
 
-  }else if(!calcValue.includes(".")){
+ }else if(!calcValue.includes(".")){
 
-    calcValue+=".";
+  calcValue+=".";
 
-  }
+ }
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function calcOperator(op){
 
-  const value=parseFloat(calcValue);
+ const value=parseFloat(calcValue);
 
-  if(calcStored===null){
+ if(calcStored===null){
 
-    calcStored=value;
+  calcStored=value;
 
-  }else if(calcOp){
+ }else if(calcOp){
 
-    calcStored=operate(
-      calcStored,
-      value,
-      calcOp
-    );
+  calcStored=operate(
+   calcStored,
+   value,
+   calcOp
+  );
 
-    calcValue=String(calcStored);
+  calcValue=String(calcStored);
 
-  }
+ }
 
-  calcOp=op;
-  calcWaiting=true;
+ calcOp=op;
+ calcWaiting=true;
 
-  calcExpr=
-    formatCalc(calcStored)+" "+
-    symbol(op);
+ calcExpr=
+ formatCalc(calcStored)+" "+
+operatorSymbol(op);
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function operate(a,b,op){
 
-  if(op==="+")return a+b;
-  if(op==="-")return a-b;
-  if(op==="*")return a*b;
+ if(op==="+")return a+b;
 
-  if(op==="/"){
-    return b===0 ? 0 : a/b;
-  }
+ if(op==="-")return a-b;
 
-  return b;
+ if(op==="*")return a*b;
+
+ if(op==="/"){
+  return b===0 ? 0 : a/b;
+ }
+
+ return b;
 
 }
 
-function symbol(op){
+function operatorSymbol(op){
 
-  if(op==="+")return "+";
-  if(op==="-")return "−";
-  if(op==="*")return "×";
-  if(op==="/")return "÷";
+ if(op==="+")return "+";
+ if(op==="-")return "−";
+ if(op==="*")return "×";
+ if(op==="/")return "÷";
 
-  return "";
+ return "";
 
 }
 
 function calcEqual(){
 
-  if(calcOp===null)return;
+ if(calcOp===null)return;
 
-  const value=parseFloat(calcValue);
+ const value=parseFloat(calcValue);
 
-  const result=operate(
-    calcStored,
-    value,
-    calcOp
-  );
+ const result=operate(
+  calcStored,
+  value,
+  calcOp
+ );
 
-  calcExpr=
-    formatCalc(calcStored)+" "+
-    symbol(calcOp)+" "+
-    formatCalc(value)+" =";
+ calcExpr=
+ formatCalc(calcStored)+" "+
+ operatorSymbol(calcOp)+" "+
+ formatCalc(value)+" =";
 
-  calcValue=String(
-    Number(result.toFixed(10))
-  );
+ calcValue=String(
+  Number(result.toFixed(10))
+ );
 
-  calcStored=null;
-  calcOp=null;
-  calcWaiting=true;
+ calcStored=null;
+ calcOp=null;
+ calcWaiting=true;
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function calcClear(){
 
-  calcValue="0";
-  calcStored=null;
-  calcOp=null;
-  calcWaiting=false;
-  calcExpr="";
+ calcValue="0";
+ calcStored=null;
+ calcOp=null;
+ calcWaiting=false;
+ calcExpr="";
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function calcBack(){
 
-  if(calcValue.length<=1){
+ if(calcValue.length<=1){
 
-    calcValue="0";
+  calcValue="0";
 
-  }else{
+ }else{
 
-    calcValue=calcValue.slice(0,-1);
+  calcValue=calcValue.slice(0,-1);
 
-  }
+ }
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function calcSign(){
 
-  if(calcValue==="0")return;
+ if(calcValue==="0")return;
 
-  calcValue=
-    calcValue.startsWith("-")
-    ?calcValue.slice(1)
-    :"-"+calcValue;
+ calcValue=
+ calcValue.startsWith("-")
+ ?calcValue.substring(1)
+ :"-"+calcValue;
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function calcPercent(){
 
-  const value=parseFloat(calcValue);
+ const value=parseFloat(calcValue);
 
-  calcValue=String(value/100);
+ calcValue=String(value/100);
 
-  updateCalc();
+ updateCalc();
 
 }
 
 function formatCalc(value){
 
-  return Number(value).toLocaleString(
-    "pt-BR",
-    {maximumFractionDigits:10}
-  );
+ return Number(value).toLocaleString(
+ "pt-BR",
+ {
+  maximumFractionDigits:10
+ }
+ );
 
 }
 
-/* =====================================================
-   SELEÇÃO DOS CAMPOS
-===================================================== */
+/* ================= INFORMAÇÕES ================= */
 
-document.addEventListener("click",function(event){
+function showInfo(){
 
-  const box=event.target.closest(".inputbox");
-
-  if(!box)return;
-
-  const display=box.querySelector(".display");
-
-  if(!display)return;
-
-  activeField=display.id;
-
-  setActive(activeField);
-
-});
-
-/* =====================================================
-   BOTÕES SUPERIORES
-===================================================== */
-
-function showInfo(type){
-
-  if(type==="info"){
-
-    alert(
-      "SIENA MARGEM\n\n"+
-      "Simulador comercial para margem, preço, desconto, markup e cálculos."
-    );
-
-  }else{
-
-    alert(
-      "SIENA MARGEM\n\n"+
-      "Selecione uma das ferramentas acima para começar."
-    );
-
-  }
+ alert(
+ "SIENA MARGEM\n\n"+
+ "Escolha uma ferramenta acima para realizar seus cálculos comerciais."
+ );
 
 }
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
+function showAbout(){
+
+ alert(
+ "SIENA MARGEM\n\n"+
+ "Simulador comercial\n\n"+
+ "Criado e desenvolvido por João Siena."
+ );
+
+}
+
+/* ================= INICIALIZAÇÃO ================= */
 
 createKeypad("keypadMargem");
 createKeypad("keypadPreco");
 createKeypad("keypadDesconto");
 createKeypad("keypadMarkup");
 
-setActive("custo");
-
 calculateMargem();
+calculatePreco();
+calculateDesconto();
+calculateMarkup();
 updateCalc();
 
 </script>
