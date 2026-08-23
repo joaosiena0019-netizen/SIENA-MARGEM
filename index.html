@@ -8,13 +8,11 @@ content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,vie
 
 <meta name="theme-color" content="#020704">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SIENA PRO">
 
-<title>SIENA PRO — Calculadora Comercial</title>
+<title>SIENA PRO - Calculadora Comercial</title>
 
 <style>
-
 *{
 box-sizing:border-box;
 -webkit-tap-highlight-color:transparent;
@@ -42,9 +40,8 @@ button{
 font-family:inherit;
 border:0;
 outline:0;
--webkit-appearance:none;
 appearance:none;
-touch-action:manipulation;
+-webkit-appearance:none;
 }
 
 .app{
@@ -61,17 +58,17 @@ flex-direction:column;
 overflow:hidden;
 }
 
-/* ================= HEADER ================= */
+/* ================= CABEÇALHO ================= */
 
 .header{
-flex:0 0 104px;
+flex:0 0 91px;
 position:relative;
 text-align:center;
 padding-top:2px;
 }
 
 .logo{
-font-size:54px;
+font-size:48px;
 line-height:.88;
 font-weight:900;
 letter-spacing:-3px;
@@ -79,7 +76,7 @@ color:#fff;
 }
 
 .logoSub{
-margin-top:6px;
+margin-top:5px;
 color:#43ed0a;
 font-size:27px;
 line-height:1;
@@ -88,20 +85,20 @@ letter-spacing:6px;
 }
 
 .subtitle{
-margin-top:7px;
+margin-top:5px;
 color:#929c96;
-font-size:9px;
+font-size:8px;
 font-weight:bold;
 letter-spacing:3px;
 }
 
 .headBtn{
 position:absolute;
-top:4px;
-width:48px;
-height:48px;
+top:3px;
+width:46px;
+height:46px;
 border:2px solid #245b30;
-border-radius:16px;
+border-radius:15px;
 background:#061009;
 color:#fff;
 display:flex;
@@ -113,42 +110,104 @@ justify-content:center;
 .headBtn.right{right:0}
 
 .headBtn svg{
-width:25px;
-height:25px;
+width:24px;
+height:24px;
 fill:none;
 stroke:currentColor;
 stroke-width:2;
 }
 
+/* ================= BANNER ================= */
+
+.adBanner{
+flex:0 0 47px;
+height:47px;
+margin:3px 0 5px;
+border:1px solid #329b28;
+border-radius:13px;
+background:
+linear-gradient(100deg,#06150a,#0a2812,#06150a);
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+overflow:hidden;
+position:relative;
+}
+
+.adBanner:after{
+content:"";
+position:absolute;
+width:70px;
+height:70px;
+border-radius:50%;
+background:rgba(67,237,10,.10);
+right:-20px;
+top:-35px;
+}
+
+.adIcon{
+width:29px;
+height:29px;
+border-radius:9px;
+background:#43ed0a;
+color:#031006;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:15px;
+font-weight:900;
+z-index:1;
+}
+
+.adText{
+text-align:left;
+line-height:1.05;
+z-index:1;
+}
+
+.adTitle{
+font-size:11px;
+font-weight:900;
+color:#fff;
+}
+
+.adSub{
+font-size:7px;
+color:#8e9b93;
+margin-top:3px;
+letter-spacing:.5px;
+}
+
 /* ================= ABAS ================= */
 
 .tabs{
-flex:0 0 63px;
+flex:0 0 57px;
 display:grid;
 grid-template-columns:repeat(5,1fr);
-gap:5px;
+gap:4px;
 }
 
 .tab{
+height:57px;
 min-width:0;
-height:63px;
 border:2px solid #173c23;
-border-radius:16px;
+border-radius:14px;
 background:#061009;
 color:#8b958f;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:3px;
-font-size:9px;
+gap:2px;
+font-size:8px;
 font-weight:bold;
 white-space:nowrap;
 }
 
 .tab svg{
-width:22px;
-height:22px;
+width:19px;
+height:19px;
 fill:none;
 stroke:currentColor;
 stroke-width:2;
@@ -175,7 +234,7 @@ min-height:0;
 display:none;
 flex-direction:column;
 overflow:hidden;
-padding-top:7px;
+padding-top:5px;
 }
 
 .screen.active{
@@ -187,13 +246,13 @@ display:flex;
 .panel{
 flex:0 0 auto;
 border:2px solid #173c23;
-border-radius:19px;
+border-radius:17px;
 background:rgba(3,12,7,.9);
-padding:9px;
+padding:7px;
 }
 
 .field{
-margin-bottom:10px;
+margin-bottom:7px;
 }
 
 .field:last-child{
@@ -202,22 +261,22 @@ margin-bottom:0;
 
 .label{
 display:block;
-margin:0 0 5px 2px;
+margin:0 0 4px 2px;
 color:#929c96;
-font-size:10px;
+font-size:9px;
 font-weight:bold;
-letter-spacing:1.2px;
+letter-spacing:1px;
 }
 
 .inputBox{
 width:100%;
-height:46px;
+height:40px;
 border:2px solid #204a2b;
-border-radius:15px;
+border-radius:13px;
 background:#020705;
 display:flex;
 align-items:center;
-padding:0 11px;
+padding:0 10px;
 }
 
 .inputBox.active{
@@ -228,16 +287,16 @@ box-shadow:0 0 8px rgba(67,237,10,.15);
 .prefix,
 .suffix{
 color:#43ed0a;
-font-size:21px;
+font-size:19px;
 font-weight:bold;
 }
 
 .value{
 flex:1;
 min-width:0;
-padding:0 9px;
+padding:0 8px;
 color:#fff;
-font-size:22px;
+font-size:20px;
 font-weight:bold;
 overflow:hidden;
 white-space:nowrap;
@@ -247,10 +306,10 @@ white-space:nowrap;
 
 .result{
 flex:0 0 auto;
-margin-top:6px;
+margin-top:5px;
 border:2px solid #329b28;
-border-radius:20px;
-padding:7px 10px;
+border-radius:18px;
+padding:6px 9px;
 text-align:center;
 background:
 radial-gradient(circle at 75% 15%,rgba(47,180,28,.17),transparent 45%),
@@ -259,15 +318,15 @@ radial-gradient(circle at 75% 15%,rgba(47,180,28,.17),transparent 45%),
 
 .resultTitle{
 color:#929b96;
-font-size:10px;
+font-size:9px;
 font-weight:bold;
-letter-spacing:1.2px;
+letter-spacing:1px;
 }
 
 .resultMain{
-margin:4px 0 5px;
+margin:3px 0 4px;
 color:#43ed0a;
-font-size:31px;
+font-size:27px;
 font-weight:900;
 line-height:1;
 white-space:nowrap;
@@ -278,7 +337,7 @@ text-overflow:ellipsis;
 .resultLine{
 height:1px;
 background:#24442b;
-margin-bottom:5px;
+margin-bottom:4px;
 }
 
 .resultBottom{
@@ -291,14 +350,14 @@ border-right:1px solid #345039;
 }
 
 .small{
-margin-bottom:2px;
+margin-bottom:1px;
 color:#737d77;
-font-size:8px;
+font-size:7px;
 }
 
 .resultValue{
 color:#fff;
-font-size:14px;
+font-size:13px;
 font-weight:bold;
 }
 
@@ -310,21 +369,21 @@ min-height:0;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 grid-template-rows:repeat(4,minmax(0,1fr));
-gap:5px;
-margin-top:6px;
+gap:4px;
+margin-top:5px;
 }
 
 .key{
 min-width:0;
 min-height:0;
 border:2px solid #173c23;
-border-radius:14px;
+border-radius:13px;
 background:#07140c;
 color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:21px;
+font-size:20px;
 font-weight:bold;
 }
 
@@ -342,7 +401,7 @@ color:#031006;
 /* ================= CALCULADORA ================= */
 
 .calculator{
-padding-top:2px;
+padding-top:1px;
 }
 
 .calcDisplay{
@@ -352,13 +411,13 @@ display:flex;
 flex-direction:column;
 justify-content:flex-end;
 text-align:right;
-padding:0 5px 7px;
+padding:0 5px 6px;
 }
 
 .calcExpression{
-min-height:18px;
+min-height:16px;
 color:#78827c;
-font-size:13px;
+font-size:12px;
 white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
@@ -366,7 +425,7 @@ text-overflow:ellipsis;
 
 .calcNumber{
 color:#fff;
-font-size:clamp(43px,11vw,60px);
+font-size:clamp(42px,11vw,58px);
 line-height:1;
 font-weight:300;
 white-space:nowrap;
@@ -375,7 +434,7 @@ text-overflow:ellipsis;
 }
 
 .calcKeys{
-flex:0 0 61%;
+flex:0 0 62%;
 min-height:0;
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -384,7 +443,7 @@ gap:5px;
 }
 
 .calcKey{
-width:min(100%,62px);
+width:min(100%,61px);
 aspect-ratio:1;
 justify-self:center;
 align-self:center;
@@ -395,7 +454,7 @@ color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:clamp(22px,6vw,30px);
+font-size:clamp(21px,6vw,29px);
 }
 
 .calcKey.function{
@@ -412,7 +471,7 @@ color:#031006;
 /* ================= FOOTER ================= */
 
 .footer{
-flex:0 0 17px;
+flex:0 0 15px;
 text-align:center;
 color:#707b74;
 font-size:7px;
@@ -430,7 +489,7 @@ position:fixed;
 inset:0;
 z-index:900;
 display:none;
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.6);
 backdrop-filter:blur(4px);
 }
 
@@ -444,7 +503,7 @@ left:12px;
 top:max(8px,env(safe-area-inset-top));
 width:min(300px,calc(100% - 24px));
 border:2px solid #245b30;
-border-radius:22px;
+border-radius:21px;
 background:#041009;
 padding:15px;
 box-shadow:0 15px 40px rgba(0,0,0,.5);
@@ -484,7 +543,7 @@ color:#43ed0a;
 margin-right:8px;
 }
 
-/* ================= MODAL ================= */
+/* ================= SOBRE ================= */
 
 .modal{
 position:fixed;
@@ -493,7 +552,7 @@ z-index:1000;
 display:none;
 align-items:center;
 justify-content:center;
-padding:18px;
+padding:15px;
 background:rgba(0,0,0,.82);
 backdrop-filter:blur(8px);
 }
@@ -504,56 +563,53 @@ display:flex;
 
 .modalBox{
 width:min(100%,620px);
-max-height:92dvh;
+max-height:94dvh;
 overflow:auto;
 border:2px solid #245b30;
-border-radius:25px;
+border-radius:23px;
 background:
 radial-gradient(circle at 50% 0%,#0b4020,#031008 55%,#020704);
-box-shadow:0 0 40px rgba(67,237,10,.14);
-padding:22px 20px;
+padding:20px 17px;
 }
 
 .modalHeader{
 display:flex;
 align-items:center;
 justify-content:space-between;
-margin-bottom:15px;
+margin-bottom:14px;
 }
 
 .modalTitle{
 margin:0;
 color:#43ed0a;
-font-size:25px;
+font-size:23px;
 font-weight:900;
 }
 
 .closeBtn{
-width:38px;
-height:38px;
+width:37px;
+height:37px;
 border-radius:50%;
 background:#13251a;
 color:#fff;
 font-size:20px;
 }
 
-/* ================= SOBRE ================= */
-
 .story{
 color:#d4dad6;
-font-size:14px;
-line-height:1.58;
+font-size:13px;
+line-height:1.55;
 }
 
 .story p{
-margin:0 0 15px;
+margin:0 0 14px;
 }
 
 .storyIntro{
-font-size:17px;
+font-size:16px;
 color:#fff;
-line-height:1.5;
-margin-bottom:18px;
+line-height:1.45;
+margin-bottom:17px;
 }
 
 .storyIntro strong{
@@ -563,17 +619,16 @@ color:#43ed0a;
 .highlightGrid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:8px;
-margin:5px 0 20px;
+gap:7px;
+margin-bottom:18px;
 }
 
 .highlightCard{
 border:1px solid #245b30;
-border-radius:17px;
-background:
-linear-gradient(145deg,rgba(67,237,10,.11),rgba(3,12,7,.8));
-padding:14px;
-min-height:88px;
+border-radius:15px;
+background:linear-gradient(145deg,rgba(67,237,10,.11),rgba(3,12,7,.8));
+padding:12px;
+min-height:76px;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -581,106 +636,100 @@ justify-content:center;
 
 .highlightNumber{
 color:#43ed0a;
-font-size:20px;
+font-size:17px;
 font-weight:900;
 line-height:1.1;
-margin-bottom:5px;
+margin-bottom:4px;
 }
 
 .highlightText{
 color:#9ca7a0;
-font-size:9px;
+font-size:8px;
 font-weight:bold;
-letter-spacing:.6px;
-line-height:1.3;
+letter-spacing:.5px;
 text-transform:uppercase;
 }
 
 .storySectionTitle{
-margin:23px 0 10px;
+margin:21px 0 9px;
 color:#43ed0a;
-font-size:14px;
+font-size:13px;
 font-weight:900;
-letter-spacing:.5px;
 }
 
 .featureWords{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:7px;
-margin:12px 0 16px;
+gap:6px;
+margin:10px 0 14px;
 }
 
 .featureWords span{
-padding:10px;
+padding:9px;
 border:1px solid #245b30;
-border-radius:12px;
+border-radius:11px;
 background:#06120a;
 color:#fff;
 text-align:center;
-font-size:11px;
+font-size:10px;
 font-weight:bold;
 }
 
+.creatorCard,
+.useBox,
+.platformCard,
+.benefitCard,
+.storyFinal{
+border:1px solid #245b30;
+border-radius:16px;
+background:#06120a;
+}
+
 .creatorCard{
-padding:18px;
-border:1px solid #329b28;
-border-radius:18px;
-background:
-linear-gradient(145deg,rgba(67,237,10,.12),rgba(3,12,7,.8));
+padding:16px;
 text-align:center;
 }
 
 .creatorName{
-color:#fff;
-font-size:24px;
+font-size:22px;
 font-weight:900;
-letter-spacing:1px;
 }
 
 .creatorRole{
-margin-top:5px;
+margin-top:4px;
 color:#43ed0a;
-font-size:12px;
+font-size:11px;
 font-weight:bold;
-letter-spacing:1px;
 }
 
 .creatorDescription{
-margin-top:10px;
+margin-top:9px;
 color:#aeb8b2;
-font-size:12px;
-line-height:1.5;
+font-size:11px;
+line-height:1.45;
 }
 
 .storyQuote{
-margin:19px 0;
-padding:16px 14px;
+margin:17px 0;
+padding:14px;
 border-left:3px solid #43ed0a;
-border-radius:0 13px 13px 0;
 background:rgba(67,237,10,.06);
+border-radius:0 12px 12px 0;
 color:#fff;
-font-size:15px;
-line-height:1.5;
 font-weight:bold;
 }
 
 .useBox{
-border:1px solid #245b30;
-border-radius:18px;
-background:#06120a;
-padding:15px;
-margin:18px 0;
+padding:13px;
 }
 
 .useItem{
 display:flex;
-align-items:flex-start;
-gap:9px;
+gap:8px;
 color:#c4ccc7;
-font-size:12px;
-line-height:1.45;
-margin-bottom:12px;
+font-size:11px;
+line-height:1.4;
+margin-bottom:10px;
 }
 
 .useItem:last-child{
@@ -690,58 +739,50 @@ margin-bottom:0;
 .useIcon{
 color:#43ed0a;
 font-weight:bold;
-font-size:14px;
 }
 
 .platformCard{
 display:flex;
 align-items:center;
-gap:14px;
-padding:16px;
-border:2px solid #329b28;
-border-radius:18px;
-background:
-radial-gradient(circle at 10% 50%,rgba(67,237,10,.14),transparent 55%),
-#06120a;
+gap:12px;
+padding:14px;
+border-color:#329b28;
 }
 
 .platformIcon{
-width:50px;
-height:50px;
-flex:0 0 50px;
-border-radius:15px;
+width:46px;
+height:46px;
+flex:0 0 46px;
+border-radius:13px;
 background:#43ed0a;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:26px;
+font-size:24px;
 }
 
 .platformTitle{
 color:#43ed0a;
-font-size:15px;
+font-size:14px;
 font-weight:900;
 }
 
 .platformText{
-margin-top:5px;
+margin-top:4px;
 color:#aeb8b2;
-font-size:11px;
-line-height:1.45;
+font-size:10px;
+line-height:1.4;
 }
 
 .benefitsGrid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:8px;
+gap:7px;
 }
 
 .benefitCard{
-min-height:82px;
-padding:13px;
-border:1px solid #245b30;
-border-radius:15px;
-background:#06120a;
+min-height:70px;
+padding:11px;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -749,74 +790,66 @@ justify-content:center;
 
 .benefitCard strong{
 color:#43ed0a;
-font-size:12px;
-margin-bottom:5px;
+font-size:11px;
+margin-bottom:4px;
 }
 
 .benefitCard span{
 color:#aeb8b2;
-font-size:10px;
-line-height:1.35;
+font-size:9px;
 }
 
 .storyFinal{
-margin:20px 0;
-padding:18px;
-border-radius:17px;
-background:
-linear-gradient(145deg,rgba(67,237,10,.12),rgba(3,12,7,.9));
-border:1px solid #329b28;
+margin:18px 0;
+padding:16px;
+border-color:#329b28;
 text-align:center;
 color:#fff;
-font-size:15px;
-line-height:1.6;
+font-size:14px;
+line-height:1.5;
 font-weight:bold;
 }
 
 .aboutSignature{
-margin-top:22px;
-padding-top:20px;
+padding-top:17px;
 border-top:1px solid #245b30;
 text-align:center;
 }
 
 .aboutSignatureLabel{
 color:#7f8983;
-font-size:10px;
-letter-spacing:1px;
-text-transform:uppercase;
-margin-bottom:5px;
+font-size:9px;
+margin-bottom:4px;
 }
 
 .aboutSignature strong{
 color:#43ed0a;
-font-size:20px;
+font-size:18px;
 }
 
 .creatorSignature{
-margin-top:6px;
+margin-top:5px;
 color:#43ed0a;
-font-size:25px;
+font-size:23px;
 font-weight:900;
 }
 
 .aboutSmall{
 color:#7f8983;
-font-size:10px;
-margin-top:6px;
-letter-spacing:.7px;
+font-size:9px;
+margin-top:5px;
 }
 
-/* ================= PEQUENAS TELAS ================= */
+/* ================= TELAS PEQUENAS ================= */
 
 @media(max-height:700px){
 
 .header{
-flex-basis:94px;
+flex-basis:78px;
 }
 
 .logo{
-font-size:47px;
+font-size:42px;
 }
 
 .logoSub{
@@ -824,51 +857,67 @@ font-size:23px;
 }
 
 .subtitle{
-font-size:8px;
-margin-top:5px;
+font-size:7px;
+margin-top:3px;
 }
 
 .headBtn{
-width:44px;
-height:44px;
-}
-
-.tabs{
-flex-basis:57px;
-}
-
-.tab{
-height:57px;
-}
-
-.tab svg{
-width:20px;
-height:20px;
-}
-
-.screen{
-padding-top:5px;
-}
-
-.panel{
-padding:7px 8px;
-}
-
-.inputBox{
+width:42px;
 height:42px;
 }
 
-.result{
-padding:6px 8px;
+.adBanner{
+flex-basis:42px;
+height:42px;
+margin:2px 0 4px;
 }
 
-.resultMain{
-font-size:28px;
+.adIcon{
+width:26px;
+height:26px;
+}
+
+.adTitle{
+font-size:10px;
+}
+
+.adSub{
+font-size:6px;
+}
+
+.tabs{
+flex-basis:53px;
+}
+
+.tab{
+height:53px;
+}
+
+.tab svg{
+width:18px;
+height:18px;
+}
+
+.panel{
+padding:6px;
+}
+
+.inputBox{
+height:37px;
 }
 
 .commercialKeys{
-gap:4px;
+gap:3px;
 margin-top:4px;
+}
+
+.key{
+font-size:18px;
+border-radius:11px;
+}
+
+.resultMain{
+font-size:25px;
 }
 
 .footer{
@@ -880,29 +929,11 @@ flex-basis:64%;
 }
 
 .calcKey{
-width:min(100%,58px);
+width:min(100%,56px);
 }
 
 .calcNumber{
-font-size:48px;
-}
-
-.modalBox{
-max-height:94dvh;
-padding:18px 16px;
-}
-
-.story{
-font-size:13px;
-}
-
-.highlightCard{
-min-height:76px;
-padding:10px;
-}
-
-.highlightNumber{
-font-size:18px;
+font-size:46px;
 }
 
 }
@@ -913,8 +944,6 @@ font-size:18px;
 <body>
 
 <div class="app">
-
-<!-- ================= CABEÇALHO ================= -->
 
 <header class="header">
 
@@ -939,13 +968,9 @@ onclick="openAbout()">
 
 </button>
 
-<div class="logo">
-SIENA
-</div>
+<div class="logo">SIENA</div>
 
-<div class="logoSub">
-PRO
-</div>
+<div class="logoSub">PRO</div>
 
 <div class="subtitle">
 CALCULADORA COMERCIAL
@@ -953,13 +978,34 @@ CALCULADORA COMERCIAL
 
 </header>
 
+<!-- ================= PROPAGANDA DE TESTE ================= -->
+
+<div class="adBanner">
+
+<div class="adIcon">
+★
+</div>
+
+<div class="adText">
+
+<div class="adTitle">
+SUA MARCA AQUI
+</div>
+
+<div class="adSub">
+Espaço para parceiros e promoções
+</div>
+
+</div>
+
+</div>
+
 <!-- ================= ABAS ================= -->
 
 <div class="tabs">
 
 <button class="tab active"
 data-tab="margem"
-type="button"
 onclick="openTab('margem')">
 
 <svg viewBox="0 0 24 24">
@@ -975,7 +1021,6 @@ onclick="openTab('margem')">
 
 <button class="tab"
 data-tab="preco"
-type="button"
 onclick="openTab('preco')">
 
 <svg viewBox="0 0 24 24">
@@ -989,7 +1034,6 @@ onclick="openTab('preco')">
 
 <button class="tab"
 data-tab="desconto"
-type="button"
 onclick="openTab('desconto')">
 
 <svg viewBox="0 0 24 24">
@@ -1003,7 +1047,6 @@ onclick="openTab('desconto')">
 
 <button class="tab"
 data-tab="markup"
-type="button"
 onclick="openTab('markup')">
 
 <svg viewBox="0 0 24 24">
@@ -1017,7 +1060,6 @@ onclick="openTab('markup')">
 
 <button class="tab"
 data-tab="calculadora"
-type="button"
 onclick="openTab('calculadora')">
 
 <svg viewBox="0 0 24 24">
@@ -1040,9 +1082,7 @@ onclick="openTab('calculadora')">
 
 <div class="field">
 
-<label class="label">
-CUSTO DO PRODUTO
-</label>
+<label class="label">CUSTO DO PRODUTO</label>
 
 <div id="box-custo"
 class="inputBox active"
@@ -1050,8 +1090,7 @@ onclick="selectCommercialField('custoValor')">
 
 <span class="prefix">R$</span>
 
-<div id="custoValor"
-class="value">0</div>
+<div id="custoValor" class="value">0</div>
 
 </div>
 
@@ -1059,16 +1098,13 @@ class="value">0</div>
 
 <div class="field">
 
-<label class="label">
-MARGEM DESEJADA (%)
-</label>
+<label class="label">MARGEM DESEJADA (%)</label>
 
 <div id="box-margem"
 class="inputBox"
 onclick="selectCommercialField('margemValor')">
 
-<div id="margemValor"
-class="value">0</div>
+<div id="margemValor" class="value">0</div>
 
 <span class="suffix">%</span>
 
@@ -1084,8 +1120,7 @@ class="value">0</div>
 PREÇO DE VENDA
 </div>
 
-<div id="resultadoMargem"
-class="resultMain">
+<div id="resultadoMargem" class="resultMain">
 R$ 0,00
 </div>
 
@@ -1097,8 +1132,7 @@ R$ 0,00
 
 <div class="small">LUCRO</div>
 
-<div id="lucroMargem"
-class="resultValue">
+<div id="lucroMargem" class="resultValue">
 R$ 0,00
 </div>
 
@@ -1108,8 +1142,7 @@ R$ 0,00
 
 <div class="small">MARGEM</div>
 
-<div id="percentMargem"
-class="resultValue">
+<div id="percentMargem" class="resultValue">
 0,00%
 </div>
 
@@ -1119,9 +1152,7 @@ class="resultValue">
 
 </div>
 
-<div id="keysMargem"
-class="commercialKeys">
-</div>
+<div id="keysMargem" class="commercialKeys"></div>
 
 </section>
 
@@ -1133,9 +1164,7 @@ class="commercialKeys">
 
 <div class="field">
 
-<label class="label">
-CUSTO DO PRODUTO
-</label>
+<label class="label">CUSTO DO PRODUTO</label>
 
 <div id="box-precoCusto"
 class="inputBox"
@@ -1143,8 +1172,7 @@ onclick="selectCommercialField('precoCustoValor')">
 
 <span class="prefix">R$</span>
 
-<div id="precoCustoValor"
-class="value">0</div>
+<div id="precoCustoValor" class="value">0</div>
 
 </div>
 
@@ -1152,9 +1180,7 @@ class="value">0</div>
 
 <div class="field">
 
-<label class="label">
-PREÇO DE VENDA
-</label>
+<label class="label">PREÇO DE VENDA</label>
 
 <div id="box-precoVenda"
 class="inputBox"
@@ -1162,8 +1188,7 @@ onclick="selectCommercialField('precoVendaValor')">
 
 <span class="prefix">R$</span>
 
-<div id="precoVendaValor"
-class="value">0</div>
+<div id="precoVendaValor" class="value">0</div>
 
 </div>
 
@@ -1177,8 +1202,7 @@ class="value">0</div>
 MARGEM OBTIDA
 </div>
 
-<div id="resultadoPreco"
-class="resultMain">
+<div id="resultadoPreco" class="resultMain">
 0,00%
 </div>
 
@@ -1190,8 +1214,7 @@ class="resultMain">
 
 <div class="small">LUCRO</div>
 
-<div id="lucroPreco"
-class="resultValue">
+<div id="lucroPreco" class="resultValue">
 R$ 0,00
 </div>
 
@@ -1201,8 +1224,7 @@ R$ 0,00
 
 <div class="small">PREÇO</div>
 
-<div id="valorPreco"
-class="resultValue">
+<div id="valorPreco" class="resultValue">
 R$ 0,00
 </div>
 
@@ -1212,9 +1234,7 @@ R$ 0,00
 
 </div>
 
-<div id="keysPreco"
-class="commercialKeys">
-</div>
+<div id="keysPreco" class="commercialKeys"></div>
 
 </section>
 
@@ -1226,9 +1246,7 @@ class="commercialKeys">
 
 <div class="field">
 
-<label class="label">
-PREÇO ORIGINAL
-</label>
+<label class="label">PREÇO ORIGINAL</label>
 
 <div id="box-descPreco"
 class="inputBox"
@@ -1236,8 +1254,7 @@ onclick="selectCommercialField('descPrecoValor')">
 
 <span class="prefix">R$</span>
 
-<div id="descPrecoValor"
-class="value">0</div>
+<div id="descPrecoValor" class="value">0</div>
 
 </div>
 
@@ -1245,16 +1262,13 @@ class="value">0</div>
 
 <div class="field">
 
-<label class="label">
-DESCONTO (%)
-</label>
+<label class="label">DESCONTO (%)</label>
 
 <div id="box-descPercent"
 class="inputBox"
 onclick="selectCommercialField('descPercentValor')">
 
-<div id="descPercentValor"
-class="value">0</div>
+<div id="descPercentValor" class="value">0</div>
 
 <span class="suffix">%</span>
 
@@ -1270,8 +1284,7 @@ class="value">0</div>
 PREÇO COM DESCONTO
 </div>
 
-<div id="resultadoDesconto"
-class="resultMain">
+<div id="resultadoDesconto" class="resultMain">
 R$ 0,00
 </div>
 
@@ -1283,8 +1296,7 @@ R$ 0,00
 
 <div class="small">DESCONTO</div>
 
-<div id="valorDesconto"
-class="resultValue">
+<div id="valorDesconto" class="resultValue">
 R$ 0,00
 </div>
 
@@ -1294,8 +1306,7 @@ R$ 0,00
 
 <div class="small">PERCENTUAL</div>
 
-<div id="percentDesconto"
-class="resultValue">
+<div id="percentDesconto" class="resultValue">
 0,00%
 </div>
 
@@ -1305,9 +1316,7 @@ class="resultValue">
 
 </div>
 
-<div id="keysDesconto"
-class="commercialKeys">
-</div>
+<div id="keysDesconto" class="commercialKeys"></div>
 
 </section>
 
@@ -1319,9 +1328,7 @@ class="commercialKeys">
 
 <div class="field">
 
-<label class="label">
-CUSTO DO PRODUTO
-</label>
+<label class="label">CUSTO DO PRODUTO</label>
 
 <div id="box-markupCusto"
 class="inputBox"
@@ -1329,8 +1336,7 @@ onclick="selectCommercialField('markupCustoValor')">
 
 <span class="prefix">R$</span>
 
-<div id="markupCustoValor"
-class="value">0</div>
+<div id="markupCustoValor" class="value">0</div>
 
 </div>
 
@@ -1338,16 +1344,13 @@ class="value">0</div>
 
 <div class="field">
 
-<label class="label">
-MARKUP (%)
-</label>
+<label class="label">MARKUP (%)</label>
 
 <div id="box-markupPercent"
 class="inputBox"
 onclick="selectCommercialField('markupPercentValor')">
 
-<div id="markupPercentValor"
-class="value">0</div>
+<div id="markupPercentValor" class="value">0</div>
 
 <span class="suffix">%</span>
 
@@ -1363,8 +1366,7 @@ class="value">0</div>
 PREÇO DE VENDA
 </div>
 
-<div id="resultadoMarkup"
-class="resultMain">
+<div id="resultadoMarkup" class="resultMain">
 R$ 0,00
 </div>
 
@@ -1376,8 +1378,7 @@ R$ 0,00
 
 <div class="small">LUCRO</div>
 
-<div id="lucroMarkup"
-class="resultValue">
+<div id="lucroMarkup" class="resultValue">
 R$ 0,00
 </div>
 
@@ -1387,8 +1388,7 @@ R$ 0,00
 
 <div class="small">MARKUP</div>
 
-<div id="percentMarkup"
-class="resultValue">
+<div id="percentMarkup" class="resultValue">
 0,00%
 </div>
 
@@ -1398,99 +1398,55 @@ class="resultValue">
 
 </div>
 
-<div id="keysMarkup"
-class="commercialKeys">
-</div>
+<div id="keysMarkup" class="commercialKeys"></div>
 
 </section>
 
 <!-- ================= CALCULADORA ================= -->
 
-<section id="screen-calculadora"
-class="screen calculator">
+<section id="screen-calculadora" class="screen calculator">
 
 <div class="calcDisplay">
 
-<div id="calcExpression"
-class="calcExpression">
-</div>
+<div id="calcExpression" class="calcExpression"></div>
 
-<div id="calcNumber"
-class="calcNumber">
-0
-</div>
+<div id="calcNumber" class="calcNumber">0</div>
 
 </div>
 
 <div class="calcKeys">
 
-<button class="calcKey function"
-onclick="calcBack()">⌫</button>
+<button class="calcKey function" onclick="calcBack()">⌫</button>
+<button class="calcKey function" onclick="calcClear()">AC</button>
+<button class="calcKey function" onclick="calcPercent()">%</button>
+<button class="calcKey operator" onclick="calcOperator('/')">÷</button>
 
-<button class="calcKey function"
-onclick="calcClear()">AC</button>
+<button class="calcKey" onclick="calcDigit('7')">7</button>
+<button class="calcKey" onclick="calcDigit('8')">8</button>
+<button class="calcKey" onclick="calcDigit('9')">9</button>
+<button class="calcKey operator" onclick="calcOperator('*')">×</button>
 
-<button class="calcKey function"
-onclick="calcPercent()">%</button>
+<button class="calcKey" onclick="calcDigit('4')">4</button>
+<button class="calcKey" onclick="calcDigit('5')">5</button>
+<button class="calcKey" onclick="calcDigit('6')">6</button>
+<button class="calcKey operator" onclick="calcOperator('-')">−</button>
 
-<button class="calcKey operator"
-onclick="calcOperator('/')">÷</button>
+<button class="calcKey" onclick="calcDigit('1')">1</button>
+<button class="calcKey" onclick="calcDigit('2')">2</button>
+<button class="calcKey" onclick="calcDigit('3')">3</button>
+<button class="calcKey operator" onclick="calcOperator('+')">+</button>
 
-<button class="calcKey"
-onclick="calcDigit('7')">7</button>
-
-<button class="calcKey"
-onclick="calcDigit('8')">8</button>
-
-<button class="calcKey"
-onclick="calcDigit('9')">9</button>
-
-<button class="calcKey operator"
-onclick="calcOperator('*')">×</button>
-
-<button class="calcKey"
-onclick="calcDigit('4')">4</button>
-
-<button class="calcKey"
-onclick="calcDigit('5')">5</button>
-
-<button class="calcKey"
-onclick="calcDigit('6')">6</button>
-
-<button class="calcKey operator"
-onclick="calcOperator('-')">−</button>
-
-<button class="calcKey"
-onclick="calcDigit('1')">1</button>
-
-<button class="calcKey"
-onclick="calcDigit('2')">2</button>
-
-<button class="calcKey"
-onclick="calcDigit('3')">3</button>
-
-<button class="calcKey operator"
-onclick="calcOperator('+')">+</button>
-
-<button class="calcKey"
-onclick="calcSign()">+/−</button>
-
-<button class="calcKey"
-onclick="calcDigit('0')">0</button>
-
-<button class="calcKey"
-onclick="calcDecimal()">,</button>
-
-<button class="calcKey equal"
-onclick="calcEqual()">=</button>
+<button class="calcKey" onclick="calcSign()">+/−</button>
+<button class="calcKey" onclick="calcDigit('0')">0</button>
+<button class="calcKey" onclick="calcDecimal()">,</button>
+<button class="calcKey equal" onclick="calcEqual()">=</button>
 
 </div>
 
 </section>
 
 <div class="footer">
-Criado e desenvolvido por
-<strong>João Siena</strong>
+Criado e desenvolvido por <strong>João Siena</strong>
 </div>
 
 </div>
@@ -1559,36 +1515,22 @@ Uma ferramenta criada a partir da rotina real de vendas.
 
 <div class="highlightCard">
 <div class="highlightNumber">22 anos</div>
-<div class="highlightText">
-Idealizador do projeto
-</div>
+<div class="highlightText">Idealizador</div>
 </div>
 
 <div class="highlightCard">
-<div class="highlightNumber">
-Supervisor Sênior
-</div>
-<div class="highlightText">
-Experiência comercial
-</div>
+<div class="highlightNumber">Supervisor Sênior</div>
+<div class="highlightText">Experiência comercial</div>
 </div>
 
 <div class="highlightCard">
-<div class="highlightNumber">
-15 vendedores
-</div>
-<div class="highlightText">
-Equipe de alta performance
-</div>
+<div class="highlightNumber">15 vendedores</div>
+<div class="highlightText">Alta performance</div>
 </div>
 
 <div class="highlightCard">
-<div class="highlightNumber">
-Android + iOS
-</div>
-<div class="highlightText">
-Feito para usar no celular
-</div>
+<div class="highlightNumber">Android + iOS</div>
+<div class="highlightText">Feito para celular</div>
 </div>
 
 </div>
@@ -1609,17 +1551,14 @@ tomadas em poucos segundos.
 </p>
 
 <div class="featureWords">
-
 <span>Margem</span>
 <span>Preço de venda</span>
 <span>Desconto</span>
 <span>Markup</span>
-
 </div>
 
 <p>
-Foi dessa realidade que nasceu o
-<strong>SIENA PRO.</strong>
+Foi dessa realidade que nasceu o <strong>SIENA PRO.</strong>
 </p>
 
 <div class="storySectionTitle">
@@ -1657,14 +1596,7 @@ Uma ideia virou um projeto.<br>
 <p>
 O SIENA PRO foi idealizado e desenvolvido por
 <strong>João Siena</strong>, unindo experiência
-comercial, criatividade e vontade de criar algo
-realmente útil.
-</p>
-
-<p>
-A ideia surgiu pensando em
-<strong>agilizar o trabalho da equipe de vendas</strong>,
-facilitar cálculos e tornar decisões mais rápidas.
+comercial, criatividade e vontade de criar algo útil.
 </p>
 
 <div class="storySectionTitle">
@@ -1677,8 +1609,7 @@ facilitar cálculos e tornar decisões mais rápidas.
 <div class="useIcon">✓</div>
 <div>
 <strong>Equipes de vendas</strong><br>
-Para agilizar cálculos durante visitas,
-negociações e atendimentos.
+Para agilizar cálculos durante visitas e negociações.
 </div>
 </div>
 
@@ -1686,8 +1617,7 @@ negociações e atendimentos.
 <div class="useIcon">✓</div>
 <div>
 <strong>Comércios e empresas</strong><br>
-Para auxiliar na formação de preços,
-margens, descontos e markup.
+Para auxiliar na formação de preços, margens e descontos.
 </div>
 </div>
 
@@ -1695,8 +1625,7 @@ margens, descontos e markup.
 <div class="useIcon">✓</div>
 <div>
 <strong>Profissionais autônomos</strong><br>
-Para realizar cálculos rapidamente
-durante o trabalho.
+Para realizar cálculos rapidamente.
 </div>
 </div>
 
@@ -1704,33 +1633,30 @@ durante o trabalho.
 <div class="useIcon">✓</div>
 <div>
 <strong>Qualquer pessoa</strong><br>
-Que procure uma calculadora comercial
-simples e prática.
+Que procure uma calculadora comercial prática.
 </div>
 </div>
 
 </div>
 
 <div class="storySectionTitle">
-📱 FEITO PARA O SEU CELULAR
+📱 ANDROID + iOS
 </div>
 
 <div class="platformCard">
 
-<div class="platformIcon">
-📱
-</div>
+<div class="platformIcon">📱</div>
 
 <div>
 
 <div class="platformTitle">
-ANDROID + iOS
+FEITO PARA O SEU CELULAR
 </div>
 
 <div class="platformText">
 O SIENA PRO foi pensado para ser utilizado
-diretamente pelo celular, oferecendo praticidade
-para quem precisa calcular durante a rotina.
+diretamente pelo celular, com praticidade
+para a rotina comercial.
 </div>
 
 </div>
@@ -1745,30 +1671,22 @@ para quem precisa calcular durante a rotina.
 
 <div class="benefitCard">
 <strong>RÁPIDO</strong>
-<span>
-Cálculos sem complicação.
-</span>
+<span>Cálculos sem complicação.</span>
 </div>
 
 <div class="benefitCard">
 <strong>SIMPLES</strong>
-<span>
-Fácil de entender e usar.
-</span>
+<span>Fácil de entender e usar.</span>
 </div>
 
 <div class="benefitCard">
 <strong>PRÁTICO</strong>
-<span>
-Pensado para situações reais.
-</span>
+<span>Pensado para situações reais.</span>
 </div>
 
 <div class="benefitCard">
 <strong>COMERCIAL</strong>
-<span>
-Feito para quem trabalha com vendas.
-</span>
+<span>Feito para quem trabalha com vendas.</span>
 </div>
 
 </div>
@@ -1778,8 +1696,7 @@ Feito para quem trabalha com vendas.
 </div>
 
 <p>
-O objetivo nunca foi criar apenas mais uma
-calculadora.
+O objetivo nunca foi criar apenas mais uma calculadora.
 </p>
 
 <p>
@@ -1793,20 +1710,6 @@ Porque, no comercial:<br>
 <strong>tempo também é resultado.</strong>
 </div>
 
-<div class="storySectionTitle">
-✨ A HISTÓRIA CONTINUA
-</div>
-
-<p>
-O SIENA PRO nasceu dentro de uma rotina de vendas.
-</p>
-
-<p>
-Hoje, ele pode fazer parte da rotina de
-<strong>outras equipes, outros negócios e
-outros profissionais.</strong>
-</p>
-
 <div class="storyFinal">
 Uma ideia criada para facilitar.<br>
 Uma ferramenta feita para evoluir.
@@ -1818,9 +1721,7 @@ Uma ferramenta feita para evoluir.
 SIENA PRO
 </div>
 
-<strong>
-CALCULADORA COMERCIAL
-</strong>
+<strong>CALCULADORA COMERCIAL</strong>
 
 <div class="aboutSmall">
 Criado e desenvolvido por
@@ -1845,7 +1746,7 @@ para quem vive vendas.
 
 <script>
 
-/* ================= PROTEÇÃO CONTRA ZOOM ================= */
+/* ================= PROTEÇÃO ================= */
 
 document.addEventListener("dblclick",function(e){
 e.preventDefault();
@@ -1883,33 +1784,36 @@ if(text==="")return 0;
 
 text=text.replace(/\./g,"").replace(",", ".");
 
-const number=Number(text);
+const n=Number(text);
 
-return Number.isFinite(number)?number:0;
+return Number.isFinite(n)?n:0;
+
 }
 
 
-function money(number){
+function money(n){
 
-if(!Number.isFinite(number))number=0;
+if(!Number.isFinite(n))n=0;
 
-return number.toLocaleString("pt-BR",{
+return n.toLocaleString("pt-BR",{
 style:"currency",
 currency:"BRL",
 minimumFractionDigits:2,
 maximumFractionDigits:2
 });
+
 }
 
 
-function percent(number){
+function percent(n){
 
-if(!Number.isFinite(number))number=0;
+if(!Number.isFinite(n))n=0;
 
-return number.toLocaleString("pt-BR",{
+return n.toLocaleString("pt-BR",{
 minimumFractionDigits:2,
 maximumFractionDigits:2
 })+"%";
+
 }
 
 
@@ -1920,7 +1824,8 @@ function selectCommercialField(id){
 activeField=id;
 freshCommercial=true;
 
-document.querySelectorAll(".inputBox").forEach(function(box){
+document.querySelectorAll(".inputBox")
+.forEach(function(box){
 box.classList.remove("active");
 });
 
@@ -1936,23 +1841,22 @@ markupPercentValor:"box-markupPercent"
 };
 
 if(map[id]){
-document.getElementById(map[id]).classList.add("active");
+document.getElementById(map[id])
+.classList.add("active");
 }
 
 }
 
 
-/* ================= TECLADOS COMERCIAIS ================= */
+/* ================= TECLADOS ================= */
 
 function createCommercialKeyboard(containerId){
 
 const container=document.getElementById(containerId);
 
 /*
-7 | 8 | 9 | apagar
-4 | 5 | 6 | 00
-1 | 2 | 3 | ,
-0 | AC|    | =
+Apenas UM 00.
+O = ocupa duas colunas.
 */
 
 const keys=[
@@ -2028,7 +1932,7 @@ createCommercialKeyboard("keysDesconto");
 createCommercialKeyboard("keysMarkup");
 
 
-/* ================= DIGITAÇÃO COMERCIAL ================= */
+/* ================= DIGITAÇÃO ================= */
 
 function commercialDigit(digit){
 
@@ -2063,9 +1967,7 @@ value+=digit;
 
 }
 
-const numericDigits=value.replace(/[^\d]/g,"");
-
-if(numericDigits.length>14)return;
+if(value.replace(/[^\d]/g,"").length>14)return;
 
 element.textContent=value;
 
@@ -2073,8 +1975,6 @@ calculateCommercial();
 
 }
 
-
-/* ================= BACKSPACE ================= */
 
 function commercialBack(){
 
@@ -2100,8 +2000,6 @@ calculateCommercial();
 
 }
 
-
-/* ================= AC ================= */
 
 function commercialClear(){
 
@@ -2137,9 +2035,14 @@ if(custo>0&&margem>=0&&margem<100){
 venda=custo/(1-margem/100);
 }
 
-document.getElementById("resultadoMargem").textContent=money(venda);
-document.getElementById("lucroMargem").textContent=money(venda-custo);
-document.getElementById("percentMargem").textContent=percent(margem);
+document.getElementById("resultadoMargem")
+.textContent=money(venda);
+
+document.getElementById("lucroMargem")
+.textContent=money(venda-custo);
+
+document.getElementById("percentMargem")
+.textContent=percent(margem);
 
 }
 
@@ -2156,11 +2059,17 @@ document.getElementById("precoVendaValor").textContent
 
 const lucro=venda-custo;
 
-const margem=venda!==0?(lucro/venda)*100:0;
+const margem=venda!==0?
+(lucro/venda)*100:0;
 
-document.getElementById("resultadoPreco").textContent=percent(margem);
-document.getElementById("lucroPreco").textContent=money(lucro);
-document.getElementById("valorPreco").textContent=money(venda);
+document.getElementById("resultadoPreco")
+.textContent=percent(margem);
+
+document.getElementById("lucroPreco")
+.textContent=money(lucro);
+
+document.getElementById("valorPreco")
+.textContent=money(venda);
 
 }
 
@@ -2175,12 +2084,17 @@ const desconto=parseBR(
 document.getElementById("descPercentValor").textContent
 );
 
-const valorDesconto=preco*desconto/100;
-const final=preco-valorDesconto;
+const valor=preco*desconto/100;
+const final=preco-valor;
 
-document.getElementById("resultadoDesconto").textContent=money(final);
-document.getElementById("valorDesconto").textContent=money(valorDesconto);
-document.getElementById("percentDesconto").textContent=percent(desconto);
+document.getElementById("resultadoDesconto")
+.textContent=money(final);
+
+document.getElementById("valorDesconto")
+.textContent=money(valor);
+
+document.getElementById("percentDesconto")
+.textContent=percent(desconto);
 
 }
 
@@ -2197,9 +2111,14 @@ document.getElementById("markupPercentValor").textContent
 
 const venda=custo*(1+markup/100);
 
-document.getElementById("resultadoMarkup").textContent=money(venda);
-document.getElementById("lucroMarkup").textContent=money(venda-custo);
-document.getElementById("percentMarkup").textContent=percent(markup);
+document.getElementById("resultadoMarkup")
+.textContent=money(venda);
+
+document.getElementById("lucroMarkup")
+.textContent=money(venda-custo);
+
+document.getElementById("percentMarkup")
+.textContent=percent(markup);
 
 }
 
@@ -2212,14 +2131,20 @@ function openTab(tab){
 
 currentTab=tab;
 
-document.querySelectorAll(".screen").forEach(function(screen){
+document.querySelectorAll(".screen")
+.forEach(function(screen){
 screen.classList.remove("active");
 });
 
-document.getElementById("screen-"+tab).classList.add("active");
+document.getElementById("screen-"+tab)
+.classList.add("active");
 
-document.querySelectorAll(".tab").forEach(function(button){
-button.classList.toggle("active",button.dataset.tab===tab);
+document.querySelectorAll(".tab")
+.forEach(function(button){
+button.classList.toggle(
+"active",
+button.dataset.tab===tab
+);
 });
 
 const fields={
@@ -2234,11 +2159,12 @@ activeField=fields[tab];
 freshCommercial=true;
 }
 
-document.querySelectorAll(".inputBox").forEach(function(box){
+document.querySelectorAll(".inputBox")
+.forEach(function(box){
 box.classList.remove("active");
 });
 
-const boxMap={
+const map={
 custoValor:"box-custo",
 margemValor:"box-margem",
 precoCustoValor:"box-precoCusto",
@@ -2249,8 +2175,9 @@ markupCustoValor:"box-markupCusto",
 markupPercentValor:"box-markupPercent"
 };
 
-if(boxMap[activeField]){
-document.getElementById(boxMap[activeField]).classList.add("active");
+if(map[activeField]){
+document.getElementById(map[activeField])
+.classList.add("active");
 }
 
 calculateCommercial();
@@ -2272,11 +2199,11 @@ function formatCalc(value){
 
 if(value==="Erro")return "Erro";
 
-const number=Number(value);
+const n=Number(value);
 
-if(!Number.isFinite(number))return "Erro";
+if(!Number.isFinite(n))return "Erro";
 
-return number.toLocaleString("pt-BR",{
+return n.toLocaleString("pt-BR",{
 maximumFractionDigits:10,
 useGrouping:true
 });
@@ -2286,8 +2213,11 @@ useGrouping:true
 
 function updateCalc(){
 
-document.getElementById("calcNumber").textContent=formatCalc(calcValue);
-document.getElementById("calcExpression").textContent=calcExpression;
+document.getElementById("calcNumber")
+.textContent=formatCalc(calcValue);
+
+document.getElementById("calcExpression")
+.textContent=calcExpression;
 
 }
 
@@ -2309,9 +2239,8 @@ calcValue=digit;
 
 }else{
 
-const digits=calcValue.replace(/[^\d]/g,"");
-
-if(digits.length>=15)return;
+if(calcValue.replace(/[^\d]/g,"").length>=15)
+return;
 
 calcValue+=digit;
 
@@ -2386,7 +2315,8 @@ calcStored=current;
 
 }else if(calcOp!==null&&!calcWaiting){
 
-const result=doOperation(calcStored,current,calcOp);
+const result=
+doOperation(calcStored,current,calcOp);
 
 if(!Number.isFinite(result)){
 
@@ -2410,7 +2340,8 @@ calcWaiting=true;
 calcLastValue=null;
 
 calcExpression=
-formatCalc(calcStored)+" "+operatorSymbol(op);
+formatCalc(calcStored)+" "+
+operatorSymbol(op);
 
 updateCalc();
 
@@ -2427,7 +2358,8 @@ if(calcLastValue!==null){
 current=calcLastValue;
 }
 
-const result=doOperation(calcStored,current,calcOp);
+const result=
+doOperation(calcStored,current,calcOp);
 
 if(!Number.isFinite(result)){
 
@@ -2544,7 +2476,8 @@ updateCalc();
 
 function openMenu(){
 
-document.getElementById("menuOverlay").classList.add("show");
+document.getElementById("menuOverlay")
+.classList.add("show");
 
 }
 
@@ -2555,7 +2488,8 @@ event &&
 event.target!==document.getElementById("menuOverlay")
 )return;
 
-document.getElementById("menuOverlay").classList.remove("show");
+document.getElementById("menuOverlay")
+.classList.remove("show");
 
 }
 
@@ -2564,7 +2498,8 @@ document.getElementById("menuOverlay").classList.remove("show");
 
 function openAbout(){
 
-document.getElementById("aboutModal").classList.add("show");
+document.getElementById("aboutModal")
+.classList.add("show");
 
 }
 
@@ -2575,7 +2510,8 @@ event &&
 event.target!==document.getElementById("aboutModal")
 )return;
 
-document.getElementById("aboutModal").classList.remove("show");
+document.getElementById("aboutModal")
+.classList.remove("show");
 
 }
 
@@ -2586,34 +2522,32 @@ document.addEventListener("keydown",function(event){
 
 if(currentTab!=="calculadora")return;
 
-const key=event.key;
-
-if(/^\d$/.test(key)){
-calcDigit(key);
+if(/^\d$/.test(event.key)){
+calcDigit(event.key);
 return;
 }
 
-if(key===","||key==="."){
+if(event.key===","||event.key==="."){
 calcDecimal();
 return;
 }
 
-if(key==="+"||key==="-"||key==="*"||key==="/"){
-calcOperator(key);
+if(["+","-","*","/"].includes(event.key)){
+calcOperator(event.key);
 return;
 }
 
-if(key==="Enter"||key==="="){
+if(event.key==="Enter"||event.key==="="){
 calcEqual();
 return;
 }
 
-if(key==="Backspace"){
+if(event.key==="Backspace"){
 calcBack();
 return;
 }
 
-if(key==="Escape"){
+if(event.key==="Escape"){
 calcClear();
 }
 
@@ -2647,11 +2581,13 @@ currentTab="margem";
 activeField="custoValor";
 freshCommercial=true;
 
-document.querySelectorAll(".inputBox").forEach(function(box){
+document.querySelectorAll(".inputBox")
+.forEach(function(box){
 box.classList.remove("active");
 });
 
-document.getElementById("box-custo").classList.add("active");
+document.getElementById("box-custo")
+.classList.add("active");
 
 calcClear();
 calculateCommercial();
