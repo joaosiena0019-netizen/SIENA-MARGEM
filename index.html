@@ -2,1162 +2,649 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1,
-maximum-scale=1,
-minimum-scale=1,
-user-scalable=no,
-viewport-fit=cover">
-
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>SIENA MARGEM</title>
 
 <style>
-
 *{
-box-sizing:border-box;
--webkit-tap-highlight-color:transparent;
--webkit-touch-callout:none;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-touch-callout:none;
 }
 
 html,body{
-margin:0;
-padding:0;
-width:100%;
-height:100%;
-overflow:hidden;
-background:#020403;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
-touch-action:manipulation;
-overscroll-behavior:none;
-}
-
-body{
-user-select:none;
--webkit-user-select:none;
+  margin:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:#030604;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  touch-action:manipulation;
+  overscroll-behavior:none;
 }
 
 button{
-font-family:inherit;
--webkit-appearance:none;
-appearance:none;
-border:0;
+  font-family:Arial,Helvetica,sans-serif;
+  border:0;
+  outline:0;
 }
 
 .app{
-width:100%;
-height:100dvh;
-max-width:520px;
-margin:auto;
+  width:100%;
+  height:100dvh;
+  max-width:520px;
+  margin:auto;
+  padding:
+    calc(env(safe-area-inset-top) + 6px)
+    12px
+    calc(env(safe-area-inset-bottom) + 6px);
 
-padding:
-calc(env(safe-area-inset-top) + 8px)
-14px
-calc(env(safe-area-inset-bottom) + 8px);
+  display:flex;
+  flex-direction:column;
 
-display:flex;
-flex-direction:column;
-
-background:
-radial-gradient(
-circle at 50% -10%,
-#174c22 0%,
-#0a1c0e 27%,
-#030604 68%
-);
+  background:
+    radial-gradient(circle at 50% -10%,#16451f 0%,#09170c 28%,#030604 70%);
 }
 
-
-/* =========================
-TOPO
-========================= */
+/* TOPO */
 
 .top{
-height:14%;
-min-height:78px;
-
-display:grid;
-grid-template-columns:46px 1fr 46px;
-align-items:center;
+  height:13%;
+  min-height:70px;
+  display:grid;
+  grid-template-columns:44px 1fr 44px;
+  align-items:center;
 }
 
-.topButton{
-width:42px;
-height:42px;
-
-border-radius:14px;
-
-border:1px solid #396f39;
-
-background:
-linear-gradient(145deg,#142217,#060a07);
-
-color:#fff;
-
-font-size:20px;
-
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,.05),
-0 8px 20px rgba(0,0,0,.3);
-}
-
-.topButton:active{
-transform:scale(.94);
+.iconBtn{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  border:1px solid #315a34;
+  background:#0a120c;
+  color:#fff;
+  font-size:19px;
 }
 
 .brand{
-text-align:center;
-line-height:1;
+  text-align:center;
+  line-height:1;
 }
 
-.brandSiena{
-font-size:clamp(40px,11vw,60px);
-font-weight:1000;
-letter-spacing:-2px;
-
-color:#fff;
-
-text-shadow:
-0 0 25px rgba(255,255,255,.08);
+.siena{
+  font-size:clamp(38px,10vw,56px);
+  font-weight:1000;
+  letter-spacing:-2px;
 }
 
-.brandMargem{
-margin-top:7px;
-
-font-size:clamp(17px,4.5vw,25px);
-font-weight:900;
-
-letter-spacing:7px;
-
-color:#59e51f;
-
-text-shadow:
-0 0 17px rgba(89,229,31,.25);
+.margem{
+  margin-top:6px;
+  font-size:clamp(16px,4.5vw,23px);
+  font-weight:900;
+  letter-spacing:6px;
+  color:#59e51f;
 }
 
-.brandSub{
-margin-top:7px;
-
-font-size:8px;
-font-weight:bold;
-
-letter-spacing:3px;
-
-color:#7f8a82;
+.sub{
+  margin-top:6px;
+  font-size:7px;
+  letter-spacing:3px;
+  color:#7d897f;
+  font-weight:bold;
 }
 
-
-/* =========================
-ABAS
-========================= */
+/* ABAS */
 
 .tabs{
-height:8%;
-min-height:45px;
-
-display:grid;
-
-grid-template-columns:
-repeat(5,1fr);
-
-gap:5px;
-
-margin-bottom:7px;
+  height:8%;
+  min-height:42px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+  margin-bottom:6px;
 }
 
 .tab{
-min-width:0;
-
-border-radius:12px;
-
-border:1px solid #29402e;
-
-background:
-linear-gradient(145deg,#111c13,#070d09);
-
-color:#89938c;
-
-font-size:8px;
-font-weight:900;
-
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,.03),
-0 6px 14px rgba(0,0,0,.22);
+  border-radius:11px;
+  border:1px solid #293b2d;
+  background:#0b130d;
+  color:#89928b;
+  font-size:8px;
+  font-weight:900;
 }
 
 .tab.active{
-background:
-linear-gradient(145deg,#69ee29,#3db70d);
-
-color:#061006;
-
-border-color:#65e729;
-
-box-shadow:
-0 0 20px rgba(89,229,31,.2);
+  background:#59e51f;
+  color:#061006;
+  border-color:#59e51f;
 }
 
-.tab:active{
-transform:scale(.96);
+/* ÁREA PRINCIPAL */
+
+.main{
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
 }
 
-
-/* =========================
-ÁREA COMERCIAL
-========================= */
-
-.commercial{
-height:75%;
-
-display:flex;
-flex-direction:column;
-}
-
-
-/* =========================
-CAMPOS
-========================= */
+/* CAMPOS */
 
 .fields{
-height:36%;
+  height:22%;
+  min-height:95px;
 
-padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 
-display:flex;
-flex-direction:column;
-justify-content:center;
+  padding:8px;
 
-gap:8px;
+  border:1px solid #293d2d;
+  border-radius:17px;
 
-border-radius:20px;
-
-border:1px solid #29402e;
-
-background:
-linear-gradient(
-145deg,
-rgba(14,29,17,.97),
-rgba(4,9,6,.99)
-);
-
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,.04),
-0 12px 30px rgba(0,0,0,.25);
+  background:#071009;
 }
 
 .field{
-flex:1;
-min-height:0;
+  flex:1;
+  min-height:0;
 }
 
 .label{
-display:block;
-
-margin-bottom:4px;
-
-font-size:8px;
-font-weight:900;
-
-letter-spacing:1.2px;
-
-color:#9da79f;
+  display:block;
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:1px;
+  color:#98a39b;
+  margin-bottom:3px;
 }
 
 .display{
-height:calc(100% - 13px);
+  height:calc(100% - 11px);
+  min-height:32px;
 
-min-height:38px;
+  display:flex;
+  align-items:center;
 
-display:flex;
-align-items:center;
+  border:1px solid #293b2d;
+  border-radius:11px;
 
-border-radius:13px;
-
-border:1px solid #2b432f;
-
-background:
-linear-gradient(145deg,#050a06,#020403);
-
-box-shadow:
-inset 0 2px 8px rgba(0,0,0,.4);
+  background:#030704;
 }
 
 .display.selected{
+  border-color:#59e51f;
+  box-shadow:0 0 0 1px rgba(89,229,31,.2);
+}
 
-border-color:#5be522;
-
-box-shadow:
-0 0 0 1px rgba(91,229,34,.2),
-0 0 20px rgba(91,229,34,.12),
-inset 0 2px 8px rgba(0,0,0,.4);
+.prefix,.suffix{
+  color:#59e51f;
+  font-weight:900;
+  font-size:14px;
 }
 
 .prefix{
-
-padding-left:12px;
-padding-right:7px;
-
-font-size:16px;
-font-weight:900;
-
-color:#5be522;
-}
-
-.value{
-
-flex:1;
-
-font-size:18px;
-font-weight:900;
-
-color:#fff;
-
-white-space:nowrap;
-
-overflow:hidden;
-
-text-overflow:ellipsis;
+  padding-left:10px;
+  padding-right:6px;
 }
 
 .suffix{
-
-padding-right:12px;
-
-font-size:16px;
-font-weight:900;
-
-color:#5be522;
+  padding-right:10px;
 }
 
+.value{
+  flex:1;
+  font-size:16px;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
-/* =========================
-RESULTADO
-========================= */
+/* RESULTADO */
 
 .result{
+  height:21%;
+  min-height:90px;
 
-height:32%;
+  margin-top:6px;
 
-margin-top:7px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 
-display:flex;
-flex-direction:column;
+  border:1px solid #43852e;
+  border-radius:17px;
 
-align-items:center;
-justify-content:center;
-
-border-radius:20px;
-
-border:1px solid #4b9630;
-
-background:
-
-radial-gradient(
-circle at 80% 0%,
-rgba(88,229,30,.18),
-transparent 45%
-),
-
-linear-gradient(
-145deg,
-#0b1a0d,
-#050b07
-);
-
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,.04),
-0 12px 30px rgba(0,0,0,.25);
+  background:#071109;
 }
 
 .resultLabel{
-
-font-size:9px;
-font-weight:900;
-
-letter-spacing:1.5px;
-
-color:#9da69f;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1.4px;
+  color:#9ba59e;
 }
 
 .resultValue{
-
-margin:5px 0 8px;
-
-font-size:clamp(32px,9vw,46px);
-
-font-weight:1000;
-
-line-height:1;
-
-color:#5be522;
-
-text-shadow:
-0 0 20px rgba(91,229,34,.18);
+  margin:5px 0 7px;
+  font-size:clamp(28px,8vw,43px);
+  line-height:1;
+  font-weight:1000;
+  color:#59e51f;
 }
 
 .resultInfo{
-
-width:85%;
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-border-top:1px solid #293b2d;
-
-padding-top:7px;
-
-text-align:center;
+  width:84%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid #293a2d;
+  padding-top:5px;
+  text-align:center;
 }
 
-.resultInfo div:first-child{
-border-right:1px solid #293b2d;
+.resultInfo>div:first-child{
+  border-right:1px solid #293a2d;
 }
 
 .resultInfo small{
-
-display:block;
-
-font-size:7px;
-
-color:#7d877f;
-
-margin-bottom:2px;
+  display:block;
+  font-size:6px;
+  color:#7d877f;
 }
 
 .resultInfo strong{
-font-size:13px;
+  font-size:11px;
 }
 
+/* TECLADO */
 
-/* =========================
-AÇÕES
-========================= */
+.keypad{
+  height:48%;
+  min-height:190px;
 
-.actions{
+  display:grid;
 
-height:13%;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(4,1fr);
 
-min-height:42px;
+  gap:5px;
 
-display:grid;
-
-grid-template-columns:1.5fr 1fr;
-
-gap:7px;
-
-margin-top:7px;
+  margin-top:6px;
 }
 
-.action{
+.key{
+  border-radius:13px;
+  border:1px solid #2b412f;
 
-border-radius:13px;
+  background:#111b14;
 
-border:1px solid #29402e;
+  color:#fff;
 
-background:
-linear-gradient(145deg,#121e15,#070d09);
-
-color:#fff;
-
-font-size:10px;
-
-font-weight:900;
-
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,.03),
-0 7px 16px rgba(0,0,0,.2);
+  font-size:20px;
+  font-weight:800;
 }
 
-.action.calculate{
-
-background:
-linear-gradient(145deg,#69ee29,#3db70d);
-
-color:#061006;
-
-border-color:#63df25;
+.key:active{
+  transform:scale(.94);
+  background:#1d2c20;
 }
 
-.action:active{
-transform:scale(.97);
+.key.special{
+  color:#59e51f;
+  background:#0c160e;
 }
 
-
-/* =========================
-CALCULADORA LIVRE
-========================= */
-
-.calculator{
-
-height:75%;
-
-display:none;
-
-flex-direction:column;
+.key.equal{
+  background:#59e51f;
+  color:#061006;
+  border-color:#59e51f;
+  font-size:27px;
 }
 
-.calculator.show{
-display:flex;
+.key.zero{
+  grid-column:span 2;
 }
 
+/* CALCULADORA LIVRE */
 
-/* =========================
-VISOR
-========================= */
-
-.calcDisplay{
-
-height:27%;
-
-min-height:120px;
-
-padding:16px 18px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:flex-end;
-
-align-items:flex-end;
-
-border-radius:20px;
-
-border:1px solid #304832;
-
-background:
-
-radial-gradient(
-circle at 85% 5%,
-rgba(88,229,30,.11),
-transparent 42%
-),
-
-linear-gradient(
-145deg,
-#071008,
-#020403
-);
-
-box-shadow:
-inset 0 2px 10px rgba(0,0,0,.5),
-0 12px 30px rgba(0,0,0,.25);
-
-overflow:hidden;
+.calc{
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
 }
 
-.calcExpression{
+.calcScreen{
+  height:25%;
+  min-height:105px;
 
-width:100%;
+  padding:12px 15px;
 
-min-height:25px;
+  border:1px solid #304633;
+  border-radius:17px;
 
-text-align:right;
+  background:#050b07;
 
-font-size:15px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-end;
 
-font-weight:700;
-
-color:#7f8c82;
-
-white-space:nowrap;
-
-overflow:hidden;
-
-text-overflow:ellipsis;
-
-margin-bottom:8px;
+  overflow:hidden;
 }
 
-.calcResult{
+.expression{
+  width:100%;
+  min-height:22px;
 
-width:100%;
+  text-align:right;
 
-text-align:right;
+  color:#7d897f;
 
-font-size:clamp(38px,11vw,58px);
+  font-size:14px;
+  font-weight:700;
 
-font-weight:1000;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 
-line-height:1;
-
-color:#fff;
-
-white-space:nowrap;
-
-overflow:hidden;
-
-text-overflow:ellipsis;
+  margin-bottom:7px;
 }
 
+.calcValue{
+  width:100%;
 
-/* =========================
-TECLADO CALCULADORA
-========================= */
+  text-align:right;
 
-.calcKeys{
+  color:#fff;
 
-height:69%;
+  font-size:clamp(38px,11vw,58px);
+  font-weight:1000;
 
-display:grid;
+  line-height:1;
 
-grid-template-columns:
-repeat(4,1fr);
-
-grid-template-rows:
-repeat(5,1fr);
-
-gap:7px;
-
-margin-top:8px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-.calcKey{
-
-border-radius:15px;
-
-border:1px solid #2e4732;
-
-background:
-linear-gradient(145deg,#17231a,#09100b);
-
-color:#fff;
-
-font-size:clamp(18px,5vw,27px);
-
-font-weight:600;
-
-box-shadow:
-inset 0 1px 0 rgba(255,255,255,.04),
-0 7px 14px rgba(0,0,0,.3);
-}
-
-.calcKey:active{
-transform:scale(.93);
-}
-
-.calcKey.function{
-
-background:
-linear-gradient(145deg,#202d23,#101811);
-
-color:#fff;
-}
-
-.calcKey.operation{
-
-color:#5be522;
-
-background:
-linear-gradient(145deg,#142017,#071008);
-}
-
-.calcKey.equal{
-
-background:
-linear-gradient(145deg,#69ee29,#3bb20c);
-
-color:#061006;
-
-border-color:#65e729;
-
-box-shadow:
-0 0 20px rgba(89,229,31,.18);
-}
-
-.calcKey.zero{
-
-grid-column:span 2;
-
-}
-
-
-/* =========================
-RODAPÉ
-========================= */
-
-.footer{
-
-height:3%;
-
-min-height:17px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:7px;
-
-color:#68736b;
-}
-
-.footer span{
-
-margin-left:3px;
-
-color:#5be522;
-
-font-weight:bold;
-}
-
-
-/* =========================
-MENU
-========================= */
+/* MENU */
 
 .overlay{
-
-position:fixed;
-
-inset:0;
-
-display:none;
-
-z-index:50;
-
-background:rgba(0,0,0,.75);
+  position:fixed;
+  inset:0;
+  z-index:50;
+  display:none;
+  background:rgba(0,0,0,.75);
 }
 
 .overlay.show{
-display:block;
+  display:block;
 }
 
 .menu{
+  position:fixed;
+  z-index:60;
 
-position:fixed;
+  top:0;
+  left:-300px;
 
-z-index:60;
+  width:280px;
+  height:100dvh;
 
-top:0;
+  padding:
+    calc(env(safe-area-inset-top) + 25px)
+    17px;
 
-left:-310px;
+  background:#071009;
 
-width:290px;
+  border-right:1px solid #29432d;
 
-height:100dvh;
-
-padding:
-calc(env(safe-area-inset-top) + 25px)
-18px;
-
-background:
-linear-gradient(160deg,#0b180d,#050a06);
-
-border-right:1px solid #29432d;
-
-box-shadow:
-15px 0 40px rgba(0,0,0,.4);
-
-transition:.25s;
+  transition:left .2s;
 }
 
 .menu.show{
-left:0;
+  left:0;
 }
 
-.menuLogo{
-
-font-size:27px;
-
-font-weight:1000;
+.menuTitle{
+  font-size:26px;
+  font-weight:1000;
 }
 
-.menuLogo span{
-color:#5be522;
-}
-
-.menuSub{
-
-font-size:8px;
-
-letter-spacing:2px;
-
-color:#778078;
-
-margin:
-5px 0 24px;
+.menuTitle span{
+  color:#59e51f;
 }
 
 .menuButton{
+  width:100%;
+  padding:15px;
+  margin-top:9px;
 
-width:100%;
+  border-radius:12px;
 
-padding:15px;
+  border:1px solid #293b2d;
 
-margin-bottom:9px;
+  background:#0d1810;
 
-border-radius:13px;
+  color:#fff;
 
-border:1px solid #263a2b;
-
-background:
-linear-gradient(145deg,#111d14,#080e0a);
-
-color:#fff;
-
-text-align:left;
-
-font-size:13px;
-
-font-weight:bold;
+  text-align:left;
+  font-weight:bold;
 }
 
-
-/* =========================
-MODAL
-========================= */
+/* MODAL */
 
 .modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
 
-position:fixed;
+  display:none;
 
-inset:0;
+  align-items:center;
+  justify-content:center;
 
-z-index:100;
+  padding:20px;
 
-display:none;
-
-align-items:center;
-
-justify-content:center;
-
-padding:20px;
-
-background:rgba(0,0,0,.82);
+  background:rgba(0,0,0,.8);
 }
 
 .modal.show{
-display:flex;
+  display:flex;
 }
 
 .modalBox{
+  width:100%;
+  max-width:420px;
 
-width:100%;
+  padding:18px;
 
-max-width:430px;
+  border-radius:17px;
 
-padding:20px;
+  border:1px solid #29432d;
 
-border-radius:20px;
-
-border:1px solid #29432d;
-
-background:
-linear-gradient(145deg,#0b170e,#050a06);
-
-box-shadow:
-0 25px 70px rgba(0,0,0,.55);
+  background:#071009;
 }
 
-.modalHead{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:15px;
+.modalTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.modalHead h2{
-
-margin:0;
-
-font-size:19px;
+.modalTop h2{
+  margin:0;
+  font-size:18px;
 }
 
 .close{
-
-background:none;
-
-color:#fff;
-
-font-size:27px;
+  background:none;
+  color:#fff;
+  font-size:25px;
 }
 
 .info{
+  margin-top:12px;
+  padding:13px;
 
-padding:14px;
+  border-radius:12px;
 
-margin-bottom:9px;
-
-border-radius:13px;
-
-border:1px solid #26372a;
-
-background:#0d1810;
+  background:#0d1810;
+  border:1px solid #26382a;
 }
 
 .info strong{
-color:#5be522;
+  color:#59e51f;
 }
 
 .info p{
-
-font-size:12px;
-
-line-height:1.5;
-
-color:#a2aaa4;
+  color:#a0aaa3;
+  font-size:12px;
+  line-height:1.45;
 }
 
+/* TELAS PEQUENAS */
 
-/* =========================
-TELAS BAIXAS
-========================= */
+@media(max-height:680px){
 
-@media(max-height:700px){
+  .top{
+    min-height:62px;
+  }
 
-.top{
-height:13%;
-min-height:72px;
-}
+  .siena{
+    font-size:35px;
+  }
 
-.brandSiena{
-font-size:38px;
-}
+  .margem{
+    font-size:14px;
+    margin-top:4px;
+  }
 
-.brandMargem{
-font-size:16px;
-margin-top:4px;
-}
+  .sub{
+    font-size:6px;
+    margin-top:4px;
+  }
 
-.brandSub{
-font-size:7px;
-margin-top:5px;
-}
+  .tabs{
+    min-height:38px;
+  }
 
-.tabs{
-min-height:42px;
-}
+  .tab{
+    font-size:7px;
+  }
 
-.tab{
-font-size:7px;
-}
+  .fields{
+    height:20%;
+    min-height:85px;
+  }
 
-.fields{
-padding:8px;
-gap:5px;
-}
+  .result{
+    height:19%;
+    min-height:78px;
+  }
 
-.resultValue{
-font-size:30px;
-}
+  .resultValue{
+    font-size:27px;
+  }
 
-.calcDisplay{
-min-height:105px;
-}
+  .keypad{
+    height:50%;
+  }
 
-.calcResult{
-font-size:39px;
-}
-
-.calcKeys{
-gap:5px;
-}
-
-.footer{
-display:none;
-}
-
-}
-
-
-@media(max-height:620px){
-
-.brandSiena{
-font-size:33px;
-}
-
-.brandMargem{
-font-size:14px;
-letter-spacing:5px;
-}
-
-.topButton{
-width:37px;
-height:37px;
-}
-
-.tabs{
-min-height:38px;
-}
-
-.tab{
-font-size:6px;
-}
-
-.calcDisplay{
-height:25%;
-min-height:85px;
-}
-
-.calcKeys{
-height:73%;
-}
-
-}
-
-
-/* IOS / ANDROID */
-
-@supports(height:100svh){
-
-.app{
-height:100svh;
-}
-
+  .key{
+    font-size:17px;
+  }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="app">
 
-
-<!-- =========================
-TOPO
-========================= -->
+<!-- TOPO -->
 
 <div class="top">
 
-<button
-class="topButton"
-onclick="abrirMenu()">
-☰
-</button>
-
+<button class="iconBtn" onclick="abrirMenu()">☰</button>
 
 <div class="brand">
 
-<div class="brandSiena">
-SIENA
+<div class="siena">SIENA</div>
+<div class="margem">MARGEM</div>
+<div class="sub">SIMULADOR COMERCIAL</div>
+
 </div>
 
-<div class="brandMargem">
-MARGEM
-</div>
-
-<div class="brandSub">
-SIMULADOR COMERCIAL
-</div>
+<button class="iconBtn" onclick="abrirSobre()">ⓘ</button>
 
 </div>
 
 
-<button
-class="topButton"
-onclick="abrirSobre()">
-ⓘ
-</button>
-
-</div>
-
-
-<!-- =========================
-ABAS
-========================= -->
+<!-- ABAS -->
 
 <div class="tabs">
 
-<button
-class="tab active"
-onclick="trocarModo('margem',this)">
+<button class="tab active" onclick="modoComercial('margem',this)">
 MARGEM
 </button>
 
-<button
-class="tab"
-onclick="trocarModo('preco',this)">
+<button class="tab" onclick="modoComercial('preco',this)">
 PREÇO
 </button>
 
-<button
-class="tab"
-onclick="trocarModo('desconto',this)">
+<button class="tab" onclick="modoComercial('desconto',this)">
 DESC.
 </button>
 
-<button
-class="tab"
-onclick="trocarModo('markup',this)">
+<button class="tab" onclick="modoComercial('markup',this)">
 MARKUP
 </button>
 
-<button
-class="tab"
-onclick="abrirCalculadora(this)">
+<button class="tab" onclick="abrirCalc(this)">
 CALC
 </button>
 
 </div>
 
 
-<!-- =========================
-COMERCIAL
-========================= -->
+<!-- PRINCIPAL -->
 
-<div
-id="commercial"
-class="commercial">
+<div class="main">
 
+<!-- COMERCIAL -->
 
-<div
-id="fields"
-class="fields">
-</div>
+<div id="comercial">
 
+<div class="fields" id="fields"></div>
 
 <div class="result">
 
-<div
-id="resultLabel"
-class="resultLabel">
+<div class="resultLabel" id="resultLabel">
 PREÇO DE VENDA
 </div>
 
-<div
-id="resultValue"
-class="resultValue">
+<div class="resultValue" id="resultValue">
 R$ 0,00
 </div>
-
 
 <div class="resultInfo">
 
 <div>
-
-<small id="info1Label">
-LUCRO
-</small>
-
-<strong id="info1">
-R$ 0,00
-</strong>
-
+<small id="info1Label">LUCRO</small>
+<strong id="info1">R$ 0,00</strong>
 </div>
-
 
 <div>
-
-<small id="info2Label">
-MARGEM
-</small>
-
-<strong id="info2">
-0,00%
-</strong>
+<small id="info2Label">MARGEM</small>
+<strong id="info2">0,00%</strong>
+</div>
 
 </div>
 
@@ -1166,280 +653,104 @@ MARGEM
 </div>
 
 
-<div class="actions">
+<!-- CALCULADORA -->
 
-<button
-class="action calculate"
-onclick="calcular()">
-✓ &nbsp; CALCULAR
-</button>
+<div id="calc" class="calc" style="display:none">
 
-<button
-class="action"
-onclick="limpar()">
-↻ &nbsp; LIMPAR
-</button>
+<div class="calcScreen">
 
-</div>
+<div class="expression" id="expression"></div>
 
-
-</div>
-
-
-<!-- =========================
-CALCULADORA
-========================= -->
-
-<div
-id="calculator"
-class="calculator">
-
-
-<div class="calcDisplay">
-
-<div
-id="calcExpression"
-class="calcExpression">
-</div>
-
-<div
-id="calcResult"
-class="calcResult">
+<div class="calcValue" id="calcValue">
 0
 </div>
 
 </div>
 
-
-<div class="calcKeys">
-
-
-<!-- 1 -->
-
-<button
-class="calcKey function"
-onclick="calcBackspace()">
-⌫
-</button>
-
-<button
-class="calcKey function"
-onclick="calcClear()">
-AC
-</button>
-
-<button
-class="calcKey function"
-onclick="calcPercent()">
-%
-</button>
-
-<button
-class="calcKey operation"
-onclick="calcOperator('/')">
-÷
-</button>
+</div>
 
 
-<!-- 2 -->
+<!-- TECLADO ÚNICO -->
 
-<button
-class="calcKey"
-onclick="calcDigit('7')">
-7
-</button>
+<div class="keypad">
 
-<button
-class="calcKey"
-onclick="calcDigit('8')">
-8
-</button>
+<button class="key" onclick="tecla('7')">7</button>
+<button class="key" onclick="tecla('8')">8</button>
+<button class="key" onclick="tecla('9')">9</button>
+<button class="key special" onclick="tecla('BACK')">⌫</button>
 
-<button
-class="calcKey"
-onclick="calcDigit('9')">
-9
-</button>
+<button class="key" onclick="tecla('4')">4</button>
+<button class="key" onclick="tecla('5')">5</button>
+<button class="key" onclick="tecla('6')">6</button>
+<button class="key special" onclick="tecla('00')">00</button>
 
-<button
-class="calcKey operation"
-onclick="calcOperator('*')">
-×
-</button>
+<button class="key" onclick="tecla('1')">1</button>
+<button class="key" onclick="tecla('2')">2</button>
+<button class="key" onclick="tecla('3')">3</button>
+<button class="key special" onclick="tecla(',')">,</button>
 
-
-<!-- 3 -->
-
-<button
-class="calcKey"
-onclick="calcDigit('4')">
-4
-</button>
-
-<button
-class="calcKey"
-onclick="calcDigit('5')">
-5
-</button>
-
-<button
-class="calcKey"
-onclick="calcDigit('6')">
-6
-</button>
-
-<button
-class="calcKey operation"
-onclick="calcOperator('-')">
-−
-</button>
-
-
-<!-- 4 -->
-
-<button
-class="calcKey"
-onclick="calcDigit('1')">
-1
-</button>
-
-<button
-class="calcKey"
-onclick="calcDigit('2')">
-2
-</button>
-
-<button
-class="calcKey"
-onclick="calcDigit('3')">
-3
-</button>
-
-<button
-class="calcKey operation"
-onclick="calcOperator('+')">
-+
-</button>
-
-
-<!-- 5 -->
-
-<button
-class="calcKey zero"
-onclick="calcDigit('0')">
-0
-</button>
-
-<button
-class="calcKey"
-onclick="calcDecimal()">
-,
-</button>
-
-<button
-class="calcKey equal"
-onclick="calcEquals()">
-=
-</button>
-
+<button class="key zero" onclick="tecla('0')">0</button>
+<button class="key special" onclick="tecla('AC')">AC</button>
+<button class="key equal" onclick="tecla('=')">=</button>
 
 </div>
 
 </div>
 
 
-<!-- =========================
-RODAPÉ
-========================= -->
+<!-- RODAPÉ -->
 
 <div class="footer">
-
 Criado e desenvolvido por
-
-<span>
-João Siena
-</span>
-
+<span>João Siena</span>
 </div>
 
 
 </div>
 
 
-<!-- =========================
-MENU
-========================= -->
+<!-- MENU -->
 
-<div
-id="overlay"
-class="overlay"
-onclick="fecharMenu()">
-</div>
+<div id="overlay" class="overlay" onclick="fecharMenu()"></div>
 
+<div id="menu" class="menu">
 
-<div
-id="menu"
-class="menu">
-
-<div class="menuLogo">
+<div class="menuTitle">
 SIENA <span>MARGEM</span>
 </div>
 
-<div class="menuSub">
-SIMULADOR COMERCIAL
-</div>
-
-
-<button
-class="menuButton"
-onclick="abrirCalculadora()">
+<button class="menuButton" onclick="abrirCalc()">
 ▦ &nbsp; Calculadora
 </button>
 
-
-<button
-class="menuButton"
-onclick="abrirInformacoes()">
-∑ &nbsp; Informações técnicas
+<button class="menuButton" onclick="abrirInformacoes()">
+∑ &nbsp; Informações
 </button>
 
-
-<button
-class="menuButton"
-onclick="abrirSobre()">
-ⓘ &nbsp; Sobre o SIENA
+<button class="menuButton" onclick="abrirSobre()">
+ⓘ &nbsp; Sobre
 </button>
 
 </div>
 
 
-<!-- =========================
-MODAL
-========================= -->
+<!-- MODAL -->
 
-<div
-id="modal"
-class="modal">
+<div id="modal" class="modal">
 
 <div class="modalBox">
 
-<div class="modalHead">
+<div class="modalTop">
 
 <h2 id="modalTitle">
 SIENA MARGEM
 </h2>
 
-<button
-class="close"
-onclick="fecharModal()">
-×
-</button>
+<button class="close" onclick="fecharModal()">×</button>
 
 </div>
 
-<div
-id="modalContent">
-</div>
+<div id="modalContent"></div>
 
 </div>
 
@@ -1449,28 +760,33 @@ id="modalContent">
 <script>
 
 /* =====================================================
-   DADOS COMERCIAIS
+   ESTADO
 ===================================================== */
 
 let modo="margem";
 
-let campoAtivo=null;
+let campoAtivo="custo";
 
-let valores={
-custo:"0",
-margem:"0",
-preco:"0",
-precoTabela:"0",
-desconto:"0",
-markup:"0"
+let comercialAtivo=true;
+
+
+/* valores comerciais */
+
+const valores={
+  custo:"0",
+  margem:"0",
+  preco:"0",
+  tabela:"0",
+  desconto:"0",
+  markup:"0"
 };
 
 
 /* =====================================================
-   MODOS
+   CONFIGURAÇÃO DOS MODOS
 ===================================================== */
 
-const modos={
+const config={
 
 margem:{
 campos:[
@@ -1494,7 +810,7 @@ info2:"MARKUP"
 
 desconto:{
 campos:[
-["precoTabela","PREÇO DE TABELA","R$"],
+["tabela","PREÇO DE TABELA","R$"],
 ["desconto","DESCONTO","%"]
 ],
 resultado:"PREÇO FINAL",
@@ -1516,38 +832,55 @@ info2:"MARGEM"
 
 
 /* =====================================================
-   CAMPOS
+   CALCULADORA LIVRE
+===================================================== */
+
+let calcTokens=[];
+
+let calcNumero="0";
+
+let calcOperacao=null;
+
+let calcResultado=null;
+
+let calcNovoNumero=false;
+
+let calcExpressao="";
+
+
+/* =====================================================
+   MONTAR CAMPOS
 ===================================================== */
 
 function montarCampos(){
 
-let config=modos[modo];
+const c=config[modo];
 
 let html="";
 
-config.campos.forEach(c=>{
+c.campos.forEach(x=>{
 
 html+=`
 
 <div class="field">
 
 <label class="label">
-${c[1]}
+${x[1]}
 </label>
 
 <div
 class="display"
-id="display_${c[0]}"
-onclick="selecionarCampo('${c[0]}')">
+id="display_${x[0]}"
+onclick="selecionarCampo('${x[0]}')">
 
 <span class="prefix">
-${c[2]}
+${x[2]}
 </span>
 
 <span
 class="value"
-id="value_${c[0]}">
-${valores[c[0]]}
+id="value_${x[0]}">
+${valores[x[0]]}
 </span>
 
 </div>
@@ -1560,35 +893,30 @@ ${valores[c[0]]}
 
 document.getElementById("fields").innerHTML=html;
 
-campoAtivo=config.campos[0][0];
+campoAtivo=c.campos[0][0];
 
-atualizarSelecao();
+selecionarCampo(campoAtivo);
 
-calcular();
+calcularComercial();
 
 }
 
+
+/* =====================================================
+   SELECIONAR CAMPO
+===================================================== */
 
 function selecionarCampo(nome){
 
 campoAtivo=nome;
 
-atualizarSelecao();
-
-}
-
-
-function atualizarSelecao(){
-
 document
 .querySelectorAll(".display")
-.forEach(x=>{
-x.classList.remove("selected");
-});
+.forEach(x=>x.classList.remove("selected"));
 
-let el=
+const el=
 document.getElementById(
-"display_"+campoAtivo
+"display_"+nome
 );
 
 if(el){
@@ -1599,13 +927,13 @@ el.classList.add("selected");
 
 
 /* =====================================================
-   NÚMEROS
+   NÚMERO
 ===================================================== */
 
-function numero(v){
+function num(v){
 
 return parseFloat(
-String(v||"")
+String(v)
 .replace(/\./g,"")
 .replace(",",".")
 ) || 0;
@@ -1613,7 +941,13 @@ String(v||"")
 }
 
 
+/* =====================================================
+   MOEDA
+===================================================== */
+
 function moeda(v){
+
+if(!isFinite(v))v=0;
 
 return v.toLocaleString(
 "pt-BR",
@@ -1627,122 +961,20 @@ currency:"BRL"
 
 
 /* =====================================================
-   DISPLAY
+   ATUALIZAR CAMPO
 ===================================================== */
 
-function atualizarDisplay(){
+function atualizarCampo(){
 
-let config=modos[modo];
-
-config.campos.forEach(c=>{
-
-let el=
+const el=
 document.getElementById(
-"value_"+c[0]
+"value_"+campoAtivo
 );
 
 if(el){
 el.textContent=
-valores[c[0]];
+valores[campoAtivo];
 }
-
-});
-
-}
-
-
-/* =====================================================
-   DIGITAR
-===================================================== */
-
-function digitar(valor){
-
-if(!campoAtivo){
-
-campoAtivo=
-modos[modo].campos[0][0];
-
-}
-
-if(
-valores[campoAtivo]==="0" &&
-valor!==","
-){
-
-valores[campoAtivo]="";
-
-}
-
-if(
-valor==="," &&
-valores[campoAtivo].includes(",")
-){
-
-return;
-
-}
-
-valores[campoAtivo]+=valor;
-
-atualizarDisplay();
-
-calcular();
-
-}
-
-
-/* =====================================================
-   APAGAR
-===================================================== */
-
-function apagar(){
-
-if(!campoAtivo)return;
-
-valores[campoAtivo]=
-valores[campoAtivo].slice(0,-1);
-
-if(
-valores[campoAtivo]===""
-){
-
-valores[campoAtivo]="0";
-
-}
-
-atualizarDisplay();
-
-calcular();
-
-}
-
-
-/* =====================================================
-   LIMPAR
-===================================================== */
-
-function limparCampo(){
-
-if(!campoAtivo)return;
-
-valores[campoAtivo]="0";
-
-atualizarDisplay();
-
-calcular();
-
-}
-
-
-function limpar(){
-
-Object.keys(valores).forEach(k=>{
-valores[k]="0";
-});
-
-atualizarDisplay();
-
-calcular();
 
 }
 
@@ -1751,10 +983,10 @@ calcular();
    CÁLCULO COMERCIAL
 ===================================================== */
 
-function calcular(){
+function calcularComercial(){
 
 let resultado=0;
-let info1=0;
+let lucro=0;
 let info2=0;
 
 
@@ -1762,27 +994,16 @@ let info2=0;
 
 if(modo==="margem"){
 
-let custo=numero(valores.custo);
-let margem=numero(valores.margem);
-
-/*
-ACRÉSCIMO SOBRE O CUSTO.
-
-100 + 30% = 130
-100 + 150% = 250
-100 + 500% = 600
-
-SEM LIMITE.
-*/
+const custo=num(valores.custo);
+const margem=num(valores.margem);
 
 resultado=
 custo+(custo*margem/100);
 
-info1=
+lucro=
 resultado-custo;
 
-info2=
-margem;
+info2=margem;
 
 }
 
@@ -1791,21 +1012,21 @@ margem;
 
 if(modo==="preco"){
 
-let custo=numero(valores.custo);
-let preco=numero(valores.preco);
-
-if(custo>0){
+const custo=num(valores.custo);
+const preco=num(valores.preco);
 
 resultado=
-((preco-custo)/preco)*100;
+preco;
 
-info1=
+lucro=
 preco-custo;
 
 info2=
-preco/custo;
-
-}
+custo>0
+?
+((preco-custo)/preco)*100
+:
+0;
 
 }
 
@@ -1814,20 +1035,16 @@ preco/custo;
 
 if(modo==="desconto"){
 
-let tabela=
-numero(valores.precoTabela);
-
-let desconto=
-numero(valores.desconto);
+const tabela=num(valores.tabela);
+const desconto=num(valores.desconto);
 
 resultado=
 tabela-(tabela*desconto/100);
 
-info1=
+lucro=
 tabela-resultado;
 
-info2=
-desconto;
+info2=desconto;
 
 }
 
@@ -1836,105 +1053,206 @@ desconto;
 
 if(modo==="markup"){
 
-let custo=
-numero(valores.custo);
-
-let markup=
-numero(valores.markup);
+const custo=num(valores.custo);
+const markup=num(valores.markup);
 
 resultado=
 custo*markup;
 
-info1=
+lucro=
 resultado-custo;
 
-if(resultado>0){
-
 info2=
-((resultado-custo)/resultado)*100;
-
-}
+resultado>0
+?
+((resultado-custo)/resultado)*100
+:
+0;
 
 }
 
 
 /* MOSTRAR */
 
-if(modo==="preco"){
-
-document.getElementById("resultValue")
-.textContent=
-resultado.toFixed(2)
-.replace(".",",")+"%";
-
-}else{
-
 document.getElementById("resultValue")
 .textContent=
 moeda(resultado);
 
-}
-
 document.getElementById("info1")
 .textContent=
-moeda(info1);
+moeda(lucro);
 
 document.getElementById("info2")
 .textContent=
-info2.toFixed(2)
-.replace(".",",")+"%";
+info2.toFixed(2).replace(".",",")+"%";
 
 
-let config=modos[modo];
+const c=config[modo];
 
 document.getElementById("resultLabel")
-.textContent=config.resultado;
+.textContent=c.resultado;
 
 document.getElementById("info1Label")
-.textContent=config.info1;
+.textContent=c.info1;
 
 document.getElementById("info2Label")
-.textContent=config.info2;
+.textContent=c.info2;
 
 }
 
 
 /* =====================================================
-   TROCAR ABA
+   TECLADO COMERCIAL
 ===================================================== */
 
-function trocarModo(novo,botao){
+function teclaComercial(v){
+
+if(!comercialAtivo)return;
+
+
+/* IGUAL */
+
+if(v==="="){
+
+calcularComercial();
+
+return;
+
+}
+
+
+/* AC */
+
+if(v==="AC"){
+
+valores[campoAtivo]="0";
+
+atualizarCampo();
+
+calcularComercial();
+
+return;
+
+}
+
+
+/* APAGAR */
+
+if(v==="BACK"){
+
+if(
+valores[campoAtivo].length<=1
+){
+
+valores[campoAtivo]="0";
+
+}else{
+
+valores[campoAtivo]=
+valores[campoAtivo].slice(0,-1);
+
+}
+
+atualizarCampo();
+
+calcularComercial();
+
+return;
+
+}
+
+
+/* VÍRGULA */
+
+if(v==="," ){
+
+if(
+!valores[campoAtivo].includes(",")
+){
+
+valores[campoAtivo]+=",";
+
+}
+
+atualizarCampo();
+
+return;
+
+}
+
+
+/* ZERO */
+
+if(
+valores[campoAtivo]==="0"
+){
+
+valores[campoAtivo]="";
+
+}
+
+
+/* NÚMERO */
+
+valores[campoAtivo]+=v;
+
+atualizarCampo();
+
+calcularComercial();
+
+}
+
+
+/* =====================================================
+   TECLADO GERAL
+===================================================== */
+
+function tecla(v){
+
+if(comercialAtivo){
+
+teclaComercial(v);
+
+}else{
+
+teclaCalculadora(v);
+
+}
+
+}
+
+
+/* =====================================================
+   TROCAR MODO COMERCIAL
+===================================================== */
+
+function modoComercial(novo,botao){
 
 modo=novo;
 
+comercialAtivo=true;
 
-/*
-Cada aba começa zerada.
-*/
+document.getElementById("comercial")
+.style.display="block";
 
-modos[modo].campos.forEach(c=>{
-valores[c[0]]="0";
-});
+document.getElementById("calc")
+.style.display="none";
 
 
 document
 .querySelectorAll(".tab")
-.forEach(x=>{
-x.classList.remove("active");
-});
-
+.forEach(x=>x.classList.remove("active"));
 
 botao.classList.add("active");
 
 
-document
-.getElementById("commercial")
-.style.display="flex";
+/*
+Cada aba abre zerada.
+*/
 
-
-document
-.getElementById("calculator")
-.classList.remove("show");
+config[modo].campos.forEach(x=>{
+valores[x[0]]="0";
+});
 
 
 montarCampos();
@@ -1943,23 +1261,23 @@ montarCampos();
 
 
 /* =====================================================
-   CALCULADORA LIVRE
+   CALCULADORA
 ===================================================== */
 
-let calcExpression="";
-let calcCurrent="0";
-let calcLastWasEqual=false;
+function abrirCalc(botao){
 
+comercialAtivo=false;
 
-/* ABRIR */
+document.getElementById("comercial")
+.style.display="none";
 
-function abrirCalculadora(botao){
+document.getElementById("calc")
+.style.display="flex";
+
 
 document
 .querySelectorAll(".tab")
-.forEach(x=>{
-x.classList.remove("active");
-});
+.forEach(x=>x.classList.remove("active"));
 
 
 if(botao){
@@ -1975,236 +1293,215 @@ document
 }
 
 
-document
-.getElementById("commercial")
-.style.display="none";
-
-
-document
-.getElementById("calculator")
-.classList.add("show");
-
-
-atualizarCalcDisplay();
+atualizarCalcTela();
 
 }
 
 
 /* =====================================================
-   DISPLAY CALCULADORA
+   FORMATAÇÃO CALC
 ===================================================== */
 
-function atualizarCalcDisplay(){
+function calcFormat(n){
 
-document.getElementById(
-"calcExpression"
-).textContent=
-formatarExpressao(calcExpression);
+if(!isFinite(n))return "Erro";
 
-document.getElementById(
-"calcResult"
-).textContent=
-formatarNumeroCalc(calcCurrent);
-
+return Number(n).toLocaleString(
+"pt-BR",
+{
+maximumFractionDigits:10
 }
-
-
-function formatarExpressao(expr){
-
-return expr
-.replace(/\*/g," × ")
-.replace(/\//g," ÷ ")
-.replace(/\+/g," + ")
-.replace(/-/g," − ");
-
-}
-
-
-function formatarNumeroCalc(valor){
-
-if(valor==="Erro"){
-return "Erro";
-}
-
-if(valor.includes(".")){
-
-let partes=valor.split(".");
-
-let inteiro=
-Number(partes[0])
-.toLocaleString("pt-BR");
-
-return inteiro+","+partes[1];
-
-}
-
-let n=Number(valor);
-
-if(!isFinite(n)){
-return "Erro";
-}
-
-return n.toLocaleString("pt-BR");
+);
 
 }
 
 
 /* =====================================================
-   NÚMEROS
+   ATUALIZAR CALC
+===================================================== */
+
+function atualizarCalcTela(){
+
+let display=calcNumero;
+
+if(
+display==="-" ||
+display==="."
+){
+
+display="0";
+
+}
+
+document.getElementById(
+"calcValue"
+).textContent=
+display.includes(".")
+?
+display.replace(".",",")
+:
+calcFormat(Number(display));
+
+
+document.getElementById(
+"expression"
+).textContent=
+calcExpressao;
+
+}
+
+
+/* =====================================================
+   DIGITAR CALC
 ===================================================== */
 
 function calcDigit(d){
 
-if(calcLastWasEqual){
+if(
+calcNovoNumero ||
+calcNumero==="0"
+){
 
-calcExpression="";
-calcCurrent="0";
-calcLastWasEqual=false;
+calcNumero=d;
 
-}
-
-if(calcCurrent==="0"){
-
-calcCurrent=d;
+calcNovoNumero=false;
 
 }else{
 
-calcCurrent+=d;
+calcNumero+=d;
 
 }
 
-atualizarCalcDisplay();
+atualizarCalcTela();
 
 }
 
 
 /* =====================================================
-   VÍRGULA
+   DECIMAL
 ===================================================== */
 
 function calcDecimal(){
 
-if(calcLastWasEqual){
+if(calcNovoNumero){
 
-calcExpression="";
-calcCurrent="0";
-calcLastWasEqual=false;
-
-}
-
-if(
-!calcCurrent.includes(".")
-){
-
-calcCurrent+=".";
+calcNumero="0";
+calcNovoNumero=false;
 
 }
 
-atualizarCalcDisplay();
+if(!calcNumero.includes(".")){
+
+calcNumero+=".";
+
+}
+
+atualizarCalcTela();
 
 }
 
 
 /* =====================================================
-   OPERADORES
+   CALCULAR DUAS PARCELAS
+===================================================== */
+
+function executar(a,b,op){
+
+a=Number(a);
+b=Number(b);
+
+if(op==="+")return a+b;
+if(op==="-")return a-b;
+if(op==="*")return a*b;
+if(op==="/")return b===0?NaN:a/b;
+
+return b;
+
+}
+
+
+/* =====================================================
+   OPERADOR
 ===================================================== */
 
 function calcOperator(op){
 
-if(calcCurrent==="Erro"){
+const atual=Number(calcNumero);
 
-calcClear();
 
-}
-
-if(calcExpression===""){
-
-calcExpression=
-calcCurrent+op;
-
-}else{
+/*
+Se já existe operação,
+calcula antes de continuar.
+*/
 
 if(
-/[+\-*/]$/.test(calcExpression)
+calcOperacao!==null &&
+!calcNovoNumero
 ){
 
-calcExpression=
-calcExpression.slice(0,-1)+op;
+const r=
+executar(
+calcResultado,
+atual,
+calcOperacao
+);
 
-}else{
+if(!isFinite(r)){
 
-calcExpression+=
-calcCurrent+op;
-
-}
-
-}
-
-calcCurrent="0";
-
-calcLastWasEqual=false;
-
-atualizarCalcDisplay();
-
-}
-
-
-/* =====================================================
-   PORCENTAGEM
-===================================================== */
-
-function calcPercent(){
-
-let valor=
-Number(calcCurrent);
-
-if(isNaN(valor))return;
-
-calcCurrent=
-String(valor/100);
-
-atualizarCalcDisplay();
-
-}
-
-
-/* =====================================================
-   APAGAR
-===================================================== */
-
-function calcBackspace(){
-
-if(calcLastWasEqual){
+calcNumero="Erro";
+calcOperacao=null;
+atualizarCalcTela();
 return;
+
 }
 
-if(calcCurrent.length<=1){
+calcResultado=r;
+calcNumero=String(r);
 
-calcCurrent="0";
+}
+
+
+/*
+Primeira operação.
+*/
+
+if(calcResultado===null){
+
+calcResultado=atual;
+
+}
+
+
+/*
+Expressão visível.
+*/
+
+let simbolo=op;
+
+if(op==="*")simbolo="×";
+if(op==="/")simbolo="÷";
+if(op==="-")simbolo="−";
+
+
+if(calcExpressao===""){
+
+calcExpressao=
+calcFormat(atual)+" "+simbolo;
 
 }else{
 
-calcCurrent=
-calcCurrent.slice(0,-1);
+calcExpressao=
+calcExpressao+
+" "+simbolo;
 
 }
 
-atualizarCalcDisplay();
 
-}
+calcOperacao=op;
 
+calcNovoNumero=true;
 
-/* =====================================================
-   AC
-===================================================== */
-
-function calcClear(){
-
-calcExpression="";
-calcCurrent="0";
-calcLastWasEqual=false;
-
-atualizarCalcDisplay();
+atualizarCalcTela();
 
 }
 
@@ -2215,116 +1512,151 @@ atualizarCalcDisplay();
 
 function calcEquals(){
 
-if(
-calcExpression==="" ||
-calcCurrent==="Erro"
-){
+if(calcOperacao===null){
 
 return;
 
 }
 
-let expressaoFinal=
-calcExpression+
-calcCurrent;
+const atual=Number(calcNumero);
 
-let resultado;
-
-try{
-
-/*
-Permite somente:
-números
-ponto
-+
--
-*
-/
-espaços
-*/
-
-if(
-!/^[0-9+\-*/. ]+$/.test(
-expressaoFinal
-)
-){
-
-throw new Error();
-
-}
-
-
-/*
-Não aceita expressão terminando
-em operador.
-*/
-
-if(
-/[+\-*/.]$/.test(
-expressaoFinal
-)
-){
-
-throw new Error();
-
-}
-
-
-/*
-Executa somente expressão matemática
-validada acima.
-*/
-
-resultado=
-Function(
-'"use strict";return ('+
-expressaoFinal+
-')'
-)();
-
-
-if(
-typeof resultado!=="number" ||
-!isFinite(resultado)
-){
-
-throw new Error();
-
-}
-
-}catch(e){
-
-calcExpression=
-expressaoFinal;
-
-calcCurrent="Erro";
-
-calcLastWasEqual=true;
-
-atualizarCalcDisplay();
-
-return;
-
-}
-
-
-/*
-Mantém a conta inteira visível.
-*/
-
-calcExpression=
-expressaoFinal+" =";
-
-calcCurrent=
-String(
-Number(
-resultado.toFixed(10)
-)
+const r=
+executar(
+calcResultado,
+atual,
+calcOperacao
 );
 
-calcLastWasEqual=true;
 
-atualizarCalcDisplay();
+if(!isFinite(r)){
+
+calcNumero="Erro";
+
+calcResultado=null;
+calcOperacao=null;
+
+atualizarCalcTela();
+
+return;
+
+}
+
+
+/*
+Mostra a conta completa.
+*/
+
+calcExpressao=
+calcExpressao+
+" "+
+calcFormat(atual)+
+" =";
+
+
+calcNumero=String(r);
+
+calcResultado=r;
+
+calcOperacao=null;
+
+calcNovoNumero=true;
+
+atualizarCalcTela();
+
+}
+
+
+/* =====================================================
+   PORCENTAGEM
+===================================================== */
+
+function calcPercent(){
+
+const atual=Number(calcNumero);
+
+if(!isFinite(atual))return;
+
+
+/*
+Calculadora comum:
+
+200 + 10% = 220
+
+200 - 10% = 180
+
+200 × 10% = 20
+
+200 ÷ 10% = 2000
+*/
+
+if(
+calcResultado!==null &&
+calcOperacao!==null
+){
+
+let percentual=
+calcResultado*atual/100;
+
+calcNumero=
+String(percentual);
+
+}else{
+
+calcNumero=
+String(atual/100);
+
+}
+
+atualizarCalcTela();
+
+}
+
+
+/* =====================================================
+   APAGAR
+===================================================== */
+
+function calcBack(){
+
+if(
+calcNumero==="Erro"
+){
+
+calcClear();
+
+return;
+
+}
+
+if(calcNumero.length<=1){
+
+calcNumero="0";
+
+}else{
+
+calcNumero=
+calcNumero.slice(0,-1);
+
+}
+
+atualizarCalcTela();
+
+}
+
+
+/* =====================================================
+   LIMPAR CALCULADORA
+===================================================== */
+
+function calcClear(){
+
+calcNumero="0";
+calcResultado=null;
+calcOperacao=null;
+calcNovoNumero=false;
+calcExpressao="";
+
+atualizarCalcTela();
 
 }
 
@@ -2360,7 +1692,7 @@ document
 
 
 /* =====================================================
-   MODAIS
+   MODAL
 ===================================================== */
 
 function fecharModal(){
@@ -2376,15 +1708,11 @@ function abrirSobre(){
 
 fecharMenu();
 
-document.getElementById(
-"modalTitle"
-).textContent=
-"SIENA MARGEM";
+document.getElementById("modalTitle")
+.textContent="SIENA MARGEM";
 
-
-document.getElementById(
-"modalContent"
-).innerHTML=`
+document.getElementById("modalContent")
+.innerHTML=`
 
 <div class="info">
 
@@ -2393,13 +1721,9 @@ SIENA MARGEM
 </strong>
 
 <p>
-Simulador comercial para cálculos
-de margem, preço, desconto e markup.
-</p>
-
-<p>
-Também possui uma calculadora livre
-para contas matemáticas.
+Simulador comercial com ferramentas
+de margem, preço, desconto, markup
+e calculadora livre.
 </p>
 
 <p>
@@ -2410,7 +1734,6 @@ Criado e desenvolvido por
 </div>
 
 `;
-
 
 document
 .getElementById("modal")
@@ -2423,23 +1746,19 @@ function abrirInformacoes(){
 
 fecharMenu();
 
-document.getElementById(
-"modalTitle"
-).textContent=
-"Informações";
+document.getElementById("modalTitle")
+.textContent="Informações";
 
-
-document.getElementById(
-"modalContent"
-).innerHTML=`
+document.getElementById("modalContent")
+.innerHTML=`
 
 <div class="info">
 
 <strong>MARGEM</strong>
 
 <p>
-O percentual pode ser qualquer número.
-Não existe limite.
+Permite qualquer percentual e aplica
+o percentual sobre o custo informado.
 </p>
 
 </div>
@@ -2449,8 +1768,8 @@ Não existe limite.
 <strong>PREÇO</strong>
 
 <p>
-Calcula a margem obtida entre
-custo e preço de venda.
+Mostra a margem obtida a partir
+do custo e preço de venda.
 </p>
 
 </div>
@@ -2460,8 +1779,8 @@ custo e preço de venda.
 <strong>DESCONTO</strong>
 
 <p>
-Calcula o preço final depois
-do desconto informado.
+Calcula o preço final após
+o desconto informado.
 </p>
 
 </div>
@@ -2471,8 +1790,8 @@ do desconto informado.
 <strong>MARKUP</strong>
 
 <p>
-Multiplica o custo pelo fator
-de markup informado.
+Calcula o preço multiplicando
+o custo pelo markup.
 </p>
 
 </div>
@@ -2482,14 +1801,13 @@ de markup informado.
 <strong>CALCULADORA</strong>
 
 <p>
-Calculadora livre com a expressão
-completa sempre visível no visor.
+Calculadora livre com expressão
+visível durante a operação.
 </p>
 
 </div>
 
 `;
-
 
 document
 .getElementById("modal")
@@ -2499,55 +1817,24 @@ document
 
 
 /* =====================================================
-   PROTEÇÃO CONTRA ZOOM
+   BLOQUEIO DE ZOOM
 ===================================================== */
 
 document.addEventListener(
 "gesturestart",
-function(e){
-e.preventDefault();
-},
+e=>e.preventDefault(),
 {passive:false}
 );
 
 document.addEventListener(
 "gesturechange",
-function(e){
-e.preventDefault();
-},
+e=>e.preventDefault(),
 {passive:false}
 );
 
 document.addEventListener(
 "gestureend",
-function(e){
-e.preventDefault();
-},
-{passive:false}
-);
-
-
-/* Double tap */
-
-let ultimoToque=0;
-
-document.addEventListener(
-"touchend",
-function(e){
-
-let agora=Date.now();
-
-if(
-agora-ultimoToque<300
-){
-
-e.preventDefault();
-
-}
-
-ultimoToque=agora;
-
-},
+e=>e.preventDefault(),
 {passive:false}
 );
 
